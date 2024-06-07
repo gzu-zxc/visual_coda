@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of product catalog IDs grouped by publishers.",
+    "data": {
+        "url": "spider_csv/product_catalog_Catalogs.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "catalog_publisher",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "catalog_id",
+            "type": "quantitative"
+        }
+    }
+}

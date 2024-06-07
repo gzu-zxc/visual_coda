@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of music file sizes and durations.",
+    "data": {
+        "url": "spider_csv/music_1_files.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "file_size",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            },
+            "scale": {
+                "type": "linear"
+            },
+            "axis": {
+                "title": "File Size (MB)"
+            }
+        },
+        "y": {
+            "field": "duration",
+            "type": "temporal",
+            "timeUnit": "interval",
+            "unit": "second",
+            "axis": {
+                "title": "Duration (s)"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

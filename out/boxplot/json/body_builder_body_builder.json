@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of maximum weights lifted in the snatch and clean and jerk exercises, as well as the total weight lifted across all exercises for body builders.",
+    "data": {
+        "url": "spider_csv/body_builder_body_builder.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Snatch",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Clean_Jerk",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Total",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of bike share stations showing the number of docks available at each station.",
+    "data": {
+        "url": "spider_csv/bike_1_station.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "long",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear"
+            },
+            "axis": {
+                "title": "Longitude"
+            }
+        },
+        "y": {
+            "field": "lat",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear"
+            },
+            "axis": {
+                "title": "Latitude"
+            }
+        },
+        "color": {
+            "field": "dock_count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Number of Docks"
+            }
+        }
+    }
+}

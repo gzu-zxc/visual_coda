@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of the number of addresses by zip_postcode and state_province_county.",
+    "data": {
+        "url": "spider_csv/customers_and_products_contacts_addresses.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "zip_postcode",
+            "type": "quantitative",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "y": {
+            "field": "state_province_county",
+            "type": "nominal",
+            "scale": {
+                "type": "point"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "*",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

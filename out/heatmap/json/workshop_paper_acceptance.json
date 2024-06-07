@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap of paper acceptance status across workshops.",
+    "data": {
+        "url": "spider_csv/workshop_paper_acceptance.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Workshop_ID",
+            "type": "ordinal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "y": {
+            "field": "Submission_ID",
+            "type": "ordinal",
+            "scale": {
+                "type": "point"
+            }
+        },
+        "color": {
+            "field": "Result",
+            "type": "nominal"
+        },
+        "aggregate": [
+            "count"
+        ],
+        "stack": "normalize"
+    }
+}

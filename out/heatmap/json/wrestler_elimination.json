@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of eliminations performed by each wrestler at different times.",
+    "data": {
+        "url": "spider_csv/wrestler_elimination.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Eliminated_By",
+            "type": "nominal",
+            "axis": {
+                "title": "Eliminated By"
+            }
+        },
+        "y": {
+            "field": "Time",
+            "type": "temporal",
+            "timeUnit": "interval",
+            "axis": {
+                "title": "Time"
+            }
+        },
+        "color": {
+            "field": "Elimination_ID",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Number of Eliminations"
+            }
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        },
+        "legend": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

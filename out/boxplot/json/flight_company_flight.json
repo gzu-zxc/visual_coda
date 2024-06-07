@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of flight velocities.",
+    "data": {
+        "url": "spider_csv/flight_company_flight.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Velocity",
+            "type": "quantitative"
+        }
+    }
+}

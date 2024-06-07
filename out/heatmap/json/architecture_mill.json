@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of mills built per year, binned by type of mill architecture.",
+    "data": {
+        "url": "spider_csv/architecture_mill.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "built_year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "bin": {
+                "maxbins": 20
+            }
+        },
+        "y": {
+            "field": "type",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

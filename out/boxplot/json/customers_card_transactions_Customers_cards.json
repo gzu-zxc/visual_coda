@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of additional card details by card type.",
+    "data": {
+        "url": "spider_csv/customers_card_transactions_Customers_cards.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "card_type_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "other_card_details",
+            "type": "quantitative",
+            "aggregate": "boxplot"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of teachers' ages across different hometowns.",
+    "data": {
+        "url": "spider_csv/course_teach_teacher.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Hometown",
+            "type": "ordinal",
+            "sort": {
+                "field": "Teacher_ID"
+            }
+        },
+        "y": {
+            "field": "Age",
+            "type": "ordinal",
+            "sort": "ascending"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

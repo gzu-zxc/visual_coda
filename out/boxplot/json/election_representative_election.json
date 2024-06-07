@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of total votes received by representative candidates in each election.",
+    "data": {
+        "url": "spider_csv/election_representative_election.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Election_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Votes",
+            "type": "quantitative"
+        }
+    }
+}

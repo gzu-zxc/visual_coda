@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot chart showing the distribution of account openings by account name over time.",
+    "data": {
+        "url": "spider_csv/customers_and_invoices_Accounts.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "account_name",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "date_account_opened",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        }
+    }
+}

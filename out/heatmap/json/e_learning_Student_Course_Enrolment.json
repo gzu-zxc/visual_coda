@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of student enrollments and completions by month and day.",
+    "data": {
+        "url": "spider_csv/e_learning_Student_Course_Enrolment.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_of_enrolment",
+            "type": "temporal",
+            "timeUnit": "monthday"
+        },
+        "y": {
+            "field": "date_of_completion",
+            "type": "temporal",
+            "timeUnit": "monthday"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "student_id",
+            "type": "quantitative"
+        }
+    }
+}

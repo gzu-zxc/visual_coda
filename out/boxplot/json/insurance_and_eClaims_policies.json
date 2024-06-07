@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of insurance policy start dates by policy type code.",
+    "data": {
+        "url": "spider_csv/insurance_and_eClaims_policies.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Policy_Type_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Start_Date",
+            "type": "temporal",
+            "timeUnit": "year"
+        }
+    }
+}

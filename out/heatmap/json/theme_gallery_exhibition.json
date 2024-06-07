@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of average ticket prices for art exhibitions by year and theme.",
+    "data": {
+        "url": "spider_csv/theme_gallery_exhibition.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Theme",
+            "type": "nominal",
+            "sort": {
+                "field": "mean_Ticket_Price",
+                "op": "mean",
+                "order": "descending"
+            }
+        },
+        "color": {
+            "field": "mean_Ticket_Price",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Ticket_Price",
+            "as": "mean_Ticket_Price"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Ticket_Price",
+                    "as": "mean_Ticket_Price"
+                }
+            ],
+            "groupby": [
+                "Year",
+                "Theme"
+            ]
+        }
+    ]
+}

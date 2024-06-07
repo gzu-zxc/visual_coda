@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of student GPA by class standing",
+    "data": {
+        "url": "spider_csv/college_1_student.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "STU_CLASS",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "STU_GPA",
+            "type": "quantitative"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of hosts across the first and last years of party events.",
+    "data": {
+        "url": "spider_csv/party_host_party.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "First_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Last_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "Number_of_hosts",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    }
+}

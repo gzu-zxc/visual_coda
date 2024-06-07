@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of physician affiliations across different departments.",
+    "data": {
+        "url": "spider_csv/hospital_1_affiliated_with.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Department",
+            "type": "nominal",
+            "sort": {
+                "field": "Department"
+            }
+        },
+        "y": {
+            "field": "PrimaryAffiliation",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "color": {
+            "field": "PrimaryAffiliation",
+            "type": "nominal",
+            "scale": {
+                "range": [
+                    "#756bb1",
+                    "#d62728"
+                ]
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.PrimaryAffiliation == 1 ? 'Primary' : 'Not Primary'",
+            "as": "AffiliationType"
+        }
+    ]
+}

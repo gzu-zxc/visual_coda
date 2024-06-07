@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot chart showing the distribution of guests' age by year of birth.",
+    "data": {
+        "url": "spider_csv/apartment_rentals_Guests.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_of_birth",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "guest_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of web client accelerators over different connection types.",
+    "data": {
+        "url": "spider_csv/browser_web_web_client_accelerator.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "id",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Connection",
+            "type": "nominal"
+        }
+    }
+}

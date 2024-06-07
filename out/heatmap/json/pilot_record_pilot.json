@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of pilots by age and rank.",
+    "data": {
+        "url": "spider_csv/pilot_record_pilot.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "Rank",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

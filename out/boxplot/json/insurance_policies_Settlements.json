@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of the amounts claimed and settled for insurance policies.",
+    "data": {
+        "url": "spider_csv/insurance_policies_Settlements.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Amount_Claimed",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Amount_Settled",
+            "type": "quantitative"
+        }
+    }
+}

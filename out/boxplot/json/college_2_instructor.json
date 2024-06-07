@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of salaries for different departments.",
+    "data": {
+        "url": "spider_csv/college_2_instructor.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dept_name",
+            "type": "nominal",
+            "sort": "alphabetical"
+        },
+        "y": {
+            "field": "salary",
+            "type": "quantitative"
+        }
+    }
+}

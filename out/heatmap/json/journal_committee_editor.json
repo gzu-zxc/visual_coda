@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of the ages of the editors against their unique IDs.",
+    "data": {
+        "url": "spider_csv/journal_committee_editor.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "axis": {
+                "title": "Age"
+            }
+        },
+        "y": {
+            "field": "Editor_ID",
+            "type": "nominal",
+            "axis": {
+                "title": "Editor ID"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

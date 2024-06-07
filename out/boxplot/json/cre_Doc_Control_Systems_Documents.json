@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of receipt numbers by document status code.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Control_Systems_Documents.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "document_status_code",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "receipt_number",
+            "type": "quantitative"
+        }
+    }
+}

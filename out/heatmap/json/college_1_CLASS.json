@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of class schedules by room and time.",
+    "data": {
+        "url": "spider_csv/college_1_CLASS.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CLASS_TIME",
+            "type": "temporal",
+            "timeUnit": [
+                "hour",
+                "day"
+            ],
+            "axis": {
+                "title": "Time of Day"
+            }
+        },
+        "y": {
+            "field": "CLASS_ROOM",
+            "type": "nominal",
+            "axis": {
+                "title": "Class Room"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Classes"
+            }
+        }
+    }
+}

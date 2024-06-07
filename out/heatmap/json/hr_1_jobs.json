@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of job titles and salary ranges within a company.",
+    "data": {
+        "url": "spider_csv/hr_1_jobs.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "JOB_TITLE",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "y": {
+            "field": "MIN_SALARY",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "MAX_SALARY",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redyellowblue"
+            },
+            "bin": true
+        }
+    }
+}

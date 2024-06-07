@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of student voters by age and major.",
+    "data": {
+        "url": "spider_csv/voter_2_STUDENT.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "Major",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

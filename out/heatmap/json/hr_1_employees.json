@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of employees hired per job role per month.",
+    "data": {
+        "url": "spider_csv/hr_1_employees.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "HIRE_DATE",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "JOB_ID",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

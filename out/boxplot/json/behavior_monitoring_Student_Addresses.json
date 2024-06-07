@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot of monthly rental costs for student addresses.",
+    "data": {
+        "url": "spider_csv/behavior_monitoring_Student_Addresses.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "other_details",
+            "type": "nominal",
+            "axis": {
+                "title": "Address Type"
+            }
+        },
+        "y": {
+            "field": "monthly_rental",
+            "type": "quantitative",
+            "axis": {
+                "title": "Monthly Rental Cost"
+            }
+        }
+    }
+}

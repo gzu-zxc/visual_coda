@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of residents moving in and out by month and year.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_Residents.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_moved_in",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        },
+        "y": {
+            "field": "date_moved_out",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "resident_id",
+            "type": "quantitative"
+        }
+    }
+}

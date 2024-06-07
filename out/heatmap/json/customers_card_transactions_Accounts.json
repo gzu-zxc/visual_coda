@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of customer card transactions across different accounts.",
+    "data": {
+        "url": "spider_csv/customers_card_transactions_Accounts.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "account_id",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "y": {
+            "field": "customer_id",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

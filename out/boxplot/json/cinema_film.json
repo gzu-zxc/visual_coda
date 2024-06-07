@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of film ranks in series by directors.",
+    "data": {
+        "url": "spider_csv/cinema_film.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank_in_series",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "Directed_by",
+            "type": "nominal"
+        }
+    }
+}

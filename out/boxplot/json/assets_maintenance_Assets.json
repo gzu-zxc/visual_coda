@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot chart showing the distribution of asset models over time by make.",
+    "data": {
+        "url": "spider_csv/assets_maintenance_Assets.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "asset_make",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "asset_acquired_date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "color": {
+            "field": "asset_model",
+            "type": "nominal"
+        }
+    }
+}

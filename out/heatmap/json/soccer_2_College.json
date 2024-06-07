@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of college soccer teams, showing student enrollment numbers by team and state.",
+    "data": {
+        "url": "spider_csv/soccer_2_College.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "cName",
+            "type": "ordinal",
+            "scale": {
+                "bandSize": 10
+            }
+        },
+        "y": {
+            "field": "state",
+            "type": "ordinal",
+            "scale": {
+                "bandSize": 10
+            }
+        },
+        "color": {
+            "field": "enr",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Student Enrollment"
+            }
+        }
+    }
+}

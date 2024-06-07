@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of devices per model and software platform.",
+    "data": {
+        "url": "spider_csv/device_device.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Device",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Software_Platform",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "Device_ID",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

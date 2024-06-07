@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of product prices by product type code.",
+    "data": {
+        "url": "spider_csv/customers_and_products_contacts_products.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "product_type_code",
+            "type": "nominal",
+            "scale": {
+                "bandSize": 30
+            },
+            "axis": {
+                "labelAngle": 0,
+                "title": "Product Type Code"
+            }
+        },
+        "y": {
+            "field": "product_price",
+            "type": "quantitative",
+            "scale": {
+                "nice": true
+            },
+            "axis": {
+                "title": "Product Price"
+            }
+        }
+    }
+}

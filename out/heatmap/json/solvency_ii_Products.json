@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of product prices aggregated by product type code.",
+    "data": {
+        "url": "spider_csv/solvency_ii_Products.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Product_Type_Code",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Product_Price",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "color": {
+            "field": "Product_Price",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

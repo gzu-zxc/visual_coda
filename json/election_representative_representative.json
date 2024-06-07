@@ -1,0 +1,51 @@
+[
+  {
+    "Representative_ID":1,
+    "Name":"Dan Quayle",
+    "State":"Indiana",
+    "Party":"Republican",
+    "Lifespan":"1947\u2013"
+  },
+  {
+    "Representative_ID":2,
+    "Name":"John Quayle",
+    "State":"New York",
+    "Party":"Democratic",
+    "Lifespan":"1868\u20131930"
+  },
+  {
+    "Representative_ID":3,
+    "Name":"Al Quie",
+    "State":"Minnesota",
+    "Party":"Republican",
+    "Lifespan":"1923\u2013"
+  },
+  {
+    "Representative_ID":4,
+    "Name":"James M. Quigley",
+    "State":"Pennsylvania",
+    "Party":"Democratic",
+    "Lifespan":"1918\u2013"
+  },
+  {
+    "Representative_ID":5,
+    "Name":"Jimmy Quillen",
+    "State":"Tennessee",
+    "Party":"Republican",
+    "Lifespan":"1916\u20132003"
+  },
+  {
+    "Representative_ID":6,
+    "Name":"Jack Quinn",
+    "State":"New York",
+    "Party":"Republican",
+    "Lifespan":"1951\u2013"
+  },
+  {
+    "Representative_ID":7,
+    "Name":"James L. Quinn",
+    "State":"Pennsylvania",
+    "Party":"Democratic",
+    "Lifespan":"1875\u20131960"
+  }
+]

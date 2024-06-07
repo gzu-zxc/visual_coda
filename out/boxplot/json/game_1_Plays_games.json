@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of the number of hours students have played each game.",
+    "data": {
+        "url": "spider_csv/game_1_Plays_games.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "GameID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Hours_Played",
+            "type": "quantitative"
+        }
+    }
+}

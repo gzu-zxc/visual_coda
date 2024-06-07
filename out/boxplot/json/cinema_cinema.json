@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of cinema capacities over opening years.",
+    "data": {
+        "url": "spider_csv/cinema_cinema.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Openning_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Capacity",
+            "type": "quantitative"
+        }
+    }
+}

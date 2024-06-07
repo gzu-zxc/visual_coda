@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of phone prices based on memory size.",
+    "data": {
+        "url": "spider_csv/phone_market_phone.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Memory_in_G",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Price",
+            "type": "quantitative"
+        }
+    }
+}

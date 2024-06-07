@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of apartment bookings over time.",
+    "data": {
+        "url": "spider_csv/apartment_rentals_Apartment_Bookings.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "booking_start_date",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Booking Start Month"
+            }
+        },
+        "y": {
+            "field": "apt_id",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 10
+            },
+            "axis": {
+                "title": "Apartment ID"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Bookings"
+            }
+        }
+    }
+}

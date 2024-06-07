@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of institution enrollment by type.",
+    "data": {
+        "url": "spider_csv/protein_institute_institution.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type",
+            "type": "nominal",
+            "axis": {
+                "title": "Institution Type"
+            }
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "axis": {
+                "title": "Enrollment"
+            }
+        }
+    }
+}

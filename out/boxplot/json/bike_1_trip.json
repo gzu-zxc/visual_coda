@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot of trip durations.",
+    "data": {
+        "url": "spider_csv/bike_1_trip.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "duration",
+            "type": "quantitative"
+        }
+    }
+}

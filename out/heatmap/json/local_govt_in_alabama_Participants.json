@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of participant types in local government events in Alabama.",
+    "data": {
+        "url": "spider_csv/local_govt_in_alabama_Participants.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Participant_Type_Code",
+            "type": "nominal",
+            "axis": {
+                "labelAngle": 0
+            }
+        },
+        "y": {
+            "field": "count",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of Participants"
+            }
+        },
+        "color": {
+            "field": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Participant Count"
+            }
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Participant_ID",
+                    "as": "count"
+                }
+            ],
+            "groupby": [
+                "Participant_Type_Code"
+            ]
+        }
+    ]
+}

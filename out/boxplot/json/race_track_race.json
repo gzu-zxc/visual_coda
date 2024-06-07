@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of races by class and date.",
+    "data": {
+        "url": "spider_csv/race_track_race.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Class",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate",
+            "aggregate": "median"
+        }
+    }
+}

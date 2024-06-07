@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of students enrolled in different credit hour ranges across different years.",
+    "data": {
+        "url": "spider_csv/college_1_student.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "STU_DOB",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year"
+            }
+        },
+        "y": {
+            "field": "STU_HRS",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            },
+            "axis": {
+                "title": "Credit Hours"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Students"
+            }
+        }
+    }
+}

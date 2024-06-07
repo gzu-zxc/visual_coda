@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of course completion times across different courses.",
+    "data": {
+        "url": "spider_csv/e_learning_Student_Course_Enrolment.csv.csv"
+    },
+    "transform": [
+        {
+            "calculate": "datum.date_of_completion - datum.date_of_enrolment",
+            "as": "completion_days"
+        }
+    ],
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "course_id",
+            "type": "nominal",
+            "scale": {
+                "type": "band"
+            },
+            "axis": {
+                "labelAngle": 0
+            }
+        },
+        "y": {
+            "field": "completion_days",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            },
+            "axis": {
+                "title": "Days to Completion"
+            }
+        }
+    }
+}

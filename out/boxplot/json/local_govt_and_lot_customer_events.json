@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of customer events by month of move-in date.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_customer_events.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_moved_in",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "Customer_Event_ID",
+            "type": "quantitative",
+            "aggregate": "box-plot"
+        }
+    }
+}

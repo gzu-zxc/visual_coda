@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of student distribution by age and major.",
+    "data": {
+        "url": "spider_csv/allergy_1_Student.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "Major",
+            "type": "ordinal",
+            "bin": true
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

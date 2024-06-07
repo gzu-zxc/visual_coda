@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of money requested by entrepreneurs across different companies.",
+    "data": {
+        "url": "spider_csv/entrepreneur_entrepreneur.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Company",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Money_Requested",
+            "type": "quantitative"
+        }
+    }
+}

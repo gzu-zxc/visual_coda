@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of faculty members by rank and gender.",
+    "data": {
+        "url": "spider_csv/activity_1_Faculty.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank",
+            "type": "ordinal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "y": {
+            "field": "Sex",
+            "type": "ordinal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "FacID",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

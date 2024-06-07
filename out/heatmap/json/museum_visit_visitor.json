@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of museum visitors by level of membership and age.",
+    "data": {
+        "url": "spider_csv/museum_visit_visitor.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Level_of_membership",
+            "type": "ordinal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            },
+            "scale": {
+                "type": "point"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

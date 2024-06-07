@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of attendance across different hosting teams.",
+    "data": {
+        "url": "spider_csv/performance_attendance_performance.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Host",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Attendance",
+            "type": "quantitative"
+        }
+    }
+}

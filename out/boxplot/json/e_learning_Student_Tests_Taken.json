@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of test results over time.",
+    "data": {
+        "url": "spider_csv/e_learning_Student_Tests_Taken.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_test_taken",
+            "type": "temporal",
+            "timeUnit": "monthyear"
+        },
+        "color": {
+            "field": "test_result",
+            "type": "nominal"
+        }
+    }
+}

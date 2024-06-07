@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of wedding churches by their opening years and unique identifiers.",
+    "data": {
+        "url": "spider_csv/wedding_Church.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Date",
+            "type": "temporal",
+            "timeUnit": "year",
+            "bin": {
+                "maxbins": 20
+            }
+        },
+        "y": {
+            "field": "Church_ID",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

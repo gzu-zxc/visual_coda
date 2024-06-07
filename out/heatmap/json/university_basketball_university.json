@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of universities founded in each decade against their student enrollment.",
+    "data": {
+        "url": "spider_csv/university_basketball_university.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Founded",
+            "type": "temporal",
+            "timeUnit": "decade",
+            "axis": {
+                "title": "Year Founded (Decade)"
+            }
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            },
+            "axis": {
+                "title": "Student Enrollment"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Universities"
+            }
+        }
+    }
+}

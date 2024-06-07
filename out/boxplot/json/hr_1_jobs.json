@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the salary ranges for different job positions.",
+    "data": {
+        "url": "spider_csv/hr_1_jobs.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "JOB_TITLE",
+            "type": "nominal",
+            "sort": {
+                "field": "MIN_SALARY"
+            }
+        },
+        "y": {
+            "field": "salaryRange",
+            "type": "quantitative",
+            "bin": true,
+            "aggregate": "extent"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.MIN_SALARY + '-' + datum.MAX_SALARY",
+            "as": "salaryRange"
+        }
+    ]
+}

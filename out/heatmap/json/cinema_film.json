@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of film ranks within series and their numbers in the season.",
+    "data": {
+        "url": "spider_csv/cinema_film.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank_in_series",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Number_in_season",
+            "type": "ordinal"
+        }
+    }
+}

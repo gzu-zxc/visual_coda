@@ -1,0 +1,62 @@
+[
+  {
+    "Submission_ID":1,
+    "Scores":72.0,
+    "Author":"Steve Niehaus",
+    "College":"Notre Dame"
+  },
+  {
+    "Submission_ID":2,
+    "Scores":79.0,
+    "Author":"Sammy Green",
+    "College":"Florida"
+  },
+  {
+    "Submission_ID":3,
+    "Scores":78.0,
+    "Author":"Sherman Smith",
+    "College":"Miami (OH)"
+  },
+  {
+    "Submission_ID":4,
+    "Scores":79.0,
+    "Author":"Steve Raible",
+    "College":"Georgia Tech"
+  },
+  {
+    "Submission_ID":5,
+    "Scores":82.0,
+    "Author":"Jeff Lloyd",
+    "College":"West Texas State"
+  },
+  {
+    "Submission_ID":6,
+    "Scores":89.0,
+    "Author":"Rick Engles",
+    "College":"Tulsa"
+  },
+  {
+    "Submission_ID":7,
+    "Scores":92.0,
+    "Author":"Don Bitterlich",
+    "College":"Temple"
+  },
+  {
+    "Submission_ID":8,
+    "Scores":93.0,
+    "Author":"Steve Myer",
+    "College":"New Mexico"
+  },
+  {
+    "Submission_ID":9,
+    "Scores":82.0,
+    "Author":"Randy Johnson",
+    "College":"Georgia"
+  },
+  {
+    "Submission_ID":10,
+    "Scores":83.0,
+    "Author":"Andy Bolton",
+    "College":"Fisk"
+  }
+]

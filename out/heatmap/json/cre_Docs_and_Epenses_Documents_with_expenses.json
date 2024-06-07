@@ -1,0 +1,72 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total expenses for different document details categorized by budget type code.",
+    "data": {
+        "url": "spider_csv/cre_Docs_and_Epenses_Documents_with_expenses.csv.csv"
+    },
+    "transform": [
+        {
+            "bin": {
+                "field": "Budget_Type_Code",
+                "maxbins": 10
+            },
+            "as": "binned_Budget_Type_Code"
+        },
+        {
+            "bin": {
+                "field": "Document_Details",
+                "maxbins": 10
+            },
+            "as": "binned_Document_Details"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Document_ID",
+                    "as": "Total_Expenses"
+                }
+            ],
+            "groupby": [
+                "binned_Budget_Type_Code",
+                "binned_Document_Details"
+            ]
+        }
+    ],
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "binned_Budget_Type_Code",
+            "type": "ordinal",
+            "scale": {
+                "padding": 0.5
+            },
+            "axis": {
+                "title": "Budget Type Code"
+            }
+        },
+        "y": {
+            "field": "binned_Document_Details",
+            "type": "ordinal",
+            "scale": {
+                "padding": 0.5
+            },
+            "axis": {
+                "title": "Document Details"
+            }
+        },
+        "color": {
+            "field": "Total_Expenses",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Total Expenses"
+            }
+        }
+    }
+}

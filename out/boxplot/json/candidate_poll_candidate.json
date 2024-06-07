@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot showing the distribution of support, consideration, opposition, and uncertainty rates for candidates.",
+    "data": {
+        "url": "spider_csv/candidate_poll_candidate.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Candidate_ID",
+            "type": "nominal"
+        },
+        "y": [
+            {
+                "field": "Support_rate",
+                "type": "quantitative"
+            },
+            {
+                "field": "Consider_rate",
+                "type": "quantitative"
+            },
+            {
+                "field": "Oppose_rate",
+                "type": "quantitative"
+            },
+            {
+                "field": "Unsure_rate",
+                "type": "quantitative"
+            }
+        ]
+    }
+}

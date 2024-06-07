@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of railway managers by age and the decade they started working.",
+    "data": {
+        "url": "spider_csv/railway_manager.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Working_year_starts",
+            "type": "temporal",
+            "timeUnit": "decade",
+            "axis": {
+                "title": "Year Started (Decade)"
+            }
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative",
+            "bin": true,
+            "axis": {
+                "title": "Age Range"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot showing the distribution of student enrollment numbers for college soccer teams.",
+    "data": {
+        "url": "spider_csv/soccer_2_College.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "cName",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "enr",
+            "type": "quantitative"
+        }
+    }
+}

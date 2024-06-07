@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of device shop opening years.",
+    "data": {
+        "url": "spider_csv/device_shop.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Year",
+            "type": "quantitative"
+        }
+    }
+}

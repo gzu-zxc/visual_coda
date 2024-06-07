@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of assets acquired and disposed within certain date ranges.",
+    "data": {
+        "url": "spider_csv/assets_maintenance_Assets.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "asset_acquired_date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate",
+            "bin": {
+                "maxbins": 12
+            }
+        },
+        "y": {
+            "field": "asset_disposed_date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate",
+            "bin": {
+                "maxbins": 12
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

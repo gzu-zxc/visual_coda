@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of artists joining the gallery per decade and age range.",
+    "data": {
+        "url": "spider_csv/theme_gallery_artist.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year_Join",
+            "type": "temporal",
+            "timeUnit": "decade",
+            "axis": {
+                "title": "Year Joined (Decade)"
+            }
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 5
+            },
+            "axis": {
+                "title": "Age Range"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Artists"
+            }
+        }
+    }
+}

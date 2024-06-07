@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the number of participants by month of birth and height.",
+    "data": {
+        "url": "spider_csv/candidate_poll_people.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date_of_Birth",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Month of Birth"
+            }
+        },
+        "y": {
+            "field": "Height",
+            "type": "quantitative",
+            "axis": {
+                "title": "Height (cm)"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Participants"
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot of movie budgets in millions of dollars.",
+    "data": {
+        "url": "spider_csv/culture_company_movie.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Budget_million",
+            "type": "quantitative"
+        }
+    }
+}

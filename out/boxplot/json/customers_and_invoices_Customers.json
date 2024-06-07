@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart comparing customer invoices by gender.",
+    "data": {
+        "url": "spider_csv/customers_and_invoices_Customers.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "customer_id",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "gender",
+            "type": "nominal"
+        }
+    }
+}

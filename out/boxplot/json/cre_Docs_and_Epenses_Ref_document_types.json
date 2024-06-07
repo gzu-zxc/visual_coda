@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of document type descriptions.",
+    "data": {
+        "url": "spider_csv/cre_Docs_and_Epenses_Ref_document_types.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Document_Type_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Document_Type_Description",
+            "type": "quantitative"
+        }
+    }
+}

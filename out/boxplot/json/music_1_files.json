@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of file sizes by formats.",
+    "data": {
+        "url": "spider_csv/music_1_files.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "formats",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "file_size",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            },
+            "scale": {
+                "type": "linear"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "toNumber(datum.file_size)",
+            "as": "file_size_num"
+        }
+    ]
+}

@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of items per type and service type.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_Things.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type_of_Thing_Code",
+            "type": "nominal",
+            "bin": {
+                "maxbins": 3
+            }
+        },
+        "y": {
+            "field": "service_type_code",
+            "type": "nominal",
+            "bin": {
+                "maxbins": 2
+            }
+        },
+        "color": {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

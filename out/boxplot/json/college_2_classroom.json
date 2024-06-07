@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot showing the distribution of classroom capacities.",
+    "data": {
+        "url": "spider_csv/college_2_classroom.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "capacity",
+            "type": "quantitative"
+        }
+    }
+}

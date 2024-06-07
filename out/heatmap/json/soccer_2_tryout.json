@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the number of players selected ('yes') and not selected ('no') for each team and position.",
+    "data": {
+        "url": "spider_csv/soccer_2_tryout.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "pPos",
+            "type": "ordinal",
+            "sort": {
+                "field": "pPos"
+            }
+        },
+        "y": {
+            "field": "cName",
+            "type": "ordinal",
+            "sort": {
+                "field": "cName"
+            }
+        },
+        "color": {
+            "field": "decision",
+            "type": "nominal",
+            "aggregate": "count",
+            "scale": {
+                "domain": [
+                    "yes",
+                    "no"
+                ],
+                "range": [
+                    "#4daf4a",
+                    "#377eb8"
+                ]
+            }
+        }
+    }
+}

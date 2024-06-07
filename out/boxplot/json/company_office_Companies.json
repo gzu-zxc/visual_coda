@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot of company sales in billions of dollars.",
+    "data": {
+        "url": "spider_csv/company_office_Companies.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Sales_billion",
+            "type": "quantitative"
+        }
+    }
+}

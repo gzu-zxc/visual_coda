@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot of the number of votes received by players in the Baseball Hall of Fame voting results.",
+    "data": {
+        "url": "spider_csv/baseball_1_hall_of_fame.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "votes",
+            "type": "quantitative"
+        }
+    }
+}

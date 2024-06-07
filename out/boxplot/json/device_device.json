@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot showing the distribution of software package versions across different device models.",
+    "data": {
+        "url": "spider_csv/device_device.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Device",
+            "type": "nominal",
+            "sort": {
+                "op": "mean",
+                "field": "Package_Version"
+            }
+        },
+        "y": {
+            "field": "Package_Version",
+            "type": "ordinal",
+            "aggregate": [
+                "q1",
+                "q3",
+                "median",
+                "min",
+                "max"
+            ],
+            "scale": {
+                "zero": false
+            }
+        }
+    }
+}

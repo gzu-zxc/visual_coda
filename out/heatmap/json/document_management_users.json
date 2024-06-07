@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of users logged in by user_id and role_code.",
+    "data": {
+        "url": "spider_csv/document_management_users.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "user_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "role_code",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "user_login",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Number of Users Logged In"
+            }
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of the wealthiest singers, showing the distribution of net worth over birth years.",
+    "data": {
+        "url": "spider_csv/singer_singer.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Birth_Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "y": {
+            "field": "Net_Worth_Millions",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

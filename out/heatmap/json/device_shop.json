@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of device shops opened per year in each location.",
+    "data": {
+        "url": "spider_csv/device_shop.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Year",
+            "type": "quantitative",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Location",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

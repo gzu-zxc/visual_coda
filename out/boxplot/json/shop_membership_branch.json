@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of membership amount over the years branches were opened.",
+    "data": {
+        "url": "spider_csv/shop_membership_branch.csv.csv"
+    },
+    "mark": {
+        "type": "box",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "membership_amount",
+            "type": "quantitative"
+        }
+    }
+}

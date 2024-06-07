@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of soccer player positions across different seasons.",
+    "data": {
+        "url": "spider_csv/match_season_match_season.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Season",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Position",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

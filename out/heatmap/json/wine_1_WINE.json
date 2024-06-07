@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of wines per year and grape variety.",
+    "data": {
+        "url": "spider_csv/wine_1_WINE.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Grape",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

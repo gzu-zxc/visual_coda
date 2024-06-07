@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the count of orders per invoice date.",
+    "data": {
+        "url": "spider_csv/customers_and_invoices_Invoices.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "invoice_date",
+            "type": "temporal",
+            "timeUnit": "day"
+        },
+        "y": {
+            "field": "order_id",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "order_id",
+            "type": "quantitative"
+        }
+    }
+}

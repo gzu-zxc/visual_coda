@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the relationship between city area and population.",
+    "data": {
+        "url": "spider_csv/farm_city.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Area_km_2",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "Population",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "City_ID",
+            "type": "ordinal"
+        }
+    }
+}

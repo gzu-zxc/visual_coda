@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of employees' age across different cities.",
+    "data": {
+        "url": "spider_csv/employee_hire_evaluation_employee.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "y": {
+            "field": "City",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

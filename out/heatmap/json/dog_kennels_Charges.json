@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of charge types and their amounts at a dog kennel.",
+    "data": {
+        "url": "spider_csv/dog_kennels_Charges.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "charge_type",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "charge_amount",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        "color": {
+            "field": "charge_amount",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redyellowblue"
+            }
+        }
+    }
+}

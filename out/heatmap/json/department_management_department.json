@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of departments created per year, grouped by ranking.",
+    "data": {
+        "url": "spider_csv/department_management_department.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Creation",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Ranking",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

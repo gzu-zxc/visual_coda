@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of wine appellations per county and area.",
+    "data": {
+        "url": "spider_csv/wine_1_APPELLATIONS.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "County",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 15
+            }
+        },
+        "y": {
+            "field": "Area",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 6
+            }
+        },
+        "color": {
+            "field": "No",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

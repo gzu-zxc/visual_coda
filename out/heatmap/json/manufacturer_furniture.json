@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of furniture items based on the number of components and market rate.",
+    "data": {
+        "url": "spider_csv/manufacturer_furniture.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Num_of_Component",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "Market_Rate",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of annual revenue for various manufacturers.",
+    "data": {
+        "url": "spider_csv/manufactory_1_manufacturers.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Revenue",
+            "type": "quantitative"
+        }
+    }
+}

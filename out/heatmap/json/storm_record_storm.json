@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the distribution of storms by maximum speed and year of activity.",
+    "data": {
+        "url": "spider_csv/storm_record_storm.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Dates_active",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year of Activity"
+            }
+        },
+        "y": {
+            "field": "Max_speed",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            },
+            "axis": {
+                "title": "Maximum Speed (knots)"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

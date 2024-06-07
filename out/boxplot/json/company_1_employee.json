@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of employee salaries.",
+    "data": {
+        "url": "spider_csv/company_1_employee.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Salary",
+            "type": "quantitative"
+        }
+    }
+}

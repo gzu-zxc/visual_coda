@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the number of game injuries per month across different seasons.",
+    "data": {
+        "url": "spider_csv/game_injury_game.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Season",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "color": {
+            "field": "count_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.id",
+            "as": "count_id"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "count_id",
+                    "as": "count_injuries"
+                }
+            ],
+            "groupby": [
+                "Season",
+                "Date_month"
+            ]
+        }
+    ]
+}

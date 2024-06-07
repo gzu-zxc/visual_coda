@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap of car count per year and number of cylinders.",
+    "data": {
+        "url": "spider_csv/car_1_CARS_DATA.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year"
+            }
+        },
+        "y": {
+            "field": "Cylinders",
+            "type": "ordinal",
+            "sort": "ascending",
+            "axis": {
+                "title": "Cylinders"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

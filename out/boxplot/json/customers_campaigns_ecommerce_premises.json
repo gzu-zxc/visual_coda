@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of premise_id by premises_type.",
+    "data": {
+        "url": "spider_csv/customers_campaigns_ecommerce_premises.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "premises_type",
+            "type": "nominal",
+            "sort": {
+                "field": "premises_type"
+            }
+        },
+        "y": {
+            "field": "premise_id",
+            "type": "quantitative"
+        }
+    },
+    "color": {
+        "field": "premises_type",
+        "type": "nominal"
+    }
+}

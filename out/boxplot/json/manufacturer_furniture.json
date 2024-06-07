@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of the number of components for various furniture items.",
+    "data": {
+        "url": "spider_csv/manufacturer_furniture.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Num_of_Component",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of average instructor salary by department.",
+    "data": {
+        "url": "spider_csv/college_2_instructor.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dept_name",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 17
+            }
+        },
+        "y": {
+            "field": "salary",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "aggregate": "average",
+            "field": "salary",
+            "type": "quantitative"
+        }
+    }
+}

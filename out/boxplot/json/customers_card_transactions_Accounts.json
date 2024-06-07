@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of account occurrences by account name.",
+    "data": {
+        "url": "spider_csv/customers_card_transactions_Accounts.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "account_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "account_id",
+            "type": "quantitative",
+            "aggregate": "boxplot"
+        }
+    }
+}

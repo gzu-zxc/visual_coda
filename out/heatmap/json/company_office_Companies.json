@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total sales in billions of dollars per industry by country of headquarters.",
+    "data": {
+        "url": "spider_csv/company_office_Companies.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Industry",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Headquarters",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Sales_billion",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    }
+}

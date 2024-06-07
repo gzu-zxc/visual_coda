@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of courses across different days and hours.",
+    "data": {
+        "url": "spider_csv/college_3_COURSE.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Days",
+            "type": "nominal",
+            "axis": {
+                "title": "Days of the Week"
+            }
+        },
+        "y": {
+            "field": "Hours",
+            "type": "nominal",
+            "axis": {
+                "title": "Time of Day"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "CID",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Courses"
+            }
+        }
+    }
+}

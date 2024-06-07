@@ -1,0 +1,20 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of zip or postal codes for customer addresses.",
+    "data": {
+        "url": "spider_csv/customers_and_products_contacts_addresses.csv.csv"
+    },
+    "mark": {
+        "type": "box",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "zip_postcode",
+            "type": "quantitative",
+            "axis": {
+                "title": "Zip or Postal Code"
+            }
+        }
+    }
+}

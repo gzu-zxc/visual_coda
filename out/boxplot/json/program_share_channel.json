@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of the share percentage of television channels.",
+    "data": {
+        "url": "spider_csv/program_share_channel.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Share_in_percent",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of product prices binned by Manufacturer.",
+    "data": {
+        "url": "spider_csv/manufactory_1_products.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "y": {
+            "field": "Manufacturer",
+            "type": "ordinal"
+        },
+        "x": {
+            "bin": {
+                "maxbins": 10
+            },
+            "field": "Price",
+            "type": "quantitative"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "Price",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

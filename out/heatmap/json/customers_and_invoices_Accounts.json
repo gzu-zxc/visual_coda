@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of accounts opened by month and year, grouped by account name.",
+    "data": {
+        "url": "spider_csv/customers_and_invoices_Accounts.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_account_opened",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        },
+        "y": {
+            "field": "account_name",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

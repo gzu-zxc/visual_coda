@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of station networks per service and local authority combination.",
+    "data": {
+        "url": "spider_csv/station_weather_station.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "services",
+            "type": "nominal",
+            "sort": {
+                "field": "id"
+            }
+        },
+        "y": {
+            "field": "local_authority",
+            "type": "nominal",
+            "sort": {
+                "field": "id"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

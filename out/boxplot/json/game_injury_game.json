@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of the number of game injuries per season.",
+    "data": {
+        "url": "spider_csv/game_injury_game.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Season",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "count_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.id",
+            "as": "count_id"
+        }
+    ]
+}

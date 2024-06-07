@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of salaries for different job roles.",
+    "data": {
+        "url": "spider_csv/hr_1_employees.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "JOB_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "SALARY",
+            "type": "quantitative"
+        }
+    }
+}

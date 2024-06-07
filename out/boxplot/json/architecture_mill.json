@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of mill construction years by type of mill architecture.",
+    "data": {
+        "url": "spider_csv/architecture_mill.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "type",
+            "type": "nominal",
+            "sort": "none"
+        },
+        "y": {
+            "field": "built_year",
+            "type": "quantitative",
+            "aggregate": "quartile",
+            "extend": "maxMin"
+        }
+    }
+}

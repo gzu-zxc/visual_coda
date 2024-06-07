@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box Plot chart showing the distribution of the date of the last product hire by customers, categorized by customer behavior.",
+    "data": {
+        "url": "spider_csv/products_for_hire_customers.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "good_or_bad_customer",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "date_last_hire",
+            "type": "temporal",
+            "timeUnit": "day"
+        },
+        "sort": {
+            "field": "date_last_hire",
+            "order": "ascending"
+        }
+    }
+}

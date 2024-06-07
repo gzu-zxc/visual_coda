@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of employees by start year and employment type.",
+    "data": {
+        "url": "spider_csv/employee_hire_evaluation_hiring.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Start_from",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year Started"
+            }
+        },
+        "y": {
+            "field": "Is_full_time",
+            "type": "nominal",
+            "axis": {
+                "title": "Employment Type"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Count"
+            }
+        }
+    }
+}

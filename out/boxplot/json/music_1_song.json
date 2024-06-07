@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of song ratings by genre",
+    "data": {
+        "url": "spider_csv/music_1_song.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "genre_is",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "rating",
+            "type": "quantitative"
+        }
+    }
+}

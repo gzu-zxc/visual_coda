@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of TV shows per country and language.",
+    "data": {
+        "url": "spider_csv/tvshow_TV_Channel.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Country",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Language",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "count_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.id",
+            "as": "count_id"
+        }
+    ]
+}

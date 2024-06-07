@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the average rating of songs by genre.",
+    "data": {
+        "url": "spider_csv/music_1_song.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "genre_is",
+            "type": "nominal",
+            "sort": {
+                "field": "rating",
+                "op": "average",
+                "order": "descending"
+            }
+        },
+        "color": {
+            "field": "rating",
+            "type": "quantitative",
+            "aggregate": "average",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

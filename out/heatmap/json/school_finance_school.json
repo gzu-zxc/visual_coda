@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total enrollment per IHSAA class.",
+    "data": {
+        "url": "spider_csv/school_finance_school.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "IHSAA_Class",
+            "type": "ordinal",
+            "axis": {
+                "title": "IHSAA Class"
+            }
+        },
+        "color": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redyellowblue"
+            },
+            "axis": {
+                "title": "Total Enrollment"
+            }
+        }
+    }
+}

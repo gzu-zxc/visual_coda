@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total student capacity by gender category for each dormitory.",
+    "data": {
+        "url": "spider_csv/dorm_1_dorm.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "gender",
+            "type": "nominal",
+            "axis": {
+                "title": "Gender Category"
+            }
+        },
+        "y": {
+            "field": "student_capacity",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "axis": {
+                "title": "Total Student Capacity"
+            }
+        },
+        "color": {
+            "field": "student_capacity",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

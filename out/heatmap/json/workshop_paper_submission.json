@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of paper submission scores.",
+    "data": {
+        "url": "spider_csv/workshop_paper_submission.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Submission_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "bin": {
+                "maxbins": 10
+            },
+            "field": "Scores",
+            "type": "quantitative"
+        },
+        "color": {
+            "bin": {
+                "maxbins": 10
+            },
+            "field": "Scores",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

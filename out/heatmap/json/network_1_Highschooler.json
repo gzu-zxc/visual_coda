@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of highschoolers by grade and unique identifier.",
+    "data": {
+        "url": "spider_csv/network_1_Highschooler.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "grade",
+            "type": "ordinal",
+            "sort": {
+                "field": "grade"
+            }
+        },
+        "y": {
+            "field": "ID",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

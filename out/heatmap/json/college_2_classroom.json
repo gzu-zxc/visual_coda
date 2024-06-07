@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of college classroom capacity by room number.",
+    "data": {
+        "url": "spider_csv/college_2_classroom.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "room_number",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 27
+            }
+        },
+        "y": {
+            "field": "capacity",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 25
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

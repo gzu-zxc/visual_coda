@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot showing the distribution of endowment amounts received by various schools.",
+    "data": {
+        "url": "spider_csv/school_finance_endowment.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "School_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "amount",
+            "type": "quantitative"
+        }
+    }
+}

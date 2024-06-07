@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the years in office for ministers in different regions.",
+    "data": {
+        "url": "spider_csv/party_people_party.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Took_office",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Left_office",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "Region_ID",
+            "type": "ordinal"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

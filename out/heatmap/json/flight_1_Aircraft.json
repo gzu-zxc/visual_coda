@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of aircraft distances by unique identifier.",
+    "data": {
+        "url": "spider_csv/flight_1_Aircraft.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "aid",
+            "type": "ordinal"
+        },
+        "y": {
+            "bin": {
+                "maxbins": 50
+            },
+            "field": "distance",
+            "type": "quantitative"
+        },
+        "color": {
+            "aggregate": "sum",
+            "field": "distance",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

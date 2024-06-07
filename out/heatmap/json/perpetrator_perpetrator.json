@@ -1,0 +1,57 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the number of people killed by year and month.",
+    "data": {
+        "url": "spider_csv/perpetrator_perpetrator.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Month",
+            "type": "ordinal",
+            "timeUnit": "month"
+        },
+        "color": {
+            "field": "Killed",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "toDate(datum.Date)",
+            "as": "DateAsDate"
+        },
+        {
+            "timeUnit": [
+                "year",
+                "month"
+            ],
+            "field": "DateAsDate",
+            "as": [
+                "Year",
+                "Month"
+            ]
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Killed",
+                    "as": "Killed"
+                }
+            ],
+            "groupby": [
+                "Year",
+                "Month"
+            ]
+        }
+    ]
+}

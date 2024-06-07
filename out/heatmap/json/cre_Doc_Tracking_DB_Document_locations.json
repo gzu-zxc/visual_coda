@@ -1,0 +1,69 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the duration of documents at different locations.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Tracking_DB_Document_locations.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Location_Code",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "month",
+            "type": "ordinal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Month"
+            }
+        },
+        "color": {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Documents"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Date_in_Location_From !== null && datum.Date_in_Locaton_To !== null ? (datum.Date_in_Locaton_To - datum.Date_in_Location_From) / 86400000 : 0",
+            "as": "duration"
+        },
+        {
+            "timeUnit": [
+                "month",
+                "year"
+            ],
+            "field": "Date_in_Location_From"
+        },
+        {
+            "timeUnit": [
+                "month",
+                "year"
+            ],
+            "field": "Date_in_Locaton_To"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Document_ID",
+                    "as": "count"
+                }
+            ],
+            "groupby": [
+                "Location_Code",
+                "month"
+            ]
+        }
+    ]
+}

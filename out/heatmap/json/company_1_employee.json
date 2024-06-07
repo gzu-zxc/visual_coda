@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the distribution of employee salaries over time.",
+    "data": {
+        "url": "spider_csv/company_1_employee.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Bdate",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "axis": {
+                "title": "Year-Month"
+            }
+        },
+        "y": {
+            "field": "Salary",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "axis": {
+                "title": "Average Salary"
+            }
+        },
+        "color": {
+            "field": "Salary",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "scale": {
+                "scheme": "redyellowblue"
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of department budgets in billions of dollars.",
+    "data": {
+        "url": "spider_csv/department_management_department.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Budget_in_Billions",
+            "type": "quantitative"
+        }
+    }
+}

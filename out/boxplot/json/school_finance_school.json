@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of school enrollment by IHSAA classification.",
+    "data": {
+        "url": "spider_csv/school_finance_school.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "IHSAA_Class",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative"
+        }
+    }
+}

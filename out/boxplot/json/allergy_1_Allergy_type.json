@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of different allergies by their types.",
+    "data": {
+        "url": "spider_csv/allergy_1_Allergy_type.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "AllergyType",
+            "type": "nominal",
+            "axis": {
+                "title": "Allergy Type"
+            }
+        },
+        "y": {
+            "field": "Allergy",
+            "type": "ordinal",
+            "axis": {
+                "title": "Allergies"
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of research staff per employer organisation.",
+    "data": {
+        "url": "spider_csv/tracking_grants_for_research_Research_Staff.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "employer_organisation_id",
+            "type": "ordinal",
+            "scale": {
+                "padding": 0.5
+            }
+        },
+        "y": {
+            "field": "staff_id",
+            "type": "ordinal",
+            "scale": {
+                "padding": 0.5
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

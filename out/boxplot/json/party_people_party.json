@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the duration of ministers in office.",
+    "data": {
+        "url": "spider_csv/party_people_party.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Minister",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Duration_in_office",
+            "type": "quantitative",
+            "title": "Duration in Office (years)"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Left_office - datum.Took_office",
+            "as": "Duration_in_office"
+        }
+    ]
+}

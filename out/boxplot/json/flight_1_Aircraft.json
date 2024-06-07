@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of total distances traveled by various aircraft.",
+    "data": {
+        "url": "spider_csv/flight_1_Aircraft.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "distance",
+            "type": "quantitative"
+        }
+    }
+}

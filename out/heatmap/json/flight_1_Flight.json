@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the average price of flights by time of departure.",
+    "data": {
+        "url": "spider_csv/flight_1_Flight.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "departure_date",
+            "type": "temporal",
+            "timeUnit": "hour",
+            "axis": {
+                "title": "Departure Time (hour)"
+            }
+        },
+        "y": {
+            "field": "price",
+            "type": "quantitative",
+            "aggregate": "average",
+            "axis": {
+                "title": "Average Price"
+            }
+        },
+        "color": {
+            "field": "price",
+            "type": "quantitative",
+            "aggregate": "average",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

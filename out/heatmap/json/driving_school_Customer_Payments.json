@@ -1,0 +1,56 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total payment amounts made by customers over time.",
+    "data": {
+        "url": "spider_csv/driving_school_Customer_Payments.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "binned_date",
+            "type": "ordinal",
+            "timeUnit": "day",
+            "title": "Payment Date"
+        },
+        "y": {
+            "field": "customer_id",
+            "type": "ordinal",
+            "title": "Customer ID"
+        },
+        "color": {
+            "field": "sum_amount_payment",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "title": "Total Payment Amount"
+        }
+    },
+    "transform": [
+        {
+            "bin": {
+                "field": "datetime_payment",
+                "timeUnit": "day",
+                "maxbins": 30
+            },
+            "as": "binned_date"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "amount_payment",
+                    "as": "sum_amount_payment"
+                }
+            ],
+            "groupby": [
+                "binned_date",
+                "customer_id"
+            ]
+        }
+    ]
+}

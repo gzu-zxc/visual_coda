@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of climbers' points by mountain ID.",
+    "data": {
+        "url": "spider_csv/climbing_climber.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Mountain_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Points",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            }
+        }
+    }
+}

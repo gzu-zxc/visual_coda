@@ -1,0 +1,18 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot showing the distribution of sales in billions of dollars across various gas companies.",
+    "data": {
+        "url": "spider_csv/gas_company_company.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Sales_billion",
+            "type": "quantitative",
+            "title": "Sales (Billions of Dollars)"
+        }
+    }
+}

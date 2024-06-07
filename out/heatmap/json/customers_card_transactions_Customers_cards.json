@@ -1,0 +1,61 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of cards by validity period.",
+    "data": {
+        "url": "spider_csv/customers_card_transactions_Customers_cards.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "bin_date_valid_from",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate",
+            "bin": {
+                "maxbins": 30
+            }
+        },
+        "y": {
+            "field": "bin_date_valid_to",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate",
+            "bin": {
+                "maxbins": 30
+            }
+        },
+        "color": {
+            "field": "count_card_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    },
+    "transform": [
+        {
+            "bin": [
+                {
+                    "field": "date_valid_from",
+                    "as": "bin_date_valid_from"
+                },
+                {
+                    "field": "date_valid_to",
+                    "as": "bin_date_valid_to"
+                }
+            ]
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "card_id",
+                    "as": "count_card_id"
+                }
+            ],
+            "groupby": [
+                "bin_date_valid_from",
+                "bin_date_valid_to"
+            ]
+        }
+    ]
+}

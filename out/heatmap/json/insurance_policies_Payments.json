@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of insurance policy payments by month and payment method.",
+    "data": {
+        "url": "spider_csv/insurance_policies_Payments.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date_Payment_Made",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Month of Payment"
+            }
+        },
+        "y": {
+            "field": "Payment_Method_Code",
+            "type": "nominal",
+            "axis": {
+                "title": "Payment Method"
+            }
+        },
+        "color": {
+            "field": "Amount_Payment",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redyellowblue"
+            },
+            "legend": {
+                "title": "Total Payment Amount"
+            }
+        }
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "domainWidth": 1,
+            "tickSize": 5,
+            "titleFontSize": 12,
+            "labelFontSize": 12
+        }
+    }
+}

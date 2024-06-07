@@ -1,0 +1,58 @@
+[
+  {
+    "Mountain_ID":1,
+    "Name":"Kibo (Uhuru Pk)",
+    "Height":5895.0,
+    "Prominence":5885.0,
+    "Range":"Kilimanjaro",
+    "Country":"Tanzania"
+  },
+  {
+    "Mountain_ID":2,
+    "Name":"Mount Kenya (Batian)",
+    "Height":5199.0,
+    "Prominence":3825.0,
+    "Range":"Mount Kenya",
+    "Country":"Kenya"
+  },
+  {
+    "Mountain_ID":3,
+    "Name":"Mawenzi (Hans Meyer Pk)",
+    "Height":5148.0,
+    "Prominence":850.0,
+    "Range":"Kilimanjaro",
+    "Country":"Tanzania"
+  },
+  {
+    "Mountain_ID":4,
+    "Name":"Ngaliema \/ Mt Stanley (Margherita Pk)",
+    "Height":5109.0,
+    "Prominence":3951.0,
+    "Range":"Rwenzori",
+    "Country":"DR Congo Uganda"
+  },
+  {
+    "Mountain_ID":5,
+    "Name":"Mount Kenya (Lenana)",
+    "Height":4985.0,
+    "Prominence":130.0,
+    "Range":"Mount Kenya",
+    "Country":"Kenya"
+  },
+  {
+    "Mountain_ID":6,
+    "Name":"Ngaliema \/ Mt Stanley (Savoia Pk)",
+    "Height":4977.0,
+    "Prominence":110.0,
+    "Range":"Rwenzori",
+    "Country":"Uganda"
+  },
+  {
+    "Mountain_ID":7,
+    "Name":"Duwoni \/ Mt Speke (Vittorio Emanuele Pk)",
+    "Height":4890.0,
+    "Prominence":720.0,
+    "Range":"Rwenzori",
+    "Country":"Uganda"
+  }
+]

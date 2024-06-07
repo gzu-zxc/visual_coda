@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of class sections per course code.",
+    "data": {
+        "url": "spider_csv/college_1_CLASS.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CRS_CODE",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "CLASS_SECTION",
+            "type": "ordinal"
+        }
+    }
+}

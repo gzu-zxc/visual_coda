@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of share transactions by investor details.",
+    "data": {
+        "url": "spider_csv/tracking_share_transactions_INVESTORS.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "investor_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Investor_details",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "investor_id",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the frequency of funding requests across different companies.",
+    "data": {
+        "url": "spider_csv/entrepreneur_entrepreneur.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Company",
+            "type": "nominal",
+            "sort": {
+                "field": "Money_Requested",
+                "op": "mean"
+            }
+        },
+        "y": {
+            "bin": {
+                "maxbins": 10
+            },
+            "field": "Money_Requested",
+            "type": "quantitative",
+            "axis": {
+                "title": "Funding Requested (bin)"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Requests"
+            }
+        }
+    }
+}

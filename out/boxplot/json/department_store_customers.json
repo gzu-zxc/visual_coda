@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of customer_ids by payment_method_code.",
+    "data": {
+        "url": "spider_csv/department_store_customers.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "customer_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "payment_method_code",
+            "type": "nominal"
+        }
+    }
+}

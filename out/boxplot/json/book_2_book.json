@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of the number of issues per writer.",
+    "data": {
+        "url": "spider_csv/book_2_book.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Writer",
+            "type": "nominal",
+            "sort": {
+                "field": "Writer"
+            }
+        },
+        "y": {
+            "field": "Issues",
+            "type": "quantitative",
+            "aggregate": "mean"
+        }
+    }
+}

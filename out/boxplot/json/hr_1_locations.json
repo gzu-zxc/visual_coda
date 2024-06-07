@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of LOCATION_ID by CITY.",
+    "data": {
+        "url": "spider_csv/hr_1_locations.csv.csv"
+    },
+    "mark": {
+        "type": "box",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "LOCATION_ID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "CITY",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the distribution of document tracking calendar entries by day number within the week and date.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Tracking_DB_Ref_calendar.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Calendar_Date",
+            "type": "temporal",
+            "timeUnit": "date",
+            "axis": {
+                "title": "Date"
+            }
+        },
+        "y": {
+            "field": "Day_Number",
+            "type": "ordinal",
+            "axis": {
+                "title": "Day Number"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Count"
+            }
+        }
+    }
+}

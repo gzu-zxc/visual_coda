@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of different allergies categorized by their types.",
+    "data": {
+        "url": "spider_csv/allergy_1_Allergy_type.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Allergy",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "color": {
+            "field": "AllergyType",
+            "type": "nominal"
+        }
+    }
+}

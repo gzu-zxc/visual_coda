@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of ship missions per launch year and speed in knots.",
+    "data": {
+        "url": "spider_csv/ship_mission_mission.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Launched_Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "y": {
+            "field": "Speed_knots",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total amount donated by each donor to different schools.",
+    "data": {
+        "url": "spider_csv/school_finance_endowment.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "School_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "donator_name",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "amount",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    }
+}

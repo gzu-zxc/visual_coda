@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the support rate for candidates across different months.",
+    "data": {
+        "url": "spider_csv/candidate_poll_candidate.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Month"
+            }
+        },
+        "y": {
+            "field": "Candidate_ID",
+            "type": "nominal",
+            "axis": {
+                "title": "Candidate"
+            }
+        },
+        "color": {
+            "field": "Support_rate",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Support Rate"
+            }
+        }
+    }
+}

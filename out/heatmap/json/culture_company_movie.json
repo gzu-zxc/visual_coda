@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of movie budgets by release year.",
+    "data": {
+        "url": "spider_csv/culture_company_movie.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "y": {
+            "field": "Budget_million",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

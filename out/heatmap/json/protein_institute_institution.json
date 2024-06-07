@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the number of students enrolled over the decades in which educational institutions were founded.",
+    "data": {
+        "url": "spider_csv/protein_institute_institution.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Founded",
+            "type": "temporal",
+            "timeUnit": "decade",
+            "title": "Decade Founded"
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "title": "Enrollment"
+        },
+        "color": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "title": "Number of Students Enrolled"
+        }
+    }
+}

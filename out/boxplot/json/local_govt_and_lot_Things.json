@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of service satisfaction details across different types of items managed by local government and lottery organizations.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_Things.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type_of_Thing_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "service_details",
+            "type": "quantitative",
+            "aggregate": "box-plot"
+        },
+        "color": {
+            "field": "service_details",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the account balance by account type and number of loans.",
+    "data": {
+        "url": "spider_csv/loan_1_customer.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "acc_type",
+            "type": "nominal",
+            "bin": true
+        },
+        "y": {
+            "field": "no_of_loans",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "acc_bal",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": true
+        }
+    }
+}

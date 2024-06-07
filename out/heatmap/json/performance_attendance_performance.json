@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the attendance of hockey games across different hosting teams and dates.",
+    "data": {
+        "url": "spider_csv/performance_attendance_performance.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "monthdate",
+            "axis": {
+                "title": "Date"
+            }
+        },
+        "y": {
+            "field": "Host",
+            "type": "nominal",
+            "axis": {
+                "title": "Host Team"
+            }
+        },
+        "color": {
+            "field": "Attendance",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redyellowblue"
+            },
+            "legend": {
+                "title": "Total Attendance"
+            }
+        }
+    }
+}

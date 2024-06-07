@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of battle outcomes per year.",
+    "data": {
+        "url": "spider_csv/battle_death_battle.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year"
+            }
+        },
+        "y": {
+            "field": "result",
+            "type": "ordinal",
+            "axis": {
+                "title": "Outcome"
+            }
+        },
+        "color": {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

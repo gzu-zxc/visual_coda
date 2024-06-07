@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total attendance for home games by year and league.",
+    "data": {
+        "url": "spider_csv/baseball_1_home_game.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "league_id",
+            "type": "nominal",
+            "sort": {
+                "field": "year"
+            }
+        },
+        "color": {
+            "field": "attendance",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

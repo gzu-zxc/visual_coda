@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the frequency of coffee shop purchases at different times of the day and membership levels.",
+    "data": {
+        "url": "spider_csv/coffee_shop_member.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Time_of_purchase",
+            "type": "temporal",
+            "timeUnit": "hour",
+            "axis": {
+                "title": "Time of Purchase (hour)"
+            }
+        },
+        "y": {
+            "field": "Level_of_membership",
+            "type": "ordinal",
+            "axis": {
+                "title": "Level of Membership"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Purchases"
+            }
+        }
+    }
+}

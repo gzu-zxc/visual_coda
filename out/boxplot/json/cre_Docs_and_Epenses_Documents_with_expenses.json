@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of Document_ID by Budget_Type_Code.",
+    "data": {
+        "url": "spider_csv/cre_Docs_and_Epenses_Documents_with_expenses.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Budget_Type_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Document_ID",
+            "type": "quantitative",
+            "aggregate": "boxplot"
+        }
+    }
+}

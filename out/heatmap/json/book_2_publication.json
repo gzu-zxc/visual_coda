@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total price of books published each month.",
+    "data": {
+        "url": "spider_csv/book_2_publication.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Publication_Date",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Publication Month"
+            }
+        },
+        "y": {
+            "field": "Price",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "axis": {
+                "title": "Total Price"
+            }
+        },
+        "color": {
+            "field": "Price",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redyellowblue"
+            }
+        }
+    }
+}

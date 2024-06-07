@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Employee Hiring Evaluation Box Plot",
+    "data": {
+        "url": "spider_csv/employee_hire_evaluation_hiring.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Start_from",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "Is_full_time",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Start_from.getFullYear()",
+            "as": "year"
+        }
+    ]
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of highschoolers' unique identifiers by grade level.",
+    "data": {
+        "url": "spider_csv/network_1_Highschooler.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "grade",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "ID",
+            "type": "quantitative"
+        }
+    }
+}

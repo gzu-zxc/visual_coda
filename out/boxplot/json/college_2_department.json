@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of budgets for various departments in a college.",
+    "data": {
+        "url": "spider_csv/college_2_department.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dept_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "budget",
+            "type": "quantitative"
+        }
+    }
+}

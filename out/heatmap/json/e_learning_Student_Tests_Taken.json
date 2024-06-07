@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of tests taken per day, binned by test result.",
+    "data": {
+        "url": "spider_csv/e_learning_Student_Tests_Taken.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_test_taken",
+            "type": "temporal",
+            "timeUnit": "day",
+            "axis": {
+                "title": "Date Test Taken"
+            }
+        },
+        "y": {
+            "field": "test_result",
+            "type": "nominal",
+            "axis": {
+                "title": "Test Result"
+            }
+        },
+        "color": {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Number of Tests"
+            }
+        }
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "domainWidth": 1,
+            "tickSize": 5,
+            "titleFontSize": 14,
+            "labelFontSize": 12
+        }
+    }
+}

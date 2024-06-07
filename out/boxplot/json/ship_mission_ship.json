@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of tonnage by ship type.",
+    "data": {
+        "url": "spider_csv/ship_mission_ship.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Tonnage",
+            "type": "quantitative"
+        }
+    }
+}

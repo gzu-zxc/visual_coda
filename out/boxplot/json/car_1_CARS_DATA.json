@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of MPG by the number of Cylinders",
+    "data": {
+        "url": "spider_csv/car_1_CARS_DATA.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Cylinders",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "MPG",
+            "type": "quantitative"
+        }
+    }
+}

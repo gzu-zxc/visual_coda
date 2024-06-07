@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of memberships at each branch per year of opening.",
+    "data": {
+        "url": "spider_csv/shop_membership_branch.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "membership_amount",
+            "type": "quantitative"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

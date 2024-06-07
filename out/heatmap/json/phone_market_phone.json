@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of phone prices based on memory size.",
+    "data": {
+        "url": "spider_csv/phone_market_phone.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Memory_in_G",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 4
+            }
+        },
+        "y": {
+            "field": "Price",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

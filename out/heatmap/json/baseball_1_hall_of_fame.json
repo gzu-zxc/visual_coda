@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of Baseball Hall of Fame voting results over the years.",
+    "data": {
+        "url": "spider_csv/baseball_1_hall_of_fame.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "yearid",
+            "type": "ordinal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "player_id",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "votes",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    }
+}

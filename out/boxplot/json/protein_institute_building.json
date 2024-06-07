@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of building heights by the number of floors.",
+    "data": {
+        "url": "spider_csv/protein_institute_building.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Floors",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Height_feet",
+            "type": "quantitative"
+        }
+    }
+}

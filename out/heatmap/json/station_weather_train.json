@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the frequency of train schedules at various times.",
+    "data": {
+        "url": "spider_csv/station_weather_train.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "time",
+            "type": "temporal",
+            "timeUnit": "hoursminutes",
+            "axis": {
+                "title": "Time of Day"
+            }
+        },
+        "y": {
+            "field": "train_number",
+            "type": "quantitative",
+            "axis": {
+                "title": "Train Number"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "train_number",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Number of Trains"
+            }
+        }
+    }
+}

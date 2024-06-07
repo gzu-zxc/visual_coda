@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of mountain heights by mountain range.",
+    "data": {
+        "url": "spider_csv/climbing_mountain.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Range",
+            "type": "nominal",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "Height",
+            "type": "quantitative"
+        }
+    }
+}

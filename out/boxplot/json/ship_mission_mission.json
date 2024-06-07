@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of ship speeds in knots.",
+    "data": {
+        "url": "spider_csv/ship_mission_mission.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Speed_knots",
+            "type": "quantitative"
+        }
+    }
+}

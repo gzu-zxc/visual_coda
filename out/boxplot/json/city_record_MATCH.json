@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of match result goal differences.",
+    "data": {
+        "url": "spider_csv/city_record_MATCH.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Result",
+            "type": "quantitative"
+        }
+    }
+}

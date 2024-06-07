@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of the number of hosts across different party themes.",
+    "data": {
+        "url": "spider_csv/party_host_party.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Party_Theme",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Number_of_hosts",
+            "type": "quantitative"
+        }
+    }
+}

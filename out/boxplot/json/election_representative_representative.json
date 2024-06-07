@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of the lifespan of elected representatives by political party.",
+    "data": {
+        "url": "spider_csv/election_representative_representative.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Party",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Lifespan",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            },
+            "aggregate": [
+                "min",
+                "max",
+                "q1",
+                "q3",
+                "median"
+            ],
+            "scale": {
+                "zero": false
+            }
+        }
+    }
+}

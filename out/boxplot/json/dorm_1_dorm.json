@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of student capacities by gender category for dormitories.",
+    "data": {
+        "url": "spider_csv/dorm_1_dorm.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "gender",
+            "type": "nominal",
+            "scale": {
+                "rangeStep": 30
+            },
+            "axis": {
+                "title": "Gender Category"
+            }
+        },
+        "y": {
+            "field": "student_capacity",
+            "type": "quantitative",
+            "axis": {
+                "title": "Student Capacity"
+            }
+        },
+        "color": {
+            "field": "gender",
+            "type": "nominal"
+        }
+    }
+}

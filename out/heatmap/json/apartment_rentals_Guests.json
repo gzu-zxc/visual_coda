@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of guests by gender and month of birth.",
+    "data": {
+        "url": "spider_csv/apartment_rentals_Guests.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_of_birth",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "axis": {
+                "title": "Month of Birth"
+            }
+        },
+        "y": {
+            "field": "gender_code",
+            "type": "nominal",
+            "axis": {
+                "title": "Gender"
+            }
+        },
+        "color": {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Number of Guests"
+            }
+        }
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "domainWidth": 1,
+            "tickSize": 5,
+            "titleFontSize": 12,
+            "labelFontSize": 12
+        }
+    }
+}

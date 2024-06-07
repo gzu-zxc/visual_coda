@@ -1,0 +1,44 @@
+[
+  {
+    "Teacher_ID":1,
+    "Name":"Joseph Huts",
+    "Age":"32",
+    "Hometown":"Blackrod Urban District"
+  },
+  {
+    "Teacher_ID":2,
+    "Name":"Gustaaf Deloor",
+    "Age":"29",
+    "Hometown":"Bolton County Borough"
+  },
+  {
+    "Teacher_ID":3,
+    "Name":"Vicente Carretero",
+    "Age":"26",
+    "Hometown":"Farnworth Municipal Borough"
+  },
+  {
+    "Teacher_ID":4,
+    "Name":"John Deloor",
+    "Age":"33",
+    "Hometown":"Horwich Urban District"
+  },
+  {
+    "Teacher_ID":5,
+    "Name":"Kearsley Brown",
+    "Age":"45",
+    "Hometown":"Kearsley Urban District"
+  },
+  {
+    "Teacher_ID":6,
+    "Name":"Anne Walker",
+    "Age":"41",
+    "Hometown":"Little Lever Urban District"
+  },
+  {
+    "Teacher_ID":7,
+    "Name":"Lucy Wong",
+    "Age":"39",
+    "Hometown":"Turton Urban District"
+  }
+]

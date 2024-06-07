@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of mountain heights and prominences.",
+    "data": {
+        "url": "spider_csv/climbing_mountain.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Height",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            },
+            "scale": {
+                "zero": false
+            }
+        },
+        "y": {
+            "field": "Prominence",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            },
+            "scale": {
+                "zero": false
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

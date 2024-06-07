@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of votes for each contestant over time.",
+    "data": {
+        "url": "spider_csv/voter_1_votes.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "contestant_number",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "created",
+            "type": "temporal",
+            "timeUnit": "yearmonthdatehours"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "vote_id",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

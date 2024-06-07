@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot showing the distribution of course credits.",
+    "data": {
+        "url": "spider_csv/college_3_COURSE.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Credits",
+            "type": "quantitative"
+        }
+    }
+}

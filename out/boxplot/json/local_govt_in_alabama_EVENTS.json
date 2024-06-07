@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of event outcomes for different services in Alabama local government.",
+    "data": {
+        "url": "spider_csv/local_govt_in_alabama_EVENTS.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Service_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Event_ID",
+            "type": "quantitative",
+            "aggregate": "median"
+        },
+        "color": {
+            "field": "Event_Details",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Event_ID",
+            "as": "median_Event_ID"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "median",
+                    "field": "median_Event_ID",
+                    "as": "median_Event_ID"
+                }
+            ],
+            "groupby": [
+                "Service_ID",
+                "Event_Details"
+            ]
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

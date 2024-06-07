@@ -1,0 +1,44 @@
+[
+  {
+    "Code":1,
+    "Name":"Sony",
+    "Headquarter":"Tokyo",
+    "Founder":"Andy",
+    "Revenue":120.0
+  },
+  {
+    "Code":2,
+    "Name":"Creative Labs",
+    "Headquarter":"Austin",
+    "Founder":"Owen",
+    "Revenue":100.0
+  },
+  {
+    "Code":3,
+    "Name":"Hewlett-Packard",
+    "Headquarter":"Los Angeles",
+    "Founder":"James",
+    "Revenue":50.0
+  },
+  {
+    "Code":4,
+    "Name":"Iomega",
+    "Headquarter":"Beijing",
+    "Founder":"Mary",
+    "Revenue":200.0
+  },
+  {
+    "Code":5,
+    "Name":"Fujitsu",
+    "Headquarter":"Taiwan",
+    "Founder":"John",
+    "Revenue":130.0
+  },
+  {
+    "Code":6,
+    "Name":"Winchester",
+    "Headquarter":"Paris",
+    "Founder":"Robert",
+    "Revenue":30.0
+  }
+]

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of mountain photos by camera lens identifier.",
+    "data": {
+        "url": "spider_csv/mountain_photos_photos.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "camera_lens_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "id",
+            "type": "quantitative"
+        }
+    }
+}

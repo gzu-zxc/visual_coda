@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of days a wrestler has held a title against the number of reigns they have had.",
+    "data": {
+        "url": "spider_csv/wrestler_wrestler.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Reign",
+            "type": "ordinal",
+            "scale": {
+                "paddingInner": 0.1
+            }
+        },
+        "y": {
+            "field": "Days_held",
+            "type": "quantitative",
+            "sort": "-",
+            "scale": {
+                "paddingInner": 0.1
+            }
+        },
+        "color": {
+            "field": "Wrestler_ID",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            }
+        }
+    }
+}

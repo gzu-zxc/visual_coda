@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of the number of floors vs height of the Protein Institute buildings.",
+    "data": {
+        "url": "spider_csv/protein_institute_building.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Height_feet",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "Floors",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

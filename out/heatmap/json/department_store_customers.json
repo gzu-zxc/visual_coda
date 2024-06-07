@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of customers per payment method code.",
+    "data": {
+        "url": "spider_csv/department_store_customers.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "customer_id",
+            "type": "ordinal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "y": {
+            "field": "payment_method_code",
+            "type": "nominal",
+            "scale": {
+                "type": "point"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

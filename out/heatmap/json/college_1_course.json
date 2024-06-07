@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total credits offered by each department.",
+    "data": {
+        "url": "spider_csv/college_1_course.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "DEPT_CODE",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "CRS_CREDIT",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        "color": {
+            "field": "CRS_CREDIT",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of first election years for each political party.",
+    "data": {
+        "url": "spider_csv/election_election.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Party",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "First_Elected",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            }
+        }
+    }
+}

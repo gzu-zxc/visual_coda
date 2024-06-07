@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of customer premises by type.",
+    "data": {
+        "url": "spider_csv/customers_campaigns_ecommerce_premises.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "premise_id",
+            "type": "ordinal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "y": {
+            "field": "premises_type",
+            "type": "nominal",
+            "scale": {
+                "type": "point"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

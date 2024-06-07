@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of aircraft by maximum gross weight and total disk area.",
+    "data": {
+        "url": "spider_csv/aircraft_aircraft.csv.csv"
+    },
+    "transform": [
+        {
+            "calculate": "toNumber(datum.Max_Gross_Weight.replace(',', ''))",
+            "as": "Max_Gross_Weight_num"
+        },
+        {
+            "calculate": "toNumber(datum.Total_disk_area.replace(',', ''))",
+            "as": "Total_disk_area_num"
+        }
+    ],
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Max_Gross_Weight_num",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "y": {
+            "field": "Total_disk_area_num",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

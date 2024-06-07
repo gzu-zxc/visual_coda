@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of tries scored by players in each position based on their number of appearances.",
+    "data": {
+        "url": "spider_csv/sports_competition_player.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Position",
+            "type": "nominal",
+            "axis": {
+                "title": "Position"
+            }
+        },
+        "y": {
+            "field": "Apps",
+            "type": "quantitative",
+            "axis": {
+                "title": "Appearances"
+            },
+            "sort": "descending"
+        },
+        "color": {
+            "field": "Tries",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Tries Scored"
+            }
+        }
+    }
+}

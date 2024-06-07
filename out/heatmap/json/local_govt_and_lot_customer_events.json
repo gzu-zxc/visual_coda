@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the number of customers moved in per month.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_customer_events.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_moved_in",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Month Moved In"
+        },
+        "y": {
+            "field": "customer_id",
+            "type": "nominal",
+            "aggregate": "count",
+            "title": "Number of Customers"
+        },
+        "color": {
+            "field": "count_customer_id",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "title": "Count"
+        }
+    }
+}

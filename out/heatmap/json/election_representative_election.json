@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the total number of votes received by representative candidates by date and rank in the election.",
+    "data": {
+        "url": "spider_csv/election_representative_election.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "axis": {
+                "title": "Year-Month"
+            }
+        },
+        "y": {
+            "field": "Place",
+            "type": "ordinal",
+            "axis": {
+                "title": "Rank"
+            }
+        },
+        "color": {
+            "field": "Votes",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

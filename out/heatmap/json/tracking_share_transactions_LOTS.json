@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of share transactions showing the distribution of lot details across investors and lots.",
+    "data": {
+        "url": "spider_csv/tracking_share_transactions_LOTS.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "investor_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "lot_id",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "lot_details",
+            "type": "nominal"
+        }
+    }
+}

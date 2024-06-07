@@ -1,0 +1,71 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the average amount claimed and settled by month.",
+    "data": {
+        "url": "spider_csv/insurance_policies_Settlements.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "bin_Date_Claim_Made",
+            "type": "ordinal",
+            "timeUnit": "month",
+            "title": "Month of Claim Made"
+        },
+        "y": {
+            "field": "bin_Date_Claim_Settled",
+            "type": "ordinal",
+            "timeUnit": "month",
+            "title": "Month of Claim Settled"
+        },
+        "color": {
+            "field": "diff_Amounts",
+            "type": "quantitative",
+            "title": "Difference (Claimed - Settled)",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    },
+    "transform": [
+        {
+            "bin": {
+                "field": "Date_Claim_Made",
+                "as": "bin_Date_Claim_Made",
+                "timeUnit": "month"
+            }
+        },
+        {
+            "bin": {
+                "field": "Date_Claim_Settled",
+                "as": "bin_Date_Claim_Settled",
+                "timeUnit": "month"
+            }
+        },
+        {
+            "calculate": "datum.Amount_Claimed - datum.Amount_Settled",
+            "as": "diff_Amounts"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Amount_Claimed",
+                    "as": "avg_Claimed"
+                },
+                {
+                    "op": "mean",
+                    "field": "Amount_Settled",
+                    "as": "avg_Settled"
+                }
+            ],
+            "groupby": [
+                "bin_Date_Claim_Made",
+                "bin_Date_Claim_Settled"
+            ]
+        }
+    ]
+}

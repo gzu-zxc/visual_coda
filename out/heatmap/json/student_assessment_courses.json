@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of additional quantitative details about the courses by course ID.",
+    "data": {
+        "url": "spider_csv/student_assessment_courses.csv.csv"
+    },
+    "transform": [
+        {
+            "bin": {
+                "field": "course_id",
+                "maxbins": 50
+            },
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "other_details",
+                    "as": "mean_other_details"
+                }
+            ],
+            "groupby": [
+                "bin_maxbins_50"
+            ]
+        }
+    ],
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "bin_maxbins_50",
+            "type": "ordinal",
+            "title": "Course ID"
+        },
+        "y": {
+            "field": "mean_other_details",
+            "type": "quantitative",
+            "title": "Mean of Other Details"
+        },
+        "color": {
+            "field": "mean_other_details",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Mean Other Details"
+            }
+        }
+    }
+}

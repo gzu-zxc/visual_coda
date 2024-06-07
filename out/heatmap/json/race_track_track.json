@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the seating capacity of race tracks over the years they were opened.",
+    "data": {
+        "url": "spider_csv/race_track_track.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year_Opened",
+            "type": "temporal",
+            "timeUnit": "year",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "y": {
+            "field": "Seating",
+            "type": "quantitative"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

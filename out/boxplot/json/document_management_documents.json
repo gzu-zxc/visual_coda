@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of access counts by document type.",
+    "data": {
+        "url": "spider_csv/document_management_documents.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "document_type_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "access_count",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot chart for pet age and weight categorized by pet type in an animal shelter.",
+    "data": {
+        "url": "spider_csv/pets_1_pets.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "PetType",
+            "type": "nominal"
+        },
+        "y": [
+            {
+                "field": "pet_age",
+                "type": "quantitative"
+            },
+            {
+                "field": "weight",
+                "type": "quantitative"
+            }
+        ]
+    }
+}

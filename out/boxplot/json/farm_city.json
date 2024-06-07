@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of city populations based on their areas in square kilometers.",
+    "data": {
+        "url": "spider_csv/farm_city.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Area_km_2",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Population",
+            "type": "quantitative"
+        }
+    }
+}

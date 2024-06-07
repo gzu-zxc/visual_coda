@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total invoice amounts by month.",
+    "data": {
+        "url": "spider_csv/store_1_invoices.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "invoice_date",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Month"
+            }
+        },
+        "y": {
+            "field": "total",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "axis": {
+                "title": "Total Invoice Amount"
+            }
+        },
+        "color": {
+            "field": "total",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redyellowblue"
+            }
+        }
+    }
+}

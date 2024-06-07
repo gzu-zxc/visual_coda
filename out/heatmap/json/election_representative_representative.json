@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of elected representatives per state and political party.",
+    "data": {
+        "url": "spider_csv/election_representative_representative.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "State",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Party",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Representative_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of camera lenses used for mountain photography, binned by focal length and maximum aperture.",
+    "data": {
+        "url": "spider_csv/mountain_photos_camera_lens.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "focal_length_mm",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "max_aperture",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

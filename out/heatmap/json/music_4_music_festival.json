@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total volume of awards per category across different music festivals.",
+    "data": {
+        "url": "spider_csv/music_4_music_festival.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Category",
+            "type": "nominal",
+            "axis": {
+                "title": "Award Category"
+            }
+        },
+        "y": {
+            "field": "Music_Festival",
+            "type": "nominal",
+            "axis": {
+                "title": "Music Festival"
+            }
+        },
+        "color": {
+            "field": "Volume",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redyellowblue"
+            },
+            "legend": {
+                "title": "Total Volume of Awards"
+            }
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of debate event attendance over time.",
+    "data": {
+        "url": "spider_csv/debate_debate.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Month"
+            }
+        },
+        "y": {
+            "field": "Num_of_Audience",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "axis": {
+                "title": "Average Number of Audience Members"
+            }
+        },
+        "color": {
+            "field": "Num_of_Audience",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "scale": {
+                "scheme": "redyellowblue"
+            }
+        }
+    }
+}

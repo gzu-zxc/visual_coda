@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of county population binned by zip code.",
+    "data": {
+        "url": "spider_csv/election_county.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Zip_code",
+            "type": "nominal",
+            "axis": {
+                "title": "Zip Code"
+            }
+        },
+        "y": {
+            "bin": {
+                "maxbins": 10
+            },
+            "field": "Population",
+            "type": "quantitative",
+            "axis": {
+                "title": "Population"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Count"
+            }
+        }
+    }
+}

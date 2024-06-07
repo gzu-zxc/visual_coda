@@ -1,0 +1,52 @@
+[
+  {
+    "School_ID":1,
+    "School":"University of Delaware",
+    "Location":"Newark, DE",
+    "Founded":1743.0,
+    "Affiliation":"Public",
+    "Enrollment":19067.0,
+    "Nickname":"Fightin' Blue Hens",
+    "Primary_conference":"Colonial Athletic Association ( D-I )"
+  },
+  {
+    "School_ID":2,
+    "School":"Lebanon Valley College",
+    "Location":"Annville, PA",
+    "Founded":1866.0,
+    "Affiliation":"Private\/Methodist",
+    "Enrollment":2100.0,
+    "Nickname":"Flying Dutchmen",
+    "Primary_conference":"MAC Commonwealth Conference ( D-III )"
+  },
+  {
+    "School_ID":3,
+    "School":"University of Rhode Island",
+    "Location":"Kingston, RI",
+    "Founded":1892.0,
+    "Affiliation":"Public",
+    "Enrollment":19095.0,
+    "Nickname":"Rams",
+    "Primary_conference":"Atlantic 10 Conference ( D-I )"
+  },
+  {
+    "School_ID":4,
+    "School":"Rutgers University",
+    "Location":"New Brunswick, NJ",
+    "Founded":1766.0,
+    "Affiliation":"Public",
+    "Enrollment":56868.0,
+    "Nickname":"Scarlet Knights",
+    "Primary_conference":"American Athletic Conference ( D-I )"
+  },
+  {
+    "School_ID":5,
+    "School":"Stony Brook University",
+    "Location":"Stony Brook, NY",
+    "Founded":1957.0,
+    "Affiliation":"Public",
+    "Enrollment":23997.0,
+    "Nickname":"Seawolves",
+    "Primary_conference":"America East Conference ( D-I )"
+  }
+]

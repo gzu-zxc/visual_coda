@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of machine repair technicians' starting years and ages.",
+    "data": {
+        "url": "spider_csv/machine_repair_technician.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Starting_Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

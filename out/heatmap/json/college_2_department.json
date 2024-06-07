@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bar chart showing the budget of each department in a college.",
+    "data": {
+        "name": "CollegeDepartmentDataset",
+        "url": "spider_csv/college_2_department.csv.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "dept_name",
+            "type": "nominal",
+            "sort": {
+                "field": "budget",
+                "order": "descending"
+            }
+        },
+        "y": {
+            "field": "budget",
+            "type": "quantitative"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

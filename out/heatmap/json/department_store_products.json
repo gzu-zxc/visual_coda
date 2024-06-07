@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the average price of products by type code in a department store.",
+    "data": {
+        "url": "spider_csv/department_store_products.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "product_type_code",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "y": {
+            "field": "product_price",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            },
+            "aggregate": "average"
+        },
+        "color": {
+            "field": "product_price",
+            "type": "quantitative",
+            "aggregate": "average",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

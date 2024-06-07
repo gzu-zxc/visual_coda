@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of user login status across different roles.",
+    "data": {
+        "url": "spider_csv/document_management_users.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "role_code",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "user_login",
+            "type": "nominal"
+        }
+    }
+}

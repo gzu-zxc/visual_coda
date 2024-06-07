@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total sales in billions by industry.",
+    "data": {
+        "url": "spider_csv/company_employee_company.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Industry",
+            "type": "nominal",
+            "sort": "none"
+        },
+        "y": {
+            "field": "Sales_in_Billion",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "sort": "descending"
+        },
+        "color": {
+            "field": "Sales_in_Billion",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "scheme": "redyellowblue"
+            }
+        }
+    }
+}

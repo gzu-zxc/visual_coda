@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the relationship between time and points across climbers.",
+    "data": {
+        "url": "spider_csv/climbing_climber.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Time",
+            "type": "temporal",
+            "timeUnit": "hoursminutes",
+            "bin": {
+                "maxbins": 60
+            }
+        },
+        "y": {
+            "field": "Points",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "color": {
+            "field": "Climber_ID",
+            "type": "nominal"
+        }
+    },
+    "config": {
+        "scale": {
+            "bandPaddingInner": 0.1,
+            "bandPaddingOuter": 0.1
+        },
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

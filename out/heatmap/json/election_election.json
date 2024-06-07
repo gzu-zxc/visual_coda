@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of election candidates per district and committee.",
+    "data": {
+        "url": "spider_csv/election_election.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "District",
+            "type": "ordinal",
+            "sort": {
+                "field": "District"
+            }
+        },
+        "y": {
+            "field": "Committee",
+            "type": "ordinal",
+            "sort": {
+                "field": "Committee"
+            }
+        },
+        "color": {
+            "field": "Election_ID",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

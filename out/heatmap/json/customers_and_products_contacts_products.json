@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the average product price for each product type code.",
+    "data": {
+        "url": "spider_csv/customers_and_products_contacts_products.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "product_type_code",
+            "type": "nominal",
+            "axis": {
+                "title": "Product Type Code"
+            }
+        },
+        "y": {
+            "field": "product_price",
+            "type": "quantitative",
+            "aggregate": "average",
+            "axis": {
+                "title": "Average Product Price"
+            }
+        },
+        "color": {
+            "field": "product_price",
+            "type": "quantitative",
+            "aggregate": "average",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

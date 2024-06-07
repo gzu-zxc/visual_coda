@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of physician affiliations with different departments in hospital 1, color-coded by primary status.",
+    "data": {
+        "url": "spider_csv/hospital_1_affiliated_with.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Department",
+            "type": "ordinal",
+            "sort": {
+                "field": "Department"
+            }
+        },
+        "y": {
+            "field": "Physician",
+            "type": "ordinal",
+            "sort": {
+                "field": "Physician"
+            }
+        },
+        "color": {
+            "field": "PrimaryAffiliation",
+            "type": "nominal",
+            "scale": {
+                "domain": [
+                    0,
+                    1
+                ],
+                "range": [
+                    "#c9c9c9",
+                    "#1f77b4"
+                ]
+            },
+            "aggregate": "count"
+        }
+    }
+}

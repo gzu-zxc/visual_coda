@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the low estimates of film market estimations by year and type.",
+    "data": {
+        "url": "spider_csv/film_rank_film_market_estimation.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year"
+            }
+        },
+        "y": {
+            "field": "Type",
+            "type": "nominal",
+            "axis": {
+                "title": "Type"
+            }
+        },
+        "color": {
+            "field": "Low_Estimate",
+            "type": "quantitative",
+            "bin": true,
+            "scale": {
+                "scheme": "redyellowblue"
+            },
+            "legend": {
+                "title": "Low Estimate"
+            }
+        }
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        },
+        "axis": {
+            "domainWidth": 1,
+            "tickSize": 5,
+            "titlePadding": 10
+        }
+    }
+}

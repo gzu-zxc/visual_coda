@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of races per track over time.",
+    "data": {
+        "url": "spider_csv/race_track_race.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "y": {
+            "field": "Track_ID",
+            "type": "ordinal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "Race_ID",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}
