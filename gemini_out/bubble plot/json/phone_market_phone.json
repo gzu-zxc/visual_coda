@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the price of phones based on their memory and carrier",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/phone_market_phone.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Memory_in_G",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Carrier",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Price",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Carrier",
+            "type": "nominal"
+        }
+    }
+}

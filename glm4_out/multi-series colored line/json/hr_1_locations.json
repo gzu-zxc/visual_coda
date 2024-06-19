@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of employee locations per city, state/province, and country.",
+    "data": {
+        "url": "spider_csv/hr_1_locations.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CITY",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "count_LOCATION_ID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "COUNTRY_ID",
+            "type": "nominal"
+        },
+        "detail": [
+            "STATE_PROVINCE",
+            "COUNTRY_ID"
+        ]
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "LOCATION_ID",
+                    "as": "count_LOCATION_ID"
+                }
+            ],
+            "groupby": [
+                "CITY",
+                "STATE_PROVINCE",
+                "COUNTRY_ID"
+            ]
+        }
+    ]
+}

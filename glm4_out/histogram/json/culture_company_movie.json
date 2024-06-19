@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of movie budgets in millions of dollars, with the count of movies in each budget bin.",
+    "data": {
+        "url": "spider_csv/culture_company_movie.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Budget_million",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "Budget_million",
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of wine prices.",
+    "data": {
+        "url": "spider_csv/wine_1_WINE.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Price",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "count()",
+            "type": "quantitative"
+        }
+    }
+}

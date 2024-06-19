@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the total amount of payments made by month and payment method.",
+    "data": {
+        "url": "spider_csv/driving_school_Customer_Payments.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "amount_payment",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        "x": {
+            "field": "datetime_payment",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "color": {
+            "field": "payment_method_code",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "amount_payment",
+                    "as": "amount_payment"
+                }
+            ],
+            "groupby": [
+                "datetime_payment",
+                "payment_method_code"
+            ]
+        }
+    ]
+}

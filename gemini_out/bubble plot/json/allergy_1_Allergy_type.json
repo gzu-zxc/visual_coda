@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This visualization shows the frequency of different allergies types.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/allergy_1_Allergy_type.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "AllergyType",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Allergy",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Allergy",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "AllergyType",
+            "type": "nominal"
+        }
+    }
+}

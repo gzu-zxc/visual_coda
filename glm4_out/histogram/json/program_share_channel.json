@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of television channel market share, colored by rating percentage.",
+    "data": {
+        "url": "spider_csv/program_share_channel.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Share_in_percent",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "Rating_in_percent",
+            "type": "quantitative"
+        }
+    }
+}

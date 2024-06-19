@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between document structure code and access count, with the size of the bubbles representing the document type code. ",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/document_management_documents.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "document_structure_code",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "access_count",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "document_type_code",
+            "type": "nominal"
+        }
+    }
+}

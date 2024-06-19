@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of journalists' ages and years of work experience.",
+    "data": {
+        "url": "spider_csv/news_report_journalist.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Years_working",
+            "type": "quantitative"
+        }
+    }
+}

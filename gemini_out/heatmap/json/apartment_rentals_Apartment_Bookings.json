@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of bookings by apartment and booking status",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/apartment_rentals_Apartment_Bookings.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "apt_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "booking_status_code",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "apt_booking_id",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "viridis"
+            }
+        }
+    }
+}

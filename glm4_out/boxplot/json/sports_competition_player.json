@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot showing the distribution of points scored by players in a sports competition.",
+    "data": {
+        "url": "spider_csv/sports_competition_player.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "name",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Points",
+            "type": "quantitative"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        },
+        "title": {
+            "fontSize": 16
+        }
+    }
+}

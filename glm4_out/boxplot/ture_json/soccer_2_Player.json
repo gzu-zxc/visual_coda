@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of the highest scores achieved by soccer players, split by yellow card status.",
+    "data": {
+        "url": "spider_csv/soccer_2_Player.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "HS",
+            "type": "quantitative"
+        },
+        "facet": {
+            "field": "yCard",
+            "type": "nominal"
+        }
+    }
+}

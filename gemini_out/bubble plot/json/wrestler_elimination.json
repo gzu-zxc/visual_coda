@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of wrestlers eliminated by each team, with the size of the bubbles representing the number of eliminations.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/wrestler_elimination.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Team",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Eliminated_By",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count()",
+            "field": "Elimination_ID",
+            "type": "quantitative"
+        }
+    }
+}

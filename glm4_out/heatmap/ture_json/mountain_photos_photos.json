@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of mountain photos taken with different camera lenses for each mountain.",
+    "data": {
+        "url": "spider_csv/mountain_photos_photos.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "camera_lens_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "mountain_id",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "id",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

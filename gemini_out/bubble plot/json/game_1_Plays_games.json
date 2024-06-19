@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of hours played for each game",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/game_1_Plays_games.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "GameID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Hours_Played",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Hours_Played",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between date of enrolment and date of completion with the size of the bubble representing the course id",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/e_learning_Student_Course_Enrolment.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_of_enrolment",
+            "type": "temporal"
+        },
+        "y": {
+            "field": "date_of_completion",
+            "type": "temporal"
+        },
+        "size": {
+            "field": "course_id",
+            "type": "quantitative"
+        }
+    }
+}

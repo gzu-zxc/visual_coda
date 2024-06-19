@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the maximum gross weight and the total disk area of different aircraft models.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/aircraft_aircraft.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Max_Gross_Weight",
+            "type": "quantitative",
+            "title": "Maximum Gross Weight (lb)",
+            "scale": {
+                "type": "log"
+            }
+        },
+        "y": {
+            "field": "Total_disk_area",
+            "type": "quantitative",
+            "title": "Total Disk Area (ft²)",
+            "scale": {
+                "type": "log"
+            }
+        },
+        "size": {
+            "field": "Max_disk_Loading",
+            "type": "quantitative",
+            "title": "Maximum Disk Loading (lb/ft²)"
+        }
+    }
+}

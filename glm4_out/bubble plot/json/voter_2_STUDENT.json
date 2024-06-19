@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot of student voters by age, major, and sex.",
+    "data": {
+        "url": "spider_csv/voter_2_STUDENT.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Major",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "Age",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        },
+        "color": {
+            "field": "Sex",
+            "type": "nominal"
+        }
+    }
+}

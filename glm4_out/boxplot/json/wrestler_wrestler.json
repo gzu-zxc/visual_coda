@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of days held by wrestlers across their reigns.",
+    "data": {
+        "url": "spider_csv/wrestler_wrestler.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Reign",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Days_held",
+            "type": "quantitative"
+        }
+    }
+}

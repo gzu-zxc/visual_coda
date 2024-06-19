@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the sales and profits of gas companies.",
+    "data": {
+        "url": "spider_csv/gas_company_company.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Sales_billion",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Profits_billion",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Company",
+            "type": "nominal"
+        }
+    }
+}

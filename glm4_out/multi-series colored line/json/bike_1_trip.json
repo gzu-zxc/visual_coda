@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the total trip duration over time for different subscription types.",
+    "data": {
+        "url": "spider_csv/bike_1_trip.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "start_date",
+            "type": "temporal",
+            "timeUnit": "monthdate"
+        },
+        "y": {
+            "field": "duration",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        "color": {
+            "field": "subscription_type",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.duration / 60",
+            "as": "duration_minutes"
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of payment amounts over time.",
+    "data": {
+        "url": "spider_csv/driving_school_Customer_Payments.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "amount_payment",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "y": {
+            "bin": {
+                "field": "datetime_payment",
+                "type": "temporal",
+                "timeUnit": "month"
+            },
+            "type": "quantitative"
+        }
+    }
+}

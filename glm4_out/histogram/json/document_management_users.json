@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of user login statuses.",
+    "data": {
+        "url": "spider_csv/document_management_users.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "user_login",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

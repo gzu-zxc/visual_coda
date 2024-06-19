@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between Document_ID and Budget_Type_Code, with the size of the bubbles representing the count of Document_Details",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Docs_and_Epenses_Documents_with_expenses.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Document_ID",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Budget_Type_Code",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Document_Details",
+            "type": "quantitative"
+        }
+    }
+}

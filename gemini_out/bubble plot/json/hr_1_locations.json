@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the distribution of locations by city and state.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/hr_1_locations.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CITY",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "STATE_PROVINCE",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "LOCATION_ID",
+            "type": "quantitative"
+        }
+    }
+}

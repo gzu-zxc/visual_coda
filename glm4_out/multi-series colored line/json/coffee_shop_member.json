@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of coffee shop members' purchases throughout the day, colored by membership level.",
+    "data": {
+        "url": "spider_csv/coffee_shop_member.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Time_of_purchase",
+            "type": "temporal",
+            "timeUnit": "hours"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "Member_ID"
+        },
+        "color": {
+            "field": "Level_of_membership",
+            "type": "ordinal"
+        }
+    }
+}

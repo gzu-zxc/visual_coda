@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between Salary and Super_ssn, sized by Dno.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/company_1_employee.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Salary",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Super_ssn",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Dno",
+            "type": "quantitative"
+        }
+    }
+}

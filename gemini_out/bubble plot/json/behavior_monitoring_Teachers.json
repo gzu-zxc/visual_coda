@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between teacher_id and address_id, with the size of the bubbles representing the gender",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/behavior_monitoring_Teachers.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "teacher_id",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "address_id",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "gender",
+            "type": "quantitative"
+        }
+    }
+}

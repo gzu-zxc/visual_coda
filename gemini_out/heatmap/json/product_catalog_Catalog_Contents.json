@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization of the product catalog data showing the relationship between price in dollars and price in euros.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/product_catalog_Catalog_Contents.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "price_in_dollars",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "price_in_euros",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the file size and duration of music files, categorized by formats.",
+    "data": {
+        "url": "spider_csv/music_1_files.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "file_size",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear"
+            }
+        },
+        "x": {
+            "field": "duration",
+            "type": "temporal",
+            "timeUnit": "seconds",
+            "axis": {
+                "title": "Duration (seconds)"
+            }
+        },
+        "color": {
+            "field": "formats",
+            "type": "nominal"
+        }
+    }
+}

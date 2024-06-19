@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of weather data across different days of the week.",
+    "data": {
+        "url": "spider_csv/station_weather_weekly_weather.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "day_of_week",
+            "type": "nominal"
+        },
+        "y": [
+            {
+                "field": "high_temperature",
+                "type": "quantitative"
+            },
+            {
+                "field": "low_temperature",
+                "type": "quantitative"
+            },
+            {
+                "field": "precipitation",
+                "type": "quantitative"
+            },
+            {
+                "field": "wind_speed_mph",
+                "type": "quantitative"
+            }
+        ]
+    }
+}

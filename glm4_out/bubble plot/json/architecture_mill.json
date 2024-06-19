@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of Belgian architectural mills by built year and type.",
+    "data": {
+        "url": "spider_csv/architecture_mill.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "built_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "type",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "id",
+            "type": "quantitative"
+        }
+    }
+}

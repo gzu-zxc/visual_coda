@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualizing the gross revenue of films, categorized by studio and director.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/film_rank_film.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Studio",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Director",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Gross_in_dollar",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    }
+}

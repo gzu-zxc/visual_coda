@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of event outcomes for different services in Alabama local government.",
+    "data": {
+        "url": "spider_csv/local_govt_in_alabama_EVENTS.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Service_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Event_Details",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "Event_ID",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

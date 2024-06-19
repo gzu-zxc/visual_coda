@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the salary of college instructors by department.",
+    "data": {
+        "url": "spider_csv/college_2_instructor.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dept_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "salary",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "name",
+            "type": "nominal"
+        }
+    }
+}

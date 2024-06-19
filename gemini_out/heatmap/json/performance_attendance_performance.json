@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing attendance by host and location.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/performance_attendance_performance.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Host",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Location",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "mean",
+            "field": "Attendance",
+            "type": "quantitative"
+        }
+    }
+}

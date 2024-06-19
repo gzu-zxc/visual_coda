@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of employees per department and sex. ",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/company_1_employee.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Dno",
+            "type": "nominal",
+            "title": "Department Number"
+        },
+        "y": {
+            "field": "Sex",
+            "type": "nominal",
+            "title": "Sex"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Count of Employees"
+        }
+    }
+}

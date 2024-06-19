@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the count of games played for each combination of home and away teams.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/game_injury_game.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Home_team",
+            "type": "nominal",
+            "title": "Home Team"
+        },
+        "y": {
+            "field": "Away_team",
+            "type": "nominal",
+            "title": "Away Team"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Games"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization of the number of issues for each book by writer.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/book_2_book.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Writer",
+            "type": "nominal",
+            "title": "Writer"
+        },
+        "y": {
+            "field": "Title",
+            "type": "nominal",
+            "title": "Title"
+        },
+        "color": {
+            "aggregate": "sum",
+            "field": "Issues",
+            "type": "quantitative",
+            "title": "Number of Issues"
+        }
+    }
+}

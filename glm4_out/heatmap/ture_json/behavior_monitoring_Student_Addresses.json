@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of monthly rental costs over the duration of student stays at different addresses.",
+    "data": {
+        "url": "spider_csv/behavior_monitoring_Student_Addresses.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_address_from",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "date_address_to",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "color": {
+            "field": "monthly_rental",
+            "type": "quantitative",
+            "bin": true
+        }
+    }
+}

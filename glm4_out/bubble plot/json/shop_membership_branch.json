@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of memberships at shop branches over the years they were opened.",
+    "data": {
+        "url": "spider_csv/shop_membership_branch.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "membership_amount",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Name",
+                "type": "nominal"
+            }
+        ]
+    }
+}

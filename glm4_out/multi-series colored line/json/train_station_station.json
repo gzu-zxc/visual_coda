@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the annual entry/exit, interchanges, and total passengers for UK train stations.",
+    "data": {
+        "url": "spider_csv/train_station_station.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "y": [
+            {
+                "field": "Annual_entry_exit",
+                "type": "quantitative"
+            },
+            {
+                "field": "Annual_interchanges",
+                "type": "quantitative"
+            },
+            {
+                "field": "Total_Passengers",
+                "type": "quantitative"
+            }
+        ],
+        "color": {
+            "field": "Name",
+            "type": "nominal",
+            "scale": {
+                "domain": [
+                    "Annual_entry_exit",
+                    "Annual_interchanges",
+                    "Total_Passengers"
+                ],
+                "range": [
+                    "#1f77b4",
+                    "#ff7f0e",
+                    "#2ca02c"
+                ]
+            }
+        }
+    }
+}

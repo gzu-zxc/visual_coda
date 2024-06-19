@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of memberships at different shop branches over the years.",
+    "data": {
+        "url": "spider_csv/shop_membership_branch.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "sort": {
+                "op": "min",
+                "field": "Open_year"
+            }
+        },
+        "y": {
+            "field": "membership_amount",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Name",
+            "type": "nominal"
+        }
+    }
+}

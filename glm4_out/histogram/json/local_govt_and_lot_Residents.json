@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of residents moving in over time.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_Residents.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_moved_in",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "axis": {
+                "title": "Date Moved In (Month-Year)"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of Residents"
+            }
+        }
+    }
+}

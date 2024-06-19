@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of tests taken per day, colored by test result.",
+    "data": {
+        "url": "spider_csv/e_learning_Student_Tests_Taken.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_test_taken",
+            "type": "temporal",
+            "timeUnit": "day"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "registration_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "test_result",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.date_test_taken.substring(0, 10)",
+            "as": "date"
+        }
+    ],
+    "sort": {
+        "field": "date"
+    }
+}

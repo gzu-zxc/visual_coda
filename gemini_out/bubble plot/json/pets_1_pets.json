@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between pet age and weight, with the size of the bubbles representing the number of pets in each category.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/pets_1_pets.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "pet_age",
+            "type": "quantitative",
+            "title": "Pet Age (years)"
+        },
+        "y": {
+            "field": "weight",
+            "type": "quantitative",
+            "title": "Weight (kg)"
+        },
+        "size": {
+            "aggregate": "count",
+            "title": "Number of Pets"
+        },
+        "color": {
+            "field": "PetType",
+            "type": "nominal",
+            "title": "Pet Type"
+        }
+    }
+}

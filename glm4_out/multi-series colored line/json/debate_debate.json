@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of audience members over time across different venues.",
+    "data": {
+        "url": "spider_csv/debate_debate.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "Num_of_Audience",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Venue",
+            "type": "nominal"
+        }
+    },
+    "sort": {
+        "field": "Date"
+    }
+}

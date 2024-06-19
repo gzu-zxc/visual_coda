@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between height and prominence of mountains, with the size of the bubbles representing the height of the mountains.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/climbing_mountain.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Prominence",
+            "type": "quantitative",
+            "title": "Prominence (meters)"
+        },
+        "y": {
+            "field": "Height",
+            "type": "quantitative",
+            "title": "Height (meters)"
+        },
+        "size": {
+            "field": "Height",
+            "type": "quantitative",
+            "title": "Height (meters)"
+        }
+    }
+}

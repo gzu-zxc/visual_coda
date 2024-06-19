@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of players per country and position.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/match_season_match_season.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "Country",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "x": {
+            "field": "Position",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Country",
+            "type": "nominal"
+        }
+    }
+}

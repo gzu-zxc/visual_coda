@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of total attendance for all home games in a season, colored by the number of games played.",
+    "data": {
+        "url": "spider_csv/baseball_1_home_game.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "attendance",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "games",
+            "type": "quantitative"
+        }
+    }
+}

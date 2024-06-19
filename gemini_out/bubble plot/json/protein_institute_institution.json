@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the Enrollment and Founded of different institutions, with the size of the bubble representing the Enrollment value.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/protein_institute_institution.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Founded",
+            "type": "quantitative",
+            "title": "Year Founded"
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "title": "Enrollment"
+        },
+        "size": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "title": "Enrollment"
+        },
+        "color": {
+            "field": "Type",
+            "type": "nominal",
+            "title": "Type"
+        }
+    }
+}

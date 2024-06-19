@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of maximum speeds of storms.",
+    "data": {
+        "url": "spider_csv/storm_record_storm.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Max_speed",
+            "type": "quantitative"
+        }
+    }
+}

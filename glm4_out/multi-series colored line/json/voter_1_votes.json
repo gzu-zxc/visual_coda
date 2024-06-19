@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing votes cast by voter 1 per contestant number and state.",
+    "data": {
+        "url": "spider_csv/voter_1_votes.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "created",
+            "type": "temporal",
+            "timeUnit": "yearmonthdatehoursminutes"
+        },
+        "y": {
+            "field": "contestant_number",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "state",
+            "type": "nominal"
+        },
+        "strokeDash": {
+            "field": "contestant_number",
+            "type": "ordinal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "vote_id",
+                    "as": "votes"
+                }
+            ],
+            "groupby": [
+                "contestant_number",
+                "state"
+            ]
+        }
+    ]
+}

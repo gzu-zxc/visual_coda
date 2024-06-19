@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of the highest scores achieved by soccer players.",
+    "data": {
+        "url": "spider_csv/soccer_2_Player.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "HS",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

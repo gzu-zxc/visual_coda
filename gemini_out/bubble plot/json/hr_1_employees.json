@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between salary and commission percentage, with the size of the bubbles representing the employee's salary.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/hr_1_employees.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "COMMISSION_PCT",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "SALARY",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "SALARY",
+            "type": "quantitative"
+        }
+    }
+}

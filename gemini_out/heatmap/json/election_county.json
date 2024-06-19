@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualizing the population distribution across counties.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/election_county.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "County_name",
+            "type": "nominal",
+            "title": "County Name"
+        },
+        "y": {
+            "field": "Zip_code",
+            "type": "nominal",
+            "title": "Zip Code"
+        },
+        "color": {
+            "field": "Population",
+            "type": "quantitative",
+            "title": "Population"
+        }
+    }
+}

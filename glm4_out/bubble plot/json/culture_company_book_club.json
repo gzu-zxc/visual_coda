@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the results of book clubs by category over the years.",
+    "data": {
+        "url": "spider_csv/culture_company_book_club.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Category",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Result",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

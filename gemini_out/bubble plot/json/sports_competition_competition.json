@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of competitions per country in each year.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/sports_competition_competition.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Country",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "count()",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear"
+            },
+            "title": "Number of Competitions"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal",
+            "legend": {
+                "title": "Country"
+            }
+        }
+    }
+}

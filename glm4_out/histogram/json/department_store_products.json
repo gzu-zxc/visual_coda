@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of product prices in the department store.",
+    "data": {
+        "url": "spider_csv/department_store_products.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "product_price",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

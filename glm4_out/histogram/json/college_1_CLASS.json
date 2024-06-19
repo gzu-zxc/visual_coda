@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of class times.",
+    "data": {
+        "url": "spider_csv/college_1_CLASS.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CLASS_TIME",
+            "type": "temporal",
+            "timeUnit": "hours",
+            "bin": {
+                "maxbins": 24
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "CLASS_TIME",
+            "type": "quantitative"
+        }
+    }
+}

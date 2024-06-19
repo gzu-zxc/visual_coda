@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of station networks per service.",
+    "data": {
+        "url": "spider_csv/station_weather_station.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "services",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "id",
+            "type": "quantitative"
+        }
+    }
+}

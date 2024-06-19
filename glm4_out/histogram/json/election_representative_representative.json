@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of the lifespan of elected representatives.",
+    "data": {
+        "url": "spider_csv/election_representative_representative.csv.csv"
+    },
+    "transform": [
+        {
+            "calculate": "toDate(datum.Lifespan.split('–')[0])",
+            "as": "start_year"
+        },
+        {
+            "calculate": "toDate(datum.Lifespan.split('–')[1])",
+            "as": "end_year"
+        }
+    ],
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "start_year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

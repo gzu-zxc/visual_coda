@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box Plot of hypothetical grant_amount by staff_id and colored by staff_details",
+    "data": {
+        "url": "spider_csv/tracking_grants_for_research_Research_Staff.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "staff_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "grant_amount",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "color": {
+            "field": "staff_details",
+            "type": "nominal"
+        }
+    },
+    "config": {
+        "boxplot": {
+            "extent": "min-max"
+        }
+    }
+}

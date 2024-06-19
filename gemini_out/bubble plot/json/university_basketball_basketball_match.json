@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This is a visualization of university basketball team performance using a bubble chart.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/university_basketball_basketball_match.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "ACC_Percent",
+            "type": "quantitative",
+            "title": "ACC Winning Percentage"
+        },
+        "y": {
+            "field": "All_Games_Percent",
+            "type": "quantitative",
+            "title": "Overall Winning Percentage"
+        },
+        "size": {
+            "field": "ACC_Percent",
+            "type": "quantitative",
+            "title": "ACC Winning Percentage"
+        },
+        "color": {
+            "field": "Team_Name",
+            "type": "nominal",
+            "title": "Team Name"
+        }
+    }
+}

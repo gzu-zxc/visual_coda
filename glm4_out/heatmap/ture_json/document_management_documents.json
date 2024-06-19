@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total access count for each combination of document structure and type.",
+    "data": {
+        "url": "spider_csv/document_management_documents.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "document_structure_code",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "document_type_code",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "access_count",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    }
+}

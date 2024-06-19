@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between product price and product type code, with the size of the bubble representing the number of products.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/customers_and_products_contacts_products.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "product_price",
+            "type": "quantitative",
+            "title": "Product Price"
+        },
+        "y": {
+            "field": "product_type_code",
+            "type": "nominal",
+            "title": "Product Type Code"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "product_id",
+            "type": "quantitative",
+            "title": "Number of Products"
+        }
+    }
+}

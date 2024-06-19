@@ -1,0 +1,60 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the sum of payment amounts by payment method over time.",
+    "data": {
+        "url": "spider_csv/insurance_policies_Payments.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date_Payment_Made",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Payment Date"
+            }
+        },
+        "y": {
+            "field": "sum_Amount_Payment",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "axis": {
+                "title": "Total Payment Amount"
+            }
+        },
+        "color": {
+            "field": "Payment_Method_Code",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            },
+            "legend": {
+                "title": "Payment Method"
+            }
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Amount_Payment",
+                    "as": "sum_Amount_Payment"
+                }
+            ],
+            "groupby": [
+                "Date_Payment_Made",
+                "Payment_Method_Code"
+            ]
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

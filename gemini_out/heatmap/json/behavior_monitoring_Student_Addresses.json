@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This visualization shows the distribution of monthly rental costs across different address types.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/behavior_monitoring_Student_Addresses.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "other_details",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "monthly_rental",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

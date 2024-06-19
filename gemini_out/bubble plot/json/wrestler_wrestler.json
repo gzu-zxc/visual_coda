@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot to show the relationship between the number of days a wrestler held the championship, the number of reigns and the name of the wrestler",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/wrestler_wrestler.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Days_held",
+            "type": "quantitative",
+            "title": "Days held"
+        },
+        "y": {
+            "field": "Reign",
+            "type": "quantitative",
+            "title": "Reign"
+        },
+        "size": {
+            "field": "Days_held",
+            "type": "quantitative",
+            "title": "Days held"
+        },
+        "color": {
+            "field": "Name",
+            "type": "nominal",
+            "title": "Name"
+        },
+        "tooltip": [
+            {
+                "field": "Name",
+                "type": "nominal"
+            },
+            {
+                "field": "Days_held",
+                "type": "quantitative"
+            },
+            {
+                "field": "Reign",
+                "type": "quantitative"
+            }
+        ]
+    }
+}

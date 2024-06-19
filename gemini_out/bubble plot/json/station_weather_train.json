@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of trains departing from each origin station.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/station_weather_train.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "origin",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "destination",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "count()",
+            "type": "quantitative",
+            "title": "Number of Trains"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the volume of awards given in different categories across music festivals.",
+    "data": {
+        "url": "spider_csv/music_4_music_festival.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Music_Festival",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Category",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Volume",
+            "type": "quantitative"
+        }
+    }
+}

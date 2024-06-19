@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between MPG and Weight, with the size of the bubbles representing Horsepower.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/car_1_CARS_DATA.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "MPG",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            }
+        },
+        "y": {
+            "field": "Weight",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            }
+        },
+        "size": {
+            "field": "Horsepower",
+            "type": "quantitative",
+            "legend": {
+                "title": "Horsepower"
+            }
+        }
+    }
+}

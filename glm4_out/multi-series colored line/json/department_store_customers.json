@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing customer codes by customer ID, colored by payment method.",
+    "data": {
+        "url": "spider_csv/department_store_customers.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "customer_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "customer_code",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "payment_method_code",
+            "type": "nominal"
+        }
+    }
+}

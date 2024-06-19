@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of school bus driver ages by home city.",
+    "data": {
+        "url": "spider_csv/school_bus_driver.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Home_city",
+            "type": "ordinal"
+        },
+        "y": {
+            "bin": {
+                "maxbins": 10
+            },
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "Age",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            }
+        }
+    }
+}

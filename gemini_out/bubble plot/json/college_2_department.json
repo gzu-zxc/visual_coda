@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between department budget and building location, with the size of the bubbles representing the department budget.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_2_department.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "building",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "budget",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "budget",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the frequency of event outcomes in Alabama local government services.",
+    "data": {
+        "url": "spider_csv/local_govt_in_alabama_EVENTS.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Event_ID",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Event_Details",
+            "type": "nominal"
+        }
+    }
+}

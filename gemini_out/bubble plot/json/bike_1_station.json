@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between longitude and latitude of bike stations, with the size of the bubble representing the dock count.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/bike_1_station.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "long",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "lat",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "dock_count",
+            "type": "quantitative"
+        }
+    }
+}

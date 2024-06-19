@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing classroom capacity by building and room number.",
+    "data": {
+        "url": "spider_csv/college_2_classroom.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "building",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "room_number",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "capacity",
+            "type": "quantitative"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "capacity",
+                    "as": "capacity"
+                }
+            ],
+            "groupby": [
+                "building",
+                "room_number"
+            ]
+        }
+    ]
+}

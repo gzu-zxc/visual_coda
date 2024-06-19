@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing city population by official name and status.",
+    "data": {
+        "url": "spider_csv/farm_city.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Official_Name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Population",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Status",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of the last product hire date by customers.",
+    "data": {
+        "url": "spider_csv/products_for_hire_customers.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_last_hire",
+            "type": "temporal",
+            "timeUnit": "day"
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    },
+    "transform": [
+        {
+            "bin": {
+                "field": "date_last_hire",
+                "extent": [
+                    null,
+                    null
+                ],
+                "maxbins": 30
+            }
+        }
+    ]
+}

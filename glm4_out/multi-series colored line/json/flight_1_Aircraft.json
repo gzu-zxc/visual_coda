@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the flight distances for different aircraft models.",
+    "data": {
+        "url": "spider_csv/flight_1_Aircraft.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "name",
+            "type": "nominal",
+            "sort": {
+                "field": "name"
+            }
+        },
+        "y": {
+            "field": "distance",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "aid",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the distribution of guests by gender and year of birth.",
+    "data": {
+        "url": "spider_csv/apartment_rentals_Guests.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "guest_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "gender_code",
+            "type": "nominal"
+        },
+        "x": {
+            "field": "year_of_birth",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year of Birth"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "year(datum.date_of_birth)",
+            "as": "year_of_birth"
+        }
+    ]
+}

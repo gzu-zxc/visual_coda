@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of share transactions per investor detail.",
+    "data": {
+        "url": "spider_csv/tracking_share_transactions_INVESTORS.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "investor_id",
+            "type": "quantitative"
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Investor_details",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "groupby": [
+                "Investor_details"
+            ],
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "investor_id",
+                    "as": "count_investor_id"
+                }
+            ]
+        }
+    ]
+}

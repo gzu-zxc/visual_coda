@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the height and prominence of various mountains.",
+    "data": {
+        "url": "spider_csv/climbing_mountain.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "y": [
+            {
+                "field": "Height",
+                "type": "quantitative"
+            },
+            {
+                "field": "Prominence",
+                "type": "quantitative"
+            }
+        ],
+        "color": {
+            "field": "HeightProminence",
+            "type": "nominal",
+            "legend": {
+                "title": "Measurement"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "if(datum.Height, 'Height', 'Prominence')",
+            "as": "HeightProminence"
+        }
+    ]
+}

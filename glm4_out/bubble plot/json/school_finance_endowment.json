@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the amount of endowments received by various schools.",
+    "data": {
+        "url": "spider_csv/school_finance_endowment.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "School_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "amount",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "endowment_id",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of roller coaster lengths, color-encoded by their heights.",
+    "data": {
+        "url": "spider_csv/roller_coaster_roller_coaster.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Length",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "Height",
+            "type": "quantitative"
+        }
+    }
+}

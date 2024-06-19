@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing student capacity of dormitories by gender.",
+    "data": {
+        "url": "spider_csv/dorm_1_dorm.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dormid",
+            "type": "ordinal",
+            "sort": {
+                "field": "dormid"
+            }
+        },
+        "y": {
+            "field": "student_capacity",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "gender",
+            "type": "nominal"
+        }
+    }
+}

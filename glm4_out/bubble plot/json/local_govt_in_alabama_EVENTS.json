@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the count of events per service and event details in Alabama local government.",
+    "data": {
+        "url": "spider_csv/local_govt_in_alabama_EVENTS.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Service_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Event_Details",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "count_Event_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "color": {
+            "field": "Event_Details",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Event_ID",
+                    "as": "count_Event_ID"
+                }
+            ],
+            "groupby": [
+                "Service_ID",
+                "Event_Details"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot of windmill locations, with size determined by built year",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/architecture_mill.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "location",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "built_year",
+            "type": "quantitative"
+        }
+    }
+}

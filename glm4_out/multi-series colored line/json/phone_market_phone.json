@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the price of phone models available in the market based on their memory size and carrier.",
+    "data": {
+        "url": "spider_csv/phone_market_phone.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Memory_in_G",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Price",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Carrier",
+            "type": "nominal"
+        }
+    }
+}

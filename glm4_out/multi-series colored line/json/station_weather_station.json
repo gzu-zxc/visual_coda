@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the services available at station weather stations, grouped by network names.",
+    "data": {
+        "url": "spider_csv/station_weather_station.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "services",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            }
+        },
+        "strokeDash": {
+            "field": "services",
+            "type": "nominal"
+        },
+        "group": {
+            "field": "network_name",
+            "type": "nominal"
+        }
+    }
+}

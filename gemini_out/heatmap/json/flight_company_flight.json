@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization that shows the distribution of flights across different airports and companies.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/flight_company_flight.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "airport_id",
+            "type": "nominal",
+            "title": "Airport ID"
+        },
+        "y": {
+            "field": "company_id",
+            "type": "nominal",
+            "title": "Company ID"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Flight Count"
+        }
+    }
+}

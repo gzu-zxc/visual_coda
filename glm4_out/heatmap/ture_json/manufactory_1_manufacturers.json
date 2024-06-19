@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of manufacturers' annual revenue by headquarters location.",
+    "data": {
+        "url": "spider_csv/manufactory_1_manufacturers.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Headquarter",
+            "type": "ordinal"
+        },
+        "y": {
+            "bin": {
+                "maxbins": 5
+            },
+            "field": "Revenue",
+            "type": "quantitative",
+            "axis": {
+                "title": "Revenue (bin)"
+            }
+        },
+        "color": {
+            "bin": {
+                "maxbins": 5
+            },
+            "field": "Revenue",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Revenue"
+            }
+        }
+    }
+}

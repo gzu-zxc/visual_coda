@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the count of pilots across different nationalities and positions.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/pilot_record_pilot.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Nationality",
+            "type": "nominal",
+            "title": "Nationality"
+        },
+        "y": {
+            "field": "Position",
+            "type": "nominal",
+            "title": "Position"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Count of Pilots"
+        }
+    }
+}

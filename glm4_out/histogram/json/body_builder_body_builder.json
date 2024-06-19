@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of maximum weights lifted in the snatch exercise.",
+    "data": {
+        "url": "spider_csv/body_builder_body_builder.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Snatch",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 20
+            }
+        },
+        "y": {
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of tests taken on each date, color-coded by the percentage of passing tests",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/e_learning_Student_Tests_Taken.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_test_taken",
+            "type": "temporal",
+            "timeUnit": "date",
+            "title": "Date"
+        },
+        "y": {
+            "field": "test_result",
+            "type": "nominal",
+            "title": "Test Result"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "registration_id",
+            "type": "quantitative",
+            "title": "Number of Tests Taken"
+        }
+    }
+}

@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot of the base price of the rooms.",
+    "data": {
+        "url": "spider_csv/inn_1_Rooms.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "basePrice",
+            "type": "quantitative"
+        }
+    }
+}

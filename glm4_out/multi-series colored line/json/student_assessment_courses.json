@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing additional quantitative details about courses.",
+    "data": {
+        "url": "spider_csv/student_assessment_courses.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "course_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "other_details",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "course_name",
+            "type": "nominal"
+        }
+    }
+}

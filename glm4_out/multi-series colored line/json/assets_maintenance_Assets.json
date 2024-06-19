@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the acquisition dates of different asset models by make.",
+    "data": {
+        "url": "spider_csv/assets_maintenance_Assets.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "asset_acquired_date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "color": {
+            "field": "asset_make",
+            "type": "nominal"
+        },
+        "stroke": {
+            "field": "asset_model",
+            "type": "nominal"
+        }
+    }
+}

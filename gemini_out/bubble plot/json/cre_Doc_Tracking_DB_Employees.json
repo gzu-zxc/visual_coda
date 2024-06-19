@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble chart showing the distribution of employee IDs by role and the size of the bubble representing the number of employees in that role.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Doc_Tracking_DB_Employees.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Role_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Employee_ID",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            }
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Employee_ID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Role_Code",
+            "type": "nominal"
+        }
+    },
+    "config": {
+        "view": {
+            "width": 400,
+            "height": 300
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the enrollment of colleges by state.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/soccer_2_College.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "state",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "enr",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "enr",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "state",
+            "type": "nominal"
+        }
+    }
+}

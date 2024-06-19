@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of invoice dates.",
+    "data": {
+        "url": "spider_csv/customers_and_invoices_Invoices.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "invoice_date",
+            "type": "temporal",
+            "timeUnit": "day",
+            "axis": {
+                "title": "Invoice Date"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of Invoices"
+            }
+        }
+    }
+}

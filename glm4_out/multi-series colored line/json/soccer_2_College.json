@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing enrollment numbers for college soccer teams by their names and states.",
+    "data": {
+        "url": "spider_csv/soccer_2_College.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "cName",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "enr",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "state",
+            "type": "nominal"
+        }
+    }
+}

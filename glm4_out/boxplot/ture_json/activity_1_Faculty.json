@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of phone numbers by faculty rank.",
+    "data": {
+        "url": "spider_csv/activity_1_Faculty.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Phone",
+            "type": "quantitative",
+            "aggregate": "mean"
+        }
+    }
+}

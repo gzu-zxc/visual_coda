@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the budget for each department by building.",
+    "data": {
+        "url": "spider_csv/college_2_department.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dept_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "budget",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "building",
+            "type": "nominal"
+        }
+    }
+}

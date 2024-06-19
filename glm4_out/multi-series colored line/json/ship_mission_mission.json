@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the speed of ships over the years, categorized by mission code.",
+    "data": {
+        "url": "spider_csv/ship_mission_mission.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Launched_Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Speed_knots",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Code",
+            "type": "nominal"
+        }
+    },
+    "sort": {
+        "field": "Launched_Year"
+    }
+}

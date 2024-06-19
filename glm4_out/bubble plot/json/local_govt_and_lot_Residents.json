@@ -1,0 +1,52 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the duration of stay for each resident based on their move-in and move-out dates.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_Residents.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "resident_id",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "date_moved_out",
+            "type": "quantitative",
+            "bin": true,
+            "scale": {
+                "domain": [
+                    0,
+                    1000
+                ]
+            },
+            "legend": {
+                "title": "Duration of Stay (days)"
+            }
+        },
+        "color": {
+            "field": "date_moved_in",
+            "type": "ordinal",
+            "timeUnit": "year",
+            "scale": {
+                "scheme": "category20"
+            },
+            "legend": {
+                "title": "Year Moved In"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.date_moved_out - datum.date_moved_in",
+            "as": "duration_of_stay"
+        },
+        {
+            "calculate": "year(datum.date_moved_in)",
+            "as": "year_moved_in"
+        }
+    ]
+}

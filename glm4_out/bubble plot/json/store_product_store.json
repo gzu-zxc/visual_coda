@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the store area size, number of product categories, and ranking.",
+    "data": {
+        "url": "spider_csv/store_product_store.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Area_size",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            },
+            "axis": {
+                "title": "Store Area Size (Square Meters)"
+            }
+        },
+        "y": {
+            "field": "Number_of_product_category",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            },
+            "axis": {
+                "title": "Number of Product Categories"
+            }
+        },
+        "size": {
+            "field": "Ranking",
+            "type": "ordinal",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            },
+            "legend": {
+                "title": "Ranking"
+            }
+        }
+    }
+}

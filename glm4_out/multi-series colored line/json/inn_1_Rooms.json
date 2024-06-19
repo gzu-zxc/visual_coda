@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the base price of rooms by style of decor.",
+    "data": {
+        "url": "spider_csv/inn_1_Rooms.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "RoomId",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "basePrice",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "color": {
+            "field": "decor",
+            "type": "nominal",
+            "sort": [
+                "modern",
+                "traditional"
+            ]
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "basePrice",
+                    "as": "basePrice"
+                }
+            ],
+            "groupby": [
+                "RoomId",
+                "decor"
+            ]
+        }
+    ]
+}

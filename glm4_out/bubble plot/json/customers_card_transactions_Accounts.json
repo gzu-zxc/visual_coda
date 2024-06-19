@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the count of account types by account and customer IDs.",
+    "data": {
+        "url": "spider_csv/customers_card_transactions_Accounts.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "account_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "customer_id",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "other_account_details",
+            "type": "quantitative"
+        }
+    }
+}

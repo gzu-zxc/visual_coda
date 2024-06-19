@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the age distribution of school bus drivers by home city and political party.",
+    "data": {
+        "url": "spider_csv/school_bus_driver.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Home_city",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Party",
+            "type": "nominal"
+        }
+    }
+}

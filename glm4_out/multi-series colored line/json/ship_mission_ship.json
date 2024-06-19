@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the tonnage of ships by type and nationality.",
+    "data": {
+        "url": "spider_csv/ship_mission_ship.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Tonnage",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Nationality",
+            "type": "nominal"
+        }
+    }
+}

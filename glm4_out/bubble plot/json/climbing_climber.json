@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing climbers' points and times.",
+    "data": {
+        "url": "spider_csv/climbing_climber.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Time",
+            "type": "temporal",
+            "timeUnit": "hoursminutesseconds"
+        },
+        "size": {
+            "field": "Points",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Climber_ID",
+            "type": "nominal"
+        }
+    }
+}

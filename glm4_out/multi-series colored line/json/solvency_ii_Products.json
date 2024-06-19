@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing product prices by type code.",
+    "data": {
+        "url": "spider_csv/solvency_ii_Products.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Product_Type_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Product_Price",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Product_Type_Code",
+            "type": "nominal"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

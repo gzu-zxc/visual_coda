@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the height and number of floors of Tampa's tallest buildings.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/protein_institute_building.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Height_feet",
+            "type": "quantitative",
+            "title": "Height (feet)"
+        },
+        "y": {
+            "field": "Floors",
+            "type": "quantitative",
+            "title": "Number of Floors"
+        },
+        "size": {
+            "field": "Floors",
+            "type": "quantitative",
+            "title": "Number of Floors"
+        },
+        "color": {
+            "field": "Name",
+            "type": "nominal",
+            "title": "Building Name"
+        }
+    }
+}

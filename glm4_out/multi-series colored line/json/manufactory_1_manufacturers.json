@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the revenue of various manufacturers.",
+    "data": {
+        "url": "spider_csv/manufactory_1_manufacturers.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal",
+            "sort": {
+                "field": "Name"
+            }
+        },
+        "y": {
+            "field": "Revenue",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Code",
+            "type": "nominal"
+        }
+    }
+}

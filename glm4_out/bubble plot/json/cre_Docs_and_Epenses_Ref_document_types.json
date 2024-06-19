@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the document types and their descriptions, sized by the number of occurrences.",
+    "data": {
+        "url": "spider_csv/cre_Docs_and_Epenses_Ref_document_types.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Document_Type_Name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Document_Type_Description",
+            "type": "ordinal",
+            "sort": "none"
+        },
+        "size": {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "as": "count"
+                }
+            ],
+            "groupby": [
+                "Document_Type_Code"
+            ]
+        }
+    ]
+}

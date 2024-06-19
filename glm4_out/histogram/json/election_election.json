@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of candidates first elected in each year.",
+    "data": {
+        "url": "spider_csv/election_election.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "First_Elected",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year First Elected"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "axis": {
+                "title": "Number of Candidates"
+            }
+        }
+    },
+    "transform": [
+        {
+            "bin": {
+                "field": "First_Elected",
+                "timeUnit": "year"
+            },
+            "as": "bin_First_Elected"
+        }
+    ]
+}

@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of documents present in each location over time.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Tracking_DB_Document_locations.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date_in_Location_From",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "axis": {
+                "title": "Date"
+            }
+        },
+        "y": {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "axis": {
+                "title": "Number of Documents"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Document_ID",
+            "as": "count"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "count",
+                    "as": "count"
+                }
+            ],
+            "groupby": [
+                "Date_in_Location_From"
+            ]
+        }
+    ]
+}

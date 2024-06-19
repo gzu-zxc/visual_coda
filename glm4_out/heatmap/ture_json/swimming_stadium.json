@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of swimming stadiums by the year they were opened and their capacity.",
+    "data": {
+        "url": "spider_csv/swimming_stadium.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Opening_year",
+            "type": "ordinal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Capacity",
+            "type": "ordinal",
+            "bin": true
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

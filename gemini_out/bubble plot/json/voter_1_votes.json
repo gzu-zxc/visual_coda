@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualization showing the number of votes cast per state.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/voter_1_votes.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "state",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "contestant_number",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count()",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "state",
+            "type": "nominal"
+        }
+    }
+}

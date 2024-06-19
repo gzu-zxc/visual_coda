@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the share and rating percentages of television channels.",
+    "data": {
+        "url": "spider_csv/program_share_channel.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "y": [
+            {
+                "field": "Share_in_percent",
+                "type": "quantitative"
+            },
+            {
+                "field": "Rating_in_percent",
+                "type": "quantitative"
+            }
+        ],
+        "color": {
+            "field": "metric",
+            "type": "nominal",
+            "legend": {
+                "title": "Metric"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Share_in_percent ? 'Share' : 'Rating'",
+            "as": "metric"
+        }
+    ]
+}

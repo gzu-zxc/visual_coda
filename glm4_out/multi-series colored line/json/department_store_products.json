@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing product prices by product type.",
+    "data": {
+        "url": "spider_csv/department_store_products.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "product_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "product_price",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "product_type_code",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            }
+        }
+    },
+    "config": {
+        "axis": {
+            "y": {
+                "title": "Product Price"
+            }
+        }
+    }
+}

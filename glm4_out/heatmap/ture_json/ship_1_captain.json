@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap chart showing the distribution of ship captains' age by rank.",
+    "data": {
+        "url": "spider_csv/ship_1_captain.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank",
+            "type": "ordinal"
+        },
+        "y": {
+            "bin": {
+                "maxbins": 10
+            },
+            "field": "age",
+            "type": "quantitative"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of Miles per gallon (MPG) in the AutomotiveEfficiencyDataset.",
+    "data": {
+        "url": "spider_csv/car_1_CARS_DATA.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "MPG",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

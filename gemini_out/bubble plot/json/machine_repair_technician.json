@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the technician's age and starting year, with the size of the bubble representing the number of technicians in each group.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/machine_repair_technician.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Starting_Year",
+            "type": "quantitative",
+            "title": "Starting Year"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative",
+            "title": "Age"
+        },
+        "size": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Technicians"
+        },
+        "color": {
+            "field": "Team",
+            "type": "nominal",
+            "title": "Team"
+        }
+    }
+}

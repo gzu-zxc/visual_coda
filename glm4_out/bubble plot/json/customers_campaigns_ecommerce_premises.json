@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the count of premise_id by premises_type.",
+    "data": {
+        "url": "spider_csv/customers_campaigns_ecommerce_premises.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "premise_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "premises_type",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "count_premise_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "color": {
+            "field": "premises_type",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.premise_id",
+            "as": "count_premise_id"
+        }
+    ]
+}

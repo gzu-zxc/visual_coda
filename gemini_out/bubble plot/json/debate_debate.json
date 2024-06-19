@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of audience members at each debate venue, sized by the debate date.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/debate_debate.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Venue",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Num_of_Audience",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the total gross earnings of films by directors across different studios.",
+    "data": {
+        "url": "spider_csv/film_rank_film.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Director",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Studio",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "Gross_in_dollar",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    }
+}

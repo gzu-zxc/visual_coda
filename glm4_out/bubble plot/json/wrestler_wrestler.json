@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the reign duration of wrestlers.",
+    "data": {
+        "url": "spider_csv/wrestler_wrestler.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Reign",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Days_held",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Name",
+                "type": "nominal"
+            }
+        ]
+    }
+}

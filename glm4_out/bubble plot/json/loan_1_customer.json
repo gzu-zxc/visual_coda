@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing account balance, number of loans, and credit score of customers.",
+    "data": {
+        "url": "spider_csv/loan_1_customer.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "acc_bal",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "credit_score",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "no_of_loans",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "acc_type",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing web client accelerators across different operating systems.",
+    "data": {
+        "url": "spider_csv/browser_web_web_client_accelerator.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Operating_system",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Client",
+            "type": "nominal",
+            "sort": [
+                "user",
+                "End User, ISP",
+                "End user, ISP"
+            ]
+        }
+    }
+}

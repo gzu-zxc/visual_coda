@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the frequency of soccer matches played over time.",
+    "data": {
+        "url": "spider_csv/city_record_MATCH.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Month"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "axis": {
+                "title": "Number of Matches"
+            }
+        }
+    }
+}

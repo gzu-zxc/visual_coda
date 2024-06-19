@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing museum visitors' age vs level of membership, with bubble size representing unique visitor ID.",
+    "data": {
+        "url": "spider_csv/museum_visit_visitor.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Level_of_membership",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "ID",
+            "type": "quantitative"
+        }
+    }
+}

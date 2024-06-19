@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between Apps, Tries and Points for each player",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/sports_competition_player.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Apps",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            }
+        },
+        "y": {
+            "field": "Tries",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            }
+        },
+        "size": {
+            "field": "Points",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Position",
+            "type": "nominal"
+        }
+    },
+    "width": 400,
+    "height": 300
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of primary and non-primary affiliations across different departments.",
+    "data": {
+        "url": "spider_csv/hospital_1_affiliated_with.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "PrimaryAffiliation",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "Department",
+            "type": "ordinal"
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

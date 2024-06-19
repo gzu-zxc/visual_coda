@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the opening years of various wedding churches with the size of the bubble representing the Church_ID.",
+    "data": {
+        "url": "spider_csv/wedding_Church.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Date",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "size": {
+            "field": "Church_ID",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Name",
+                "type": "nominal"
+            }
+        ]
+    }
+}

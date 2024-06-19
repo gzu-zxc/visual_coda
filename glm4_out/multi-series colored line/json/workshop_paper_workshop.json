@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the workshops over time.",
+    "data": {
+        "url": "spider_csv/workshop_paper_workshop.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "y": {
+            "field": "Workshop_ID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Workshop_ID",
+            "type": "nominal"
+        },
+        "group": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "detail": {
+            "field": "Workshop_ID",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the number of credits and the department offering the course.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_2_course.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "credits",
+            "type": "quantitative",
+            "title": "Credits"
+        },
+        "y": {
+            "field": "dept_name",
+            "type": "nominal",
+            "title": "Department"
+        },
+        "size": {
+            "field": "course_id",
+            "type": "quantitative",
+            "title": "Number of Courses"
+        }
+    }
+}

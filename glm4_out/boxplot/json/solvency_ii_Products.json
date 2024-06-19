@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of product prices by product type code.",
+    "data": {
+        "url": "spider_csv/solvency_ii_Products.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Product_Type_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Product_Price",
+            "type": "quantitative"
+        }
+    }
+}

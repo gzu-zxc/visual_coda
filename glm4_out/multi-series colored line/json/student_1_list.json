@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing classroom numbers by grade level, colored by students' last names.",
+    "data": {
+        "url": "spider_csv/student_1_list.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Grade",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Classroom",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "LastName",
+            "type": "nominal"
+        }
+    }
+}

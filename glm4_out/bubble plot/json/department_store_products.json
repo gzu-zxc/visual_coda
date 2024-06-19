@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing product price and type code in a department store.",
+    "data": {
+        "url": "spider_csv/department_store_products.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "product_type_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "product_price",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "product_id",
+            "type": "quantitative"
+        }
+    }
+}

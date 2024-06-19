@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the age of journalists and the number of years they have been working.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/news_report_journalist.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "title": "Age"
+        },
+        "y": {
+            "field": "Years_working",
+            "type": "quantitative",
+            "title": "Years Working"
+        },
+        "size": {
+            "field": "journalist_ID",
+            "type": "quantitative",
+            "title": "Number of Journalists"
+        }
+    }
+}

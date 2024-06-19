@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of beds, maximum occupancy, and base price of the rooms in an inn.",
+    "data": {
+        "url": "spider_csv/inn_1_Rooms.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "beds",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "maxOccupancy",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "basePrice",
+            "type": "quantitative",
+            "scale": {
+                "type": "sqrt"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "RoomId",
+                "type": "nominal"
+            },
+            {
+                "field": "roomName",
+                "type": "nominal"
+            },
+            {
+                "field": "bedType",
+                "type": "nominal"
+            },
+            {
+                "field": "basePrice",
+                "type": "quantitative"
+            },
+            {
+                "field": "decor",
+                "type": "nominal"
+            }
+        ]
+    }
+}

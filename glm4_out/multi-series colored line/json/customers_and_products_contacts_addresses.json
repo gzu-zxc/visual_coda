@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing zip codes across different cities and states.",
+    "data": {
+        "url": "spider_csv/customers_and_products_contacts_addresses.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "city",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "zip_postcode",
+            "type": "quantitative",
+            "sort": "ascending"
+        },
+        "color": {
+            "field": "state_province_county",
+            "type": "nominal"
+        }
+    }
+}

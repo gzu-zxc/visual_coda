@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between ship type, nationality, and tonnage.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/ship_mission_ship.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Nationality",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Tonnage",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Type",
+            "type": "nominal"
+        }
+    }
+}

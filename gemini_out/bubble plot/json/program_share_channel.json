@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualization representing the relationship between share in percent and rating in percent for different TV channels.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/program_share_channel.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Share_in_percent",
+            "type": "quantitative",
+            "title": "Share in Percent"
+        },
+        "y": {
+            "field": "Rating_in_percent",
+            "type": "quantitative",
+            "title": "Rating in Percent"
+        },
+        "size": {
+            "field": "Share_in_percent",
+            "type": "quantitative",
+            "title": "Share in Percent"
+        },
+        "color": {
+            "field": "Owner",
+            "type": "nominal",
+            "title": "Owner"
+        }
+    }
+}

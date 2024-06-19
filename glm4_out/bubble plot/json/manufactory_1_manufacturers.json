@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing manufacturers' revenue and headquarters location.",
+    "data": {
+        "url": "spider_csv/manufactory_1_manufacturers.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "text": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Revenue",
+            "type": "quantitative",
+            "scale": {
+                "type": "log"
+            }
+        },
+        "longitude": {
+            "field": "Headquarter",
+            "type": "geojson",
+            "longitude": true
+        },
+        "latitude": {
+            "field": "Headquarter",
+            "type": "geojson",
+            "latitude": true
+        }
+    }
+}

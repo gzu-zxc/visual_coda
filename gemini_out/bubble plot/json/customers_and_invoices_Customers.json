@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of customers in each state_county_province.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/customers_and_invoices_Customers.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "state_county_province",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "customer_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "size": {
+            "field": "customer_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of races held each year.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/formula_1_races.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "round",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "count()",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "type": "linear",
+                "range": [
+                    1,
+                    50
+                ]
+            }
+        },
+        "tooltip": [
+            {
+                "field": "year",
+                "type": "quantitative"
+            },
+            {
+                "field": "round",
+                "type": "quantitative"
+            },
+            {
+                "field": "count()",
+                "type": "quantitative",
+                "aggregate": "count"
+            }
+        ]
+    }
+}

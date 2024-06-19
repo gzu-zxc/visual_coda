@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the distribution of highschoolers by grade level.",
+    "data": {
+        "url": "spider_csv/network_1_Highschooler.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "grade",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "ID",
+            "type": "nominal"
+        }
+    }
+}

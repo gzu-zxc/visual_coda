@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of battles per date and color-coded by the outcome of the battles.",
+    "data": {
+        "url": "spider_csv/battle_death_battle.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "color": {
+            "field": "result",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "id",
+            "type": "quantitative"
+        }
+    }
+}

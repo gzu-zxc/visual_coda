@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing age distribution across different cities.",
+    "data": {
+        "url": "spider_csv/network_2_Person.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "age",
+            "timeUnit": "year",
+            "type": "temporal"
+        },
+        "sort": {
+            "field": [
+                "name",
+                "city"
+            ]
+        }
+    }
+}

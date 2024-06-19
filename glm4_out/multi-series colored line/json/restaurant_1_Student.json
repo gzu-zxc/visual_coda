@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the distribution of students by age and gender.",
+    "data": {
+        "url": "spider_csv/restaurant_1_Student.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "StuID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Sex",
+            "type": "nominal"
+        }
+    },
+    "layer": [
+        {
+            "mark": {
+                "type": "point",
+                "filled": true
+            }
+        }
+    ]
+}

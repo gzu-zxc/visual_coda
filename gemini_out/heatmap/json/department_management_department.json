@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the relationship between department creation year and budget.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/department_management_department.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Creation",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 20
+            }
+        },
+        "y": {
+            "field": "Budget_in_Billions",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 20
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

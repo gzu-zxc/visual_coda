@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of products per type code and their average price.",
+    "data": {
+        "url": "spider_csv/solvency_ii_Products.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Product_Type_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Product_Price",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Product_ID",
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

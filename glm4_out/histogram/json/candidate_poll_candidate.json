@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of support rates for candidates.",
+    "data": {
+        "url": "spider_csv/candidate_poll_candidate.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Support_rate",
+            "type": "quantitative",
+            "bin": true,
+            "axis": {
+                "title": "Support Rate"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of Polls"
+            }
+        }
+    }
+}

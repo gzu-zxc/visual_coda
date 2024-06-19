@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot of share transactions per investor, grouped by investor details.",
+    "data": {
+        "url": "spider_csv/tracking_share_transactions_INVESTORS.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "investor_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Investor_details",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "investor_id",
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

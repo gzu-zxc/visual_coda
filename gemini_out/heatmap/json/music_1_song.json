@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the relationship between artist_name and genre_is, based on the average rating.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/music_1_song.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "artist_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "genre_is",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "mean",
+            "field": "rating",
+            "type": "quantitative"
+        }
+    }
+}

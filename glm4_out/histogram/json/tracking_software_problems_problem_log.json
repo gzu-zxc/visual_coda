@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of log entry dates over time.",
+    "data": {
+        "url": "spider_csv/tracking_software_problems_problem_log.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "log_entry_date",
+            "type": "temporal",
+            "timeUnit": {
+                "unit": "yearmonthdate",
+                "step": 1
+            },
+            "axis": {
+                "title": "Log Entry Date"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "axis": {
+                "title": "Number of Log Entries"
+            }
+        }
+    }
+}

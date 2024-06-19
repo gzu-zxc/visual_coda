@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of music file sizes based on their duration.",
+    "data": {
+        "url": "spider_csv/music_1_files.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "file_size",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "y": {
+            "field": "duration",
+            "type": "temporal",
+            "timeUnit": "interval",
+            "bin": {
+                "maxbins": 50
+            },
+            "aggregate": "count"
+        }
+    }
+}

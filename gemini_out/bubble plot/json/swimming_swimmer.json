@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the time taken for 100 meters and the time taken for 700 meters.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/swimming_swimmer.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "meter_100",
+            "type": "quantitative",
+            "title": "Time for 100 meters"
+        },
+        "y": {
+            "field": "meter_700",
+            "type": "quantitative",
+            "title": "Time for 700 meters"
+        },
+        "size": {
+            "field": "meter_200",
+            "type": "quantitative",
+            "title": "Time for 200 meters"
+        },
+        "color": {
+            "field": "Nationality",
+            "type": "nominal",
+            "title": "Nationality"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualizing the relationship between the amount of transaction and share count, with size representing the number of transactions.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/tracking_share_transactions_TRANSACTIONS.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "amount_of_transaction",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "share_count",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

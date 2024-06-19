@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of document type descriptions.",
+    "data": {
+        "url": "spider_csv/cre_Docs_and_Epenses_Ref_document_types.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Document_Type_Description",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

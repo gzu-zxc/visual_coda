@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of courses and total credits per department.",
+    "data": {
+        "url": "spider_csv/college_2_course.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dept_name",
+            "type": "nominal",
+            "sort": {
+                "field": "sum_credits",
+                "op": "sum",
+                "order": "descending"
+            }
+        },
+        "y": {
+            "field": "count_course_id",
+            "type": "quantitative",
+            "title": "Number of Courses"
+        },
+        "size": {
+            "field": "sum_credits",
+            "type": "quantitative",
+            "title": "Total Credits"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "course_id",
+                    "as": "count_course_id"
+                },
+                {
+                    "op": "sum",
+                    "field": "credits",
+                    "as": "sum_credits"
+                }
+            ],
+            "groupby": [
+                "dept_name"
+            ]
+        }
+    ]
+}

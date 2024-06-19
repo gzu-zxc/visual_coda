@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the average salary of instructors in each department.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_2_instructor.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dept_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "name",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "average",
+            "field": "salary",
+            "type": "quantitative"
+        }
+    }
+}

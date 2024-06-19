@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing market rate of furniture items based on the number of components.",
+    "data": {
+        "url": "spider_csv/manufacturer_furniture.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Market_Rate",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Num_of_Component",
+            "type": "quantitative"
+        }
+    }
+}

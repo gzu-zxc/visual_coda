@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of catalogs published by each publisher.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/product_catalog_Catalogs.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "catalog_publisher",
+            "type": "nominal"
+        },
+        "y": {
+            "aggregate": "count()",
+            "field": "catalog_id",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "count()",
+            "field": "catalog_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "catalog_publisher",
+            "type": "nominal"
+        }
+    },
+    "width": 400,
+    "height": 300
+}

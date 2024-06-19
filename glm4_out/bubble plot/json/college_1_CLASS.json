@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the class sections for different course codes.",
+    "data": {
+        "url": "spider_csv/college_1_CLASS.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CRS_CODE",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "CLASS_SECTION",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "CLASS_CODE",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot of account balances",
+    "data": {
+        "url": "spider_csv/loan_1_customer.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "acc_type",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "acc_bal",
+            "type": "quantitative"
+        }
+    }
+}

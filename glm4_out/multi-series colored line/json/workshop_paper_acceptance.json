@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the acceptance status of papers across different workshops.",
+    "data": {
+        "url": "spider_csv/workshop_paper_acceptance.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Workshop_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        "color": {
+            "field": "Result",
+            "type": "nominal"
+        },
+        "detail": {
+            "field": "Submission_ID",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Submission_ID",
+                    "as": "count"
+                }
+            ],
+            "groupby": [
+                "Workshop_ID",
+                "Result"
+            ]
+        }
+    ]
+}

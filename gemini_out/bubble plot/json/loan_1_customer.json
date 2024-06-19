@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between account balance and number of loans, with the size of the bubble representing credit score.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/loan_1_customer.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "acc_bal",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "no_of_loans",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "credit_score",
+            "type": "quantitative"
+        }
+    }
+}

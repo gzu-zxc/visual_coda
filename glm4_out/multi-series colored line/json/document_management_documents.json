@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the access count of documents by type and structure.",
+    "data": {
+        "url": "spider_csv/document_management_documents.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "document_type_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "access_count",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        "color": {
+            "field": "document_structure_code",
+            "type": "ordinal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "access_count",
+                    "as": "access_count"
+                }
+            ],
+            "groupby": [
+                "document_type_code",
+                "document_structure_code"
+            ]
+        }
+    ]
+}

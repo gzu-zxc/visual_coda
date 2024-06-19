@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the order date and planned delivery date, with the size of the bubble representing the number of bookings.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Drama_Workshop_Groups_BOOKINGS.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Order_Date",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "Planned_Delivery_Date",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "size": {
+            "field": "Booking_ID",
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

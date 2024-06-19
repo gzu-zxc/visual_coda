@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the capacity and opening year of swimming stadiums across different cities and countries.",
+    "data": {
+        "url": "spider_csv/swimming_stadium.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "City",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Country",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Capacity",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Opening_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        }
+    },
+    "transform": [
+        {
+            "bin": {
+                "field": "Opening_year",
+                "timeUnit": "year",
+                "as": "bin_Opening_year"
+            }
+        },
+        {
+            "calculate": "datum.bin_Opening_year.start",
+            "as": "color_year"
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the distribution of teachers by gender and address identifier.",
+    "data": {
+        "url": "spider_csv/behavior_monitoring_Teachers.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "teacher_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "gender",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "address_id",
+            "type": "quantitative"
+        }
+    }
+}

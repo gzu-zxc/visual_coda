@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of incidents by type and date.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/behavior_monitoring_Behavior_Incident.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_incident_start",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Date"
+        },
+        "y": {
+            "field": "incident_type_code",
+            "type": "nominal",
+            "title": "Incident Type"
+        },
+        "size": {
+            "field": "incident_id",
+            "type": "quantitative",
+            "aggregate": "count",
+            "title": "Number of Incidents"
+        }
+    }
+}

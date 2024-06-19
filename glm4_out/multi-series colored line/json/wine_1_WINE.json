@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the average price of wines by year, colored by grape type.",
+    "data": {
+        "url": "spider_csv/wine_1_WINE.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "avg_Price",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Grape",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "groupby": [
+                "Grape"
+            ],
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Price",
+                    "as": "avg_Price"
+                }
+            ]
+        },
+        {
+            "sort": {
+                "field": "Year"
+            }
+        }
+    ]
+}

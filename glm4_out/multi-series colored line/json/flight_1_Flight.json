@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing flight distances between origins and destinations.",
+    "data": {
+        "url": "spider_csv/flight_1_Flight.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "origin",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "distance",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "destination",
+            "type": "nominal"
+        }
+    }
+}

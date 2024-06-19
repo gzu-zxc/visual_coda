@@ -1,0 +1,18 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of product prices.",
+    "data": {
+        "url": "spider_csv/customers_and_products_contacts_products.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "product_price",
+            "type": "quantitative",
+            "bin": true
+        }
+    }
+}

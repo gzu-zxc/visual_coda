@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing employee age distribution.",
+    "data": {
+        "url": "spider_csv/employee_hire_evaluation_employee.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Employee_ID",
+            "type": "nominal"
+        }
+    }
+}

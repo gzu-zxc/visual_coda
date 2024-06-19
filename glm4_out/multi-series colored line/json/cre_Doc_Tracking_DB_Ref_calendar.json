@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing document tracking reference calendar information.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Tracking_DB_Ref_calendar.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Calendar_Date",
+            "type": "temporal",
+            "timeUnit": [
+                "year",
+                "month"
+            ]
+        },
+        "y": {
+            "field": "Day_Number",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Day_Number",
+            "type": "ordinal"
+        }
+    },
+    "groupby": [
+        "Day_Number"
+    ]
+}

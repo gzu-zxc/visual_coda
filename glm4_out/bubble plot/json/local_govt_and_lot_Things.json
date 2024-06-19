@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot showing the count of items by type and service satisfaction level.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_Things.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type_of_Thing_Code",
+            "type": "nominal",
+            "axis": {
+                "title": "Type of Item"
+            }
+        },
+        "y": {
+            "field": "service_details",
+            "type": "nominal",
+            "axis": {
+                "title": "Service Satisfaction"
+            }
+        },
+        "size": {
+            "field": "thing_id",
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    }
+}

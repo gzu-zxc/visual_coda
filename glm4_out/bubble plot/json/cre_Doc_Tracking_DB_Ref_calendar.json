@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of document tracking instances per day number within a week.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Tracking_DB_Ref_calendar.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Calendar_Date",
+            "type": "temporal",
+            "timeUnit": "date"
+        },
+        "y": {
+            "field": "Day_Number",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "ID",
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

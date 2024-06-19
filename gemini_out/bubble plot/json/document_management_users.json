@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of users in each role",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/document_management_users.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "role_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "user_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "size": {
+            "field": "user_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

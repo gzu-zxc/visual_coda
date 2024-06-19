@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of items by satisfaction level.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_Things.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "thing_id",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "service_details",
+            "type": "nominal"
+        }
+    }
+}

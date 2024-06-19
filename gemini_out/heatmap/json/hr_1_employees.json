@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the distribution of salaries across different job titles.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/hr_1_employees.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "JOB_ID",
+            "type": "nominal",
+            "title": "Job Title"
+        },
+        "y": {
+            "field": "DEPARTMENT_ID",
+            "type": "nominal",
+            "title": "Department ID"
+        },
+        "color": {
+            "aggregate": "mean",
+            "field": "SALARY",
+            "type": "quantitative",
+            "title": "Average Salary"
+        }
+    }
+}

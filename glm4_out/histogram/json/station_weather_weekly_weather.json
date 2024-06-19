@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of high temperatures with colors representing precipitation levels.",
+    "data": {
+        "url": "spider_csv/station_weather_weekly_weather.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "high_temperature",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "precipitation",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "bin": true
+        }
+    }
+}

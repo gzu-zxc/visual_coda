@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart visualizing the relationship between the focal length of the lens and the maximum aperture, with the size of the bubbles representing the number of lenses with that combination.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/mountain_photos_camera_lens.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "focal_length_mm",
+            "type": "quantitative",
+            "title": "Focal Length (mm)"
+        },
+        "y": {
+            "field": "max_aperture",
+            "type": "quantitative",
+            "title": "Maximum Aperture"
+        },
+        "size": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Lenses"
+        }
+    }
+}

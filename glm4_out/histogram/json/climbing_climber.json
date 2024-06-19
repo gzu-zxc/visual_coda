@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of climber points binned by time taken to complete the climb.",
+    "data": {
+        "url": "spider_csv/climbing_climber.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Time",
+            "type": "temporal",
+            "timeUnit": "hoursminutesseconds",
+            "bin": {
+                "maxbins": 60
+            }
+        },
+        "y": {
+            "field": "Points",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of total invoice amounts per customer.",
+    "data": {
+        "url": "spider_csv/store_1_invoices.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "customer_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "total",
+            "type": "quantitative",
+            "aggregate": "box-plot"
+        }
+    }
+}

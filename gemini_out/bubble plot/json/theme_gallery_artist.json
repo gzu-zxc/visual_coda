@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the age of artists and their year they joined the gallery, sized by the number of artists.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/theme_gallery_artist.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year_Join",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Artist_ID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of document types with their corresponding codes and names, color-encoded by their descriptions.",
+    "data": {
+        "url": "spider_csv/cre_Docs_and_Epenses_Ref_document_types.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Document_Type_Code",
+            "type": "nominal",
+            "axis": {
+                "title": "Document Type Code"
+            }
+        },
+        "y": {
+            "field": "Document_Type_Name",
+            "type": "nominal",
+            "axis": {
+                "title": "Document Type Name"
+            }
+        },
+        "color": {
+            "field": "Document_Type_Description",
+            "type": "ordinal",
+            "scale": {
+                "scheme": "category10"
+            },
+            "legend": {
+                "title": "Description"
+            }
+        }
+    }
+}

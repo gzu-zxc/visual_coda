@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of different allergies categorized by their type.",
+    "data": {
+        "url": "spider_csv/allergy_1_Allergy_type.csv.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Allergy",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "Allergy",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "AllergyType",
+            "type": "nominal"
+        }
+    }
+}

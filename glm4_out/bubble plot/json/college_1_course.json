@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing college courses credits by department.",
+    "data": {
+        "url": "spider_csv/college_1_course.csv.csv"
+    },
+    "mark": {
+        "type": "point",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "CRS_CREDIT",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "DEPT_CODE",
+            "type": "nominal"
+        }
+    }
+}

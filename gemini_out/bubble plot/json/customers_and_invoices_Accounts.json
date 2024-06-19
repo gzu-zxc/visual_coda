@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the account name and the date the account was opened, with the size of the bubbles representing the customer ID.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/customers_and_invoices_Accounts.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "account_name",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "date_account_opened",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        },
+        "size": {
+            "field": "customer_id",
+            "type": "quantitative"
+        }
+    }
+}

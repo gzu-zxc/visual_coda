@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the Package_Version for different Devices categorized by Software_Platform.",
+    "data": {
+        "url": "spider_csv/device_device.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Device",
+            "type": "nominal",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "Package_Version",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "Software_Platform",
+            "type": "nominal"
+        }
+    }
+}

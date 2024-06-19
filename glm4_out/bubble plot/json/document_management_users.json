@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing user login status by user ID and role code.",
+    "data": {
+        "url": "spider_csv/document_management_users.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "user_id",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear"
+            }
+        },
+        "y": {
+            "field": "user_login",
+            "type": "nominal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "color": {
+            "field": "role_code",
+            "type": "nominal"
+        }
+    }
+}

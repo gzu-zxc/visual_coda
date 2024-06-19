@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the amount of money requested by each company, with the size of the bubble representing the amount requested.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/entrepreneur_entrepreneur.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Company",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Money_Requested",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Money_Requested",
+            "type": "quantitative"
+        }
+    }
+}

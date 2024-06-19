@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between membership amount and open year of each shop branch.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/shop_membership_branch.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_year",
+            "type": "quantitative",
+            "title": "Year the branch was opened"
+        },
+        "y": {
+            "field": "membership_amount",
+            "type": "quantitative",
+            "title": "Membership amount"
+        },
+        "size": {
+            "field": "membership_amount",
+            "type": "quantitative",
+            "title": "Membership Amount"
+        },
+        "color": {
+            "field": "City",
+            "type": "nominal",
+            "title": "City"
+        }
+    }
+}

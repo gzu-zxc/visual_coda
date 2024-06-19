@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the number of credits a course has and the department number, sized by the number of instructors.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_3_COURSE.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Credits",
+            "type": "quantitative",
+            "title": "Number of Credits"
+        },
+        "y": {
+            "field": "DNO",
+            "type": "quantitative",
+            "title": "Department Number"
+        },
+        "size": {
+            "field": "Instructor",
+            "type": "quantitative",
+            "title": "Number of Instructors"
+        }
+    }
+}

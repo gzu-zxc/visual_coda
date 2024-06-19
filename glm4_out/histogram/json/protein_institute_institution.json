@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of student enrollments across various educational institutions.",
+    "data": {
+        "url": "spider_csv/protein_institute_institution.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "bin": true
+        },
+        "tooltip": [
+            {
+                "field": "Institution",
+                "type": "nominal"
+            }
+        ]
+    }
+}

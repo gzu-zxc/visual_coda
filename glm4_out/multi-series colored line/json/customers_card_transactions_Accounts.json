@@ -1,0 +1,56 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing card transactions per account.",
+    "data": {
+        "url": "spider_csv/customers_card_transactions_Accounts.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "transaction_aggregate",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        "y": {
+            "field": "account_id",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "account_name",
+            "type": "nominal"
+        },
+        "detail": {
+            "field": "other_account_details",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.transaction_aggregate",
+            "as": "transaction_aggregate"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "transaction_amount",
+                    "as": "transaction_aggregate"
+                }
+            ],
+            "groupby": [
+                "account_id",
+                "account_name",
+                "other_account_details"
+            ]
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of Amount_Settled compared to the Amount_Claimed.",
+    "data": {
+        "url": "spider_csv/insurance_policies_Settlements.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Amount_Settled",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "y": {
+            "field": "Amount_Claimed",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

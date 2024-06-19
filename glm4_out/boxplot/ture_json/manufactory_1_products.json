@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot of product prices for Manufactory 1.",
+    "data": {
+        "url": "spider_csv/manufactory_1_products.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Price",
+            "type": "quantitative"
+        }
+    }
+}

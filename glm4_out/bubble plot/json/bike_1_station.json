@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of docks available at various bike stations based on their geolocation.",
+    "data": {
+        "url": "spider_csv/bike_1_station.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "long",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "lat",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "dock_count",
+            "type": "quantitative"
+        }
+    }
+}

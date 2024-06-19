@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot showing the duration between publication and latest revision of product catalogs.",
+    "data": {
+        "url": "spider_csv/product_catalog_Catalogs.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "catalog_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "catalog_name",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "date_of_latest_revision_year",
+            "type": "quantitative",
+            "scale": {
+                "domain": [
+                    0,
+                    5
+                ]
+            },
+            "title": "Years from Publication to Revision"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "year(datum.date_of_publication)",
+            "as": "date_of_publication_year"
+        },
+        {
+            "calculate": "year(datum.date_of_latest_revision)",
+            "as": "date_of_latest_revision_year"
+        },
+        {
+            "calculate": "datum.date_of_latest_revision_year - datum.date_of_publication_year",
+            "as": "years_diff"
+        }
+    ]
+}

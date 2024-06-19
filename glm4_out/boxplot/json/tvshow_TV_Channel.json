@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of TV shows by their series name, distinguished by whether they are in high definition or not.",
+    "data": {
+        "url": "spider_csv/tvshow_TV_Channel.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "series_name",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Hight_definition_TV",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of pet ages, color-coded by weight.",
+    "data": {
+        "url": "spider_csv/pets_1_pets.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "pet_age",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "weight",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

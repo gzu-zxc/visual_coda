@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the age of each editor over their unique identifier.",
+    "data": {
+        "url": "spider_csv/journal_committee_editor.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Editor_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Name",
+            "type": "nominal"
+        }
+    },
+    "sort": {
+        "field": "Editor_ID"
+    }
+}

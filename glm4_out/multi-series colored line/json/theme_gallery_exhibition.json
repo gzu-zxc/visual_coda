@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the average ticket price over the years for different exhibition themes.",
+    "data": {
+        "url": "spider_csv/theme_gallery_exhibition.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Ticket_Price",
+            "type": "quantitative",
+            "aggregate": "average"
+        },
+        "color": {
+            "field": "Theme",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "sort": {
+                "field": "Year"
+            }
+        }
+    ]
+}

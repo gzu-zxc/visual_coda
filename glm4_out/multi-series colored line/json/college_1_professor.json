@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the office extensions of professors by department and employee number.",
+    "data": {
+        "url": "spider_csv/college_1_professor.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "DEPT_CODE",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "PROF_EXTENSION",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "color": {
+            "field": "EMP_NUM",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "groupby": [
+                "DEPT_CODE",
+                "EMP_NUM"
+            ],
+            "aggregate": {
+                "PROF_EXTENSION": "mean"
+            }
+        }
+    ]
+}

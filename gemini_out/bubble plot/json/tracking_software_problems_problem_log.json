@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot that shows the count of problems by category and status, sized by the number of problems",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/tracking_software_problems_problem_log.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "problem_category_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "problem_status_code",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "problem_log_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "problem_category_code",
+            "type": "nominal"
+        }
+    }
+}

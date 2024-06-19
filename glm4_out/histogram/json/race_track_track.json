@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of race track seating capacities.",
+    "data": {
+        "url": "spider_csv/race_track_track.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Seating",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "Track_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

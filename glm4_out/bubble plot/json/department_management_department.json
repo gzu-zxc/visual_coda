@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the budget, number of employees, and ranking of various departments.",
+    "data": {
+        "url": "spider_csv/department_management_department.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Ranking",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Budget_in_Billions",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Num_Employees",
+            "type": "quantitative"
+        }
+    }
+}

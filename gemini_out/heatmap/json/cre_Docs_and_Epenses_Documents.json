@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of documents by document type and project ID.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Docs_and_Epenses_Documents.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Project_ID",
+            "type": "nominal",
+            "title": "Project ID"
+        },
+        "y": {
+            "field": "Document_Type_Code",
+            "type": "nominal",
+            "title": "Document Type Code"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Count"
+        }
+    }
+}

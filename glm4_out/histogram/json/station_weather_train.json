@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of trains departing at different times of the day.",
+    "data": {
+        "url": "spider_csv/station_weather_train.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "time",
+            "type": "temporal",
+            "timeUnit": "hoursminutes"
+        },
+        "y": {
+            "field": "train_number",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

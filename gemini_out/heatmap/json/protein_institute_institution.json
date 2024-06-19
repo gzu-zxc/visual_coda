@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the relationship between founding year and enrollment of protein institutes.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/protein_institute_institution.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Founded",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 20
+            }
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 20
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

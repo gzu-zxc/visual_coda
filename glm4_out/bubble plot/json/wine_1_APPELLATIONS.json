@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of wine appellations per area, with size indicating whether they are designated as American Viticultural Areas (AVA).",
+    "data": {
+        "url": "spider_csv/wine_1_APPELLATIONS.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Area",
+            "type": "nominal",
+            "sort": {
+                "op": "count",
+                "field": "Appelation"
+            }
+        },
+        "y": {
+            "field": "isAVA",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Appelation",
+            "type": "quantitative"
+        }
+    }
+}

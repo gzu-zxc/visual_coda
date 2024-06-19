@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the amount of money paid by customers over time, grouped by payment method.",
+    "data": {
+        "url": "spider_csv/driving_school_Customer_Payments.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "datetime_payment",
+            "type": "temporal",
+            "timeUnit": "monthdate",
+            "axis": {
+                "title": "Payment Date"
+            }
+        },
+        "y": {
+            "field": "amount_payment",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "axis": {
+                "title": "Total Amount Paid"
+            }
+        },
+        "color": {
+            "field": "payment_method_code",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            },
+            "legend": {
+                "title": "Payment Method"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.amount_payment",
+            "as": "amount_payment_sum"
+        },
+        {
+            "groupby": [
+                "datetime_payment",
+                "payment_method_code"
+            ],
+            "aggregate": {
+                "amount_payment_sum": "sum"
+            }
+        }
+    ]
+}

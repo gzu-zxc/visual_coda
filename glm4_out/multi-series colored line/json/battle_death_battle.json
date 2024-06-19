@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of battles per outcome over time.",
+    "data": {
+        "url": "spider_csv/battle_death_battle.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "id"
+        },
+        "color": {
+            "field": "result",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "toDate(datum.date)",
+            "as": "date_formatted"
+        }
+    ]
+}

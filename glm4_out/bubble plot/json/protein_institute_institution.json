@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of students enrolled in educational institutions over time, categorized by type of institution.",
+    "data": {
+        "url": "spider_csv/protein_institute_institution.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "Enrollment",
+            "type": "quantitative"
+        },
+        "x": {
+            "field": "Founded",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "Type",
+            "type": "nominal"
+        }
+    }
+}

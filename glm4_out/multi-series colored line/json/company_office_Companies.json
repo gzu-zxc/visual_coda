@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the sales and profits of various industries.",
+    "data": {
+        "url": "spider_csv/company_office_Companies.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Industry",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "value",
+            "type": "quantitative",
+            "axis": {
+                "title": "Billions of Dollars"
+            }
+        },
+        "color": {
+            "field": "metric",
+            "type": "nominal",
+            "legend": {
+                "title": "Metric"
+            }
+        }
+    },
+    "transform": [
+        {
+            "fold": [
+                "Sales_billion",
+                "Profits_billion"
+            ],
+            "as": [
+                "metric",
+                "value"
+            ]
+        },
+        {
+            "groupby": [
+                "Industry",
+                "metric"
+            ],
+            "aggregate": {
+                "value": [
+                    "mean"
+                ]
+            }
+        }
+    ]
+}

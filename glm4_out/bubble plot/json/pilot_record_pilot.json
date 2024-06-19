@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the age, rank, join year, and position of pilots.",
+    "data": {
+        "url": "spider_csv/pilot_record_pilot.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Join_Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "size": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Join_Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "shape": {
+            "field": "Position",
+            "type": "nominal"
+        }
+    }
+}

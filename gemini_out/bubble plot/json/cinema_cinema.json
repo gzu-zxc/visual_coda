@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the capacity of cinemas across different locations",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cinema_cinema.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Location",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Openning_year",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Capacity",
+            "type": "quantitative"
+        }
+    }
+}

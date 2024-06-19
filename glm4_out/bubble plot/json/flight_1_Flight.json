@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot of flight routes with distance on the x-axis, price on the y-axis, and flight number size.",
+    "data": {
+        "url": "spider_csv/flight_1_Flight.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "distance",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "price",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "flno",
+            "type": "quantitative"
+        }
+    }
+}

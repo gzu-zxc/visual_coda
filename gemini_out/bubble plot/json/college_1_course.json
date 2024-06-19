@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This chart shows the relationship between the number of credits and the department, sized by the course code.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_1_course.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CRS_CREDIT",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "DEPT_CODE",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "CRS_CODE",
+            "type": "nominal"
+        }
+    }
+}

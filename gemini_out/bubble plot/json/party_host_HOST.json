@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the age of party hosts and their nationality.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/party_host_HOST.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "title": "Age"
+        },
+        "y": {
+            "field": "Nationality",
+            "type": "nominal",
+            "title": "Nationality"
+        },
+        "size": {
+            "field": "Age",
+            "type": "quantitative",
+            "title": "Age"
+        },
+        "color": {
+            "field": "Nationality",
+            "type": "nominal",
+            "title": "Nationality"
+        }
+    }
+}

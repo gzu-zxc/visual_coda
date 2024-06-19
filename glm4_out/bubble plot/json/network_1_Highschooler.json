@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing highschoolers' grade levels and unique identifiers.",
+    "data": {
+        "url": "spider_csv/network_1_Highschooler.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "grade",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "ID",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "grade",
+            "type": "quantitative"
+        }
+    }
+}

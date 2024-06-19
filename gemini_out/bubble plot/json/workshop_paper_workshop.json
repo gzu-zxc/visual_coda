@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of workshops held in each venue, with the size of the bubble representing the count.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/workshop_paper_workshop.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Venue",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Workshop_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "size": {
+            "field": "Workshop_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

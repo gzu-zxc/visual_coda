@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of Template_Type_Code across different years.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Doc_Template_Mgt_Templates.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date_Effective_From",
+            "type": "temporal",
+            "timeUnit": "year",
+            "title": "Year"
+        },
+        "y": {
+            "field": "Template_Type_Code",
+            "type": "nominal",
+            "title": "Template Type Code"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Count"
+        }
+    }
+}

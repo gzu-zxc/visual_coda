@@ -1,0 +1,59 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of sports competitions per year and type.",
+    "data": {
+        "url": "spider_csv/sports_competition_competition.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year"
+            }
+        },
+        "y": {
+            "field": "count_Competition_ID",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of Competitions"
+            }
+        },
+        "color": {
+            "field": "Competition_type",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            },
+            "legend": {
+                "title": "Competition Type"
+            }
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Competition_ID",
+                    "as": "count_Competition_ID"
+                }
+            ],
+            "groupby": [
+                "Year",
+                "Competition_type"
+            ]
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

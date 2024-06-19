@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of book clubs awarded or nominated per year.",
+    "data": {
+        "url": "spider_csv/culture_company_book_club.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "book_club_id",
+            "type": "quantitative"
+        }
+    }
+}

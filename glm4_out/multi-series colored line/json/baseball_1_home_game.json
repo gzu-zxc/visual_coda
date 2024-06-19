@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the total attendance for each team over the span of home games.",
+    "data": {
+        "url": "spider_csv/baseball_1_home_game.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "span_first",
+            "type": "temporal"
+        },
+        "y": {
+            "field": "span_last",
+            "type": "temporal"
+        },
+        "color": {
+            "field": "team_id",
+            "type": "nominal"
+        },
+        "strokeWidth": {
+            "field": "attendance",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "domain": [
+                    0,
+                    2000000
+                ]
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.attendance",
+            "as": "attendance_sum"
+        }
+    ]
+}

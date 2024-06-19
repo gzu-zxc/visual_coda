@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing attendance over time for different hosts.",
+    "data": {
+        "url": "spider_csv/performance_attendance_performance.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "monthdate"
+        },
+        "y": {
+            "field": "Attendance",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Host",
+            "type": "nominal"
+        }
+    }
+}

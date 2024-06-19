@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the total amount claimed and settled over time.",
+    "data": {
+        "url": "spider_csv/insurance_policies_Settlements.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date_Claim_Made",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "y": {
+            "field": "Amount_Claimed",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        "color": {
+            "field": "Claim_ID",
+            "type": "nominal"
+        }
+    },
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "field": "Amount_Settled",
+                    "type": "quantitative",
+                    "aggregate": "sum"
+                }
+            }
+        }
+    ]
+}

@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot of the average loser age and average winner age,  colored by surface type.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/wta_1_matches.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "winner_age",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "x": {
+            "field": "loser_age",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "y": {
+            "field": "winner_age",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "color": {
+            "field": "surface",
+            "type": "nominal"
+        }
+    }
+}

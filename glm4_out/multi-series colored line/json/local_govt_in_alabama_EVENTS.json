@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of events by service ID and event outcome in Alabama local government.",
+    "data": {
+        "url": "spider_csv/local_govt_in_alabama_EVENTS.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Service_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Event_ID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Event_Details",
+            "type": "nominal"
+        }
+    }
+}

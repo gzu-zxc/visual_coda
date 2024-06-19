@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the relationship between room type and base price.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/inn_1_Rooms.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "bedType",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "decor",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "mean",
+            "field": "basePrice",
+            "type": "quantitative"
+        }
+    }
+}

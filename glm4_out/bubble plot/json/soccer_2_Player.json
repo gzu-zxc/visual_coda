@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the average highest score achieved by players with and without a yellow card.",
+    "data": {
+        "url": "spider_csv/soccer_2_Player.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "HS",
+            "type": "quantitative",
+            "aggregate": "average",
+            "scale": {
+                "type": "sqrt"
+            }
+        },
+        "color": {
+            "field": "yCard",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "HS",
+                    "as": "HS"
+                }
+            ],
+            "groupby": [
+                "yCard"
+            ]
+        }
+    ]
+}

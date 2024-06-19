@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of races per class and track per year.",
+    "data": {
+        "url": "spider_csv/race_track_race.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Track_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Class",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Class",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "count_Races",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "year(datum.Date)",
+            "as": "Year"
+        },
+        {
+            "groupby": [
+                "Class",
+                "Track_ID",
+                "Year"
+            ],
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Race_ID",
+                    "as": "count_Races"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the class code and the section number, with the size of the bubbles representing the number of classes.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_1_CLASS.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CLASS_CODE",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "CLASS_SECTION",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

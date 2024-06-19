@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization of the relationship between building and department budget.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_2_department.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "building",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "dept_name",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "average",
+            "field": "budget",
+            "type": "quantitative"
+        }
+    }
+}

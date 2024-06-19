@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the count of participants and organizers in local government events in Alabama.",
+    "data": {
+        "url": "spider_csv/local_govt_in_alabama_Participants.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Participant_ID",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "count",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Participant_Details",
+            "type": "nominal"
+        },
+        "detail": {
+            "field": "Participant_Type_Grouped",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Participant_Type_Code === 'Participant' ? 'Participant' : 'Organizer'",
+            "as": "Participant_Type_Grouped"
+        }
+    ]
+}

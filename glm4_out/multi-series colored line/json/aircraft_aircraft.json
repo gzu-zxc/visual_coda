@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the maximum gross weight and total disk area of various aircraft.",
+    "data": {
+        "url": "spider_csv/aircraft_aircraft.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Aircraft",
+            "type": "nominal"
+        },
+        "y": [
+            {
+                "field": "Max_Gross_Weight",
+                "type": "quantitative",
+                "aggregate": "mean",
+                "scale": {
+                    "zero": false
+                }
+            },
+            {
+                "field": "Total_disk_area",
+                "type": "quantitative",
+                "aggregate": "mean",
+                "scale": {
+                    "zero": false
+                },
+                "color": "red"
+            }
+        ],
+        "color": {
+            "field": "Description",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the start and end stations, with the size of the bubble representing the duration of the trip.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/bike_1_trip.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "start_station_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "end_station_name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "duration",
+            "type": "quantitative"
+        }
+    }
+}

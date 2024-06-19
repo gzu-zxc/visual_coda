@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the opening years of various device shops.",
+    "data": {
+        "url": "spider_csv/device_shop.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Shop_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Open_Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "size": {
+            "value": 100
+        },
+        "tooltip": [
+            {
+                "field": "Shop_Name"
+            }
+        ]
+    }
+}

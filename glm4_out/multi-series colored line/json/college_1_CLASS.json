@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing class schedules for different course codes and sections.",
+    "data": {
+        "url": "spider_csv/college_1_CLASS.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CRS_CODE",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "CLASS_TIME",
+            "type": "quantitative",
+            "timeUnit": "hours"
+        },
+        "color": {
+            "field": "CLASS_SECTION",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "hours(datum.CLASS_TIME)",
+            "as": "hour"
+        }
+    ]
+}

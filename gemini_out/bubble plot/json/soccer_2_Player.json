@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between height and the number of players, grouped by whether they received a yellow card.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/soccer_2_Player.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "HS",
+            "type": "quantitative"
+        },
+        "x": {
+            "field": "yCard",
+            "type": "nominal"
+        },
+        "y": {
+            "aggregate": "count()",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "yCard",
+            "type": "nominal"
+        }
+    }
+}

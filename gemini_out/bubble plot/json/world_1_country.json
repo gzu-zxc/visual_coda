@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart to visualize the relationship between population, life expectancy and GNP of different countries.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/world_1_country.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Population",
+            "type": "quantitative",
+            "title": "Population"
+        },
+        "y": {
+            "field": "LifeExpectancy",
+            "type": "quantitative",
+            "title": "Life Expectancy"
+        },
+        "size": {
+            "field": "GNP",
+            "type": "quantitative",
+            "title": "GNP"
+        },
+        "color": {
+            "field": "Continent",
+            "type": "nominal",
+            "title": "Continent"
+        }
+    }
+}

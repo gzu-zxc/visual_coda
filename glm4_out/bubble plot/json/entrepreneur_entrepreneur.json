@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the amount of money requested by different companies.",
+    "data": {
+        "url": "spider_csv/entrepreneur_entrepreneur.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Company",
+            "type": "nominal",
+            "sort": {
+                "field": "bin_Money_Requested",
+                "op": "mean"
+            }
+        },
+        "y": {
+            "bin": {
+                "maxbins": 50
+            },
+            "field": "Money_Requested",
+            "type": "quantitative",
+            "axis": {
+                "title": "Money Requested (Binned)"
+            }
+        },
+        "size": {
+            "bin": {
+                "maxbins": 50
+            },
+            "field": "Money_Requested",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Entrepreneur_ID",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "bin": "Money_Requested",
+            "field": "Money_Requested",
+            "as": "bin_Money_Requested"
+        }
+    ]
+}

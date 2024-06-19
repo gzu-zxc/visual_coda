@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the volume of awards for each music festival category.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/music_4_music_festival.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Category",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Music_Festival",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Volume",
+            "type": "quantitative"
+        }
+    }
+}

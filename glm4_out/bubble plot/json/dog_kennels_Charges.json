@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the charge amount for different charge types at a dog kennel.",
+    "data": {
+        "url": "spider_csv/dog_kennels_Charges.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "charge_type",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "charge_amount",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "charge_id",
+            "type": "quantitative"
+        }
+    }
+}

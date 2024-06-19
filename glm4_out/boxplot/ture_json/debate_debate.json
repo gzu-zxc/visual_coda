@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of the number of audience members at debate events over time.",
+    "data": {
+        "url": "spider_csv/debate_debate.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "Num_of_Audience",
+            "type": "quantitative"
+        }
+    }
+}

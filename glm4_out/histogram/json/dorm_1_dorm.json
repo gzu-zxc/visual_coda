@@ -1,0 +1,19 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of student capacities across dormitories.",
+    "data": {
+        "url": "spider_csv/dorm_1_dorm.csv.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "student_capacity",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

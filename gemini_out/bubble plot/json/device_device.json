@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between Device and Carrier, with the size of the bubbles representing the count of each combination.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/device_device.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Device",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Carrier",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Device_ID",
+            "type": "quantitative"
+        }
+    }
+}

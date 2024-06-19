@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the draft pick number over the seasons for different players",
+    "data": {
+        "url": "spider_csv/match_season_match_season.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Season",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Draft_Pick_Number",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Player",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "sort": {
+                "field": "Season"
+            }
+        },
+        {
+            "groupby": [
+                "Player"
+            ]
+        }
+    ]
+}

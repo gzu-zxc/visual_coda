@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the budget and worldwide gross of movies over the years.",
+    "data": {
+        "url": "spider_csv/culture_company_movie.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Gross_worldwide",
+            "type": "quantitative",
+            "scale": {
+                "type": "log"
+            }
+        },
+        "y": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "size": {
+            "field": "Budget_million",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    }
+}

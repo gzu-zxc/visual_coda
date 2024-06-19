@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of paper submissions by acceptance result.",
+    "data": {
+        "url": "spider_csv/workshop_paper_acceptance.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Result",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Submission_ID",
+            "type": "quantitative"
+        }
+    }
+}

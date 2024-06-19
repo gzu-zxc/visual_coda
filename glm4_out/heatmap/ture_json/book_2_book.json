@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap of the number of books per number of issues and writer.",
+    "data": {
+        "url": "spider_csv/book_2_book.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Issues",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 12
+            }
+        },
+        "y": {
+            "field": "Writer",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "count",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

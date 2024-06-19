@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of photos taken for each mountain.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/mountain_photos_photos.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "mountain_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "color",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count()",
+            "field": "id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "color",
+            "type": "nominal"
+        }
+    }
+}

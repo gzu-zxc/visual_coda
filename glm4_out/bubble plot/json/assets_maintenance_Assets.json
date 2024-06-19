@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the lifespan of assets by make and model.",
+    "data": {
+        "url": "spider_csv/assets_maintenance_Assets.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "asset_acquired_date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "y": {
+            "field": "asset_disposed_date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "size": {
+            "field": "asset_model",
+            "type": "nominal",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        },
+        "color": {
+            "field": "asset_make",
+            "type": "nominal"
+        }
+    }
+}

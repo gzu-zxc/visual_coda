@@ -1,0 +1,18 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of card numbers.",
+    "data": {
+        "url": "spider_csv/customers_card_transactions_Customers_cards.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "card_number",
+            "type": "quantitative",
+            "bin": true
+        }
+    }
+}

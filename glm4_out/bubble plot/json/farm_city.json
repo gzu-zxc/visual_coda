@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the area and population of cities and towns, colored by their status.",
+    "data": {
+        "url": "spider_csv/farm_city.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Area_km_2",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear"
+            }
+        },
+        "y": {
+            "field": "Population",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear"
+            }
+        },
+        "color": {
+            "field": "Status",
+            "type": "nominal"
+        }
+    }
+}

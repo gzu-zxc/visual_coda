@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the station weather stations, with the size of the bubble representing the network name.",
+    "data": {
+        "url": "spider_csv/station_weather_station.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "id",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "services",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "network_name",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

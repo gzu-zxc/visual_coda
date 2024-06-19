@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between zip code and city with the size of the bubble representing the address_id",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/customers_and_products_contacts_addresses.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "zip_postcode",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "city",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "address_id",
+            "type": "quantitative"
+        }
+    }
+}

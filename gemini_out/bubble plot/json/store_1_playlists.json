@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of playlists for each name",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/store_1_playlists.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "id",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "x": {
+            "field": "name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "name",
+            "type": "nominal"
+        }
+    }
+}

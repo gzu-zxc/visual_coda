@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of unique employees hired per shop per year.",
+    "data": {
+        "url": "spider_csv/employee_hire_evaluation_hiring.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Start_from",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "Shop_ID",
+            "type": "nominal"
+        },
+        "group": {
+            "field": "Shop_ID"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "Employee_ID",
+            "type": "quantitative"
+        }
+    }
+}

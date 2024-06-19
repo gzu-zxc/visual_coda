@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between transaction amount and transaction date, with the size of the bubbles representing the number of transactions.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/customers_and_invoices_Financial_transactions.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "transaction_date",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "transaction_amount",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "transaction_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

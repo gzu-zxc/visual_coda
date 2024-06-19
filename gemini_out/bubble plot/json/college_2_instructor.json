@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualizing salary and department name, sized by ID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_2_instructor.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "salary",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "dept_name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "ID",
+            "type": "quantitative"
+        }
+    }
+}

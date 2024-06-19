@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the unique identifiers and names of music playlists.",
+    "data": {
+        "url": "spider_csv/store_1_playlists.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "id",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "id",
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

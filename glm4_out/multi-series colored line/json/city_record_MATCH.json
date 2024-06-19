@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing scores over time for different competitions.",
+    "data": {
+        "url": "spider_csv/city_record_MATCH.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "Score",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Competition",
+            "type": "nominal"
+        }
+    }
+}

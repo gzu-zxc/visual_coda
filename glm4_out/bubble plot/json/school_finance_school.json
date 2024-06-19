@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing school enrollment, labeled by school name, and color-coded by IHSAA class.",
+    "data": {
+        "url": "spider_csv/school_finance_school.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "School_name",
+            "type": "nominal",
+            "axis": {
+                "labelAngle": 0
+            }
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Enrollment",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "IHSAA_Class",
+            "type": "ordinal"
+        },
+        "tooltip": [
+            {
+                "field": "School_name",
+                "type": "nominal"
+            },
+            {
+                "field": "Enrollment",
+                "type": "quantitative"
+            },
+            {
+                "field": "IHSAA_Class",
+                "type": "ordinal"
+            }
+        ]
+    }
+}

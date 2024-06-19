@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "The plot shows the number of games played by each team, size of the bubble reflects the number of games played by the team",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/game_injury_game.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Home_team",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Away_team",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "id",
+            "type": "quantitative"
+        }
+    }
+}

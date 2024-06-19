@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of battles fought by each commander in each battle outcome.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/battle_death_battle.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "bulgarian_commander",
+            "type": "nominal",
+            "title": "Bulgarian Commander"
+        },
+        "y": {
+            "field": "latin_commander",
+            "type": "nominal",
+            "title": "Latin Commander"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "id",
+            "type": "quantitative",
+            "title": "Number of Battles"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between 'Location_ID' and 'Attraction_Type_Code'  with the size of the bubble representing 'Tourist_Attraction_ID'.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Theme_park_Tourist_Attractions.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Location_ID",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Attraction_Type_Code",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Tourist_Attraction_ID",
+            "type": "quantitative"
+        }
+    }
+}

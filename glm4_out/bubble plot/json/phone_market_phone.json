@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing phone models available in the market with their memory size, price, and model name.",
+    "data": {
+        "url": "spider_csv/phone_market_phone.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Memory_in_G",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Price",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Name",
+            "type": "nominal",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    }
+}

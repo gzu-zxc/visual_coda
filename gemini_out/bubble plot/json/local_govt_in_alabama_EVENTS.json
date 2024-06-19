@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the count of events for each service.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/local_govt_in_alabama_EVENTS.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Service_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Event_Details",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Event_ID",
+            "type": "quantitative"
+        }
+    }
+}

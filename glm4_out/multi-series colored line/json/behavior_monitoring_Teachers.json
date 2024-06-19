@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the address identifier for each teacher.",
+    "data": {
+        "url": "spider_csv/behavior_monitoring_Teachers.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "address_id",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "teacher_id",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "first_name",
+            "type": "nominal"
+        }
+    }
+}

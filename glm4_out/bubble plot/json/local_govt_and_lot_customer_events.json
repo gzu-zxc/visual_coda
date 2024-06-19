@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot showing the number of 'things' associated with customer events per month of move-in.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_customer_events.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "customer_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "date_moved_in",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "size": {
+            "field": "thing_id",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between teacher age and hometown, with the size of the bubbles representing the number of teachers from each hometown.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/course_teach_teacher.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Hometown",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Hometown",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

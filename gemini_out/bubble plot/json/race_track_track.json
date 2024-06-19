@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot of Seating capacity and Year Opened for each race track.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/race_track_track.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year_Opened",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            }
+        },
+        "y": {
+            "field": "Seating",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            }
+        },
+        "size": {
+            "field": "Seating",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "tooltip": [
+            {
+                "field": "Name",
+                "type": "nominal"
+            },
+            {
+                "field": "Seating",
+                "type": "quantitative"
+            },
+            {
+                "field": "Year_Opened",
+                "type": "quantitative"
+            }
+        ]
+    }
+}

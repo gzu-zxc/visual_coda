@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of the number of people killed in various incidents.",
+    "data": {
+        "url": "spider_csv/perpetrator_perpetrator.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Killed",
+            "type": "quantitative"
+        }
+    }
+}

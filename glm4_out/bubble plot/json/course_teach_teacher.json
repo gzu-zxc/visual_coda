@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing teacher's age and hometown.",
+    "data": {
+        "url": "spider_csv/course_teach_teacher.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Teacher_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Name",
+            "type": "ordinal",
+            "sort": {
+                "field": "Name"
+            }
+        },
+        "size": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Hometown",
+            "type": "nominal"
+        }
+    }
+}

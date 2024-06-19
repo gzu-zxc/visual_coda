@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between Points and Time, with the size of the bubbles representing the number of climbers for each combination.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/climbing_climber.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Points",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Time",
+            "type": "temporal",
+            "timeUnit": "hoursminutes"
+        },
+        "size": {
+            "field": "Climber_ID",
+            "aggregate": "count",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        }
+    }
+}

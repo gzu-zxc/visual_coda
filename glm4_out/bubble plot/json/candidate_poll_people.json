@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the height and weight of candidates by sex.",
+    "data": {
+        "url": "spider_csv/candidate_poll_people.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Height",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Weight",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Weight",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        },
+        "color": {
+            "field": "Sex",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing student capacity of different dormitories by gender.",
+    "data": {
+        "url": "spider_csv/dorm_1_dorm.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dormid",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "dorm_name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "student_capacity",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "gender",
+            "type": "nominal"
+        }
+    }
+}

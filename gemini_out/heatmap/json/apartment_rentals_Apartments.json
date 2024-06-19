@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of apartments by apartment type and number of bedrooms.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/apartment_rentals_Apartments.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "apt_type_code",
+            "type": "nominal",
+            "title": "Apartment Type"
+        },
+        "y": {
+            "field": "bedroom_count",
+            "type": "ordinal",
+            "title": "Number of Bedrooms"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Count"
+        }
+    }
+}

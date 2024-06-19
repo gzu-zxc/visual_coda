@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of wrestler eliminations over time, grouped by the move used for elimination.",
+    "data": {
+        "url": "spider_csv/wrestler_elimination.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Elimination_Move",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Time",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 20
+            }
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualising the relationship between 'Num_of_Component' and 'Market_Rate' of furniture, with the size of the bubble representing the 'Market_Rate'.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/manufacturer_furniture.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Num_of_Component",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Market_Rate",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Market_Rate",
+            "type": "quantitative"
+        }
+    }
+}

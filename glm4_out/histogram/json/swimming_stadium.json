@@ -1,0 +1,19 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of swimming stadium capacities.",
+    "data": {
+        "url": "spider_csv/swimming_stadium.csv.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Capacity",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing wrestler eliminations by the wrestler who performed the elimination over time.",
+    "data": {
+        "url": "spider_csv/wrestler_elimination.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Wrestler_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Eliminated_By",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Time",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate",
+            "aggregate": "count"
+        }
+    }
+}

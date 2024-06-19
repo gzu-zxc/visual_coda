@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of film ranks within their series.",
+    "data": {
+        "url": "spider_csv/cinema_film.csv.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Rank_in_series",
+            "type": "ordinal",
+            "bin": {
+                "maxbins": 5
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "Rank_in_series",
+            "type": "quantitative"
+        }
+    }
+}

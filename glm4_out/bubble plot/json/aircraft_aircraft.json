@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the maximum gross weight, total disk area, and maximum disk loading of various aircraft.",
+    "data": {
+        "url": "spider_csv/aircraft_aircraft.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Total_disk_area",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Max_disk_Loading",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Max_Gross_Weight",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Aircraft"
+            }
+        ]
+    },
+    "transform": [
+        {
+            "calculate": "toNumber(datum.Max_Gross_Weight.replace(',', ''))",
+            "as": "Max_Gross_Weight_num"
+        },
+        {
+            "calculate": "toNumber(datum.Max_disk_Loading.replace(',', ''))",
+            "as": "Max_disk_Loading_num"
+        },
+        {
+            "replace": {
+                "field": "Max_Gross_Weight",
+                "value": "null",
+                "with": "Max_Gross_Weight_num"
+            }
+        },
+        {
+            "replace": {
+                "field": "Max_disk_Loading",
+                "value": "null",
+                "with": "Max_disk_Loading_num"
+            }
+        }
+    ]
+}

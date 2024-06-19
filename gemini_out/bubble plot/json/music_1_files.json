@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between file size and duration of music files, with the size of the bubbles representing the number of files with each combination of file size and duration.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/music_1_files.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "file_size",
+            "type": "quantitative",
+            "title": "File Size (MB)"
+        },
+        "y": {
+            "field": "duration",
+            "type": "temporal",
+            "title": "Duration",
+            "timeUnit": "minutes"
+        },
+        "size": {
+            "aggregate": "count",
+            "title": "Number of Files"
+        }
+    }
+}

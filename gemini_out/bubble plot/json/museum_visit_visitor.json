@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between age and level of membership.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/museum_visit_visitor.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "x": {
+            "field": "Level_of_membership",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Level_of_membership",
+            "type": "ordinal"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot showing the relationship between the year the ship was launched and the speed of the ship, with the size of the bubbles representing the number of ships launched that year.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/ship_mission_mission.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Launched_Year",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Speed_knots",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Ship_ID",
+            "type": "quantitative"
+        }
+    }
+}

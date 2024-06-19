@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the monthly rental cost for different types of addresses over time.",
+    "data": {
+        "url": "spider_csv/behavior_monitoring_Student_Addresses.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_address_from",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        },
+        "x2": {
+            "field": "date_address_to",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        },
+        "y": {
+            "field": "monthly_rental",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "color": {
+            "field": "other_details",
+            "type": "nominal"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

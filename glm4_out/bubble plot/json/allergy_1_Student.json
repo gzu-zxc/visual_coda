@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot of student data, with age as bubble size, sex as color, and major as the x-axis.",
+    "data": {
+        "url": "spider_csv/allergy_1_Student.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Major",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Sex",
+            "type": "nominal"
+        }
+    }
+}

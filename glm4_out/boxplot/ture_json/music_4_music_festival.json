@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of award volumes across different categories.",
+    "data": {
+        "url": "spider_csv/music_4_music_festival.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Category",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Volume",
+            "type": "quantitative"
+        }
+    }
+}

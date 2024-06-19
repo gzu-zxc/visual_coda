@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing college courses with the size of the bubble representing the number of credits.",
+    "data": {
+        "url": "spider_csv/college_3_COURSE.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CID",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "Credits",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "CName",
+                "type": "nominal"
+            }
+        ]
+    }
+}

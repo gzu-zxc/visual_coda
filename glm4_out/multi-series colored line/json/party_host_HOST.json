@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the age distribution of party hosts by nationality.",
+    "data": {
+        "url": "spider_csv/party_host_HOST.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Host_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Nationality",
+            "type": "nominal"
+        }
+    },
+    "groupby": [
+        "Nationality"
+    ]
+}

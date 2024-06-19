@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the capacity of swimming stadiums by year of opening and country.",
+    "data": {
+        "url": "spider_csv/swimming_stadium.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Opening_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Capacity",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Capacity",
+                    "as": "Capacity"
+                }
+            ],
+            "groupby": [
+                "Opening_year",
+                "Country"
+            ]
+        },
+        {
+            "sort": {
+                "field": "Opening_year"
+            }
+        }
+    ]
+}

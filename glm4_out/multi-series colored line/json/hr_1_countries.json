@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of countries per region.",
+    "data": {
+        "url": "spider_csv/hr_1_countries.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "COUNTRY_NAME",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "count_COUNTRY_ID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "REGION_ID",
+            "type": "ordinal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "COUNTRY_ID",
+                    "as": "count_COUNTRY_ID"
+                }
+            ],
+            "groupby": [
+                "REGION_ID",
+                "COUNTRY_NAME"
+            ]
+        }
+    ]
+}

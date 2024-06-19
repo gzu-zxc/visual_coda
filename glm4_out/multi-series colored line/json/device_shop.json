@@ -1,0 +1,55 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the opening years of various device shops.",
+    "data": {
+        "url": "spider_csv/device_shop.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "year",
+            "type": "ordinal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Opening Year"
+            }
+        },
+        "y": {
+            "field": "Shop_ID",
+            "type": "quantitative",
+            "axis": {
+                "title": "Shop ID"
+            }
+        },
+        "color": {
+            "field": "Shop_Name",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            }
+        },
+        "strokeDash": {
+            "field": "Shop_Name",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "year(datum.Open_Date)",
+            "as": "year"
+        },
+        {
+            "calculate": "datum.Shop_ID",
+            "as": "Shop_ID"
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

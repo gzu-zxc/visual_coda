@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the start date of insurance policies and the policy type, with the size of the bubbles representing the number of policies.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/insurance_and_eClaims_policies.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Start_Date",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "Policy_Type_Code",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Policy_ID"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing college soccer teams with their enrollment numbers.",
+    "data": {
+        "url": "spider_csv/soccer_2_College.csv.csv"
+    },
+    "mark": {
+        "type": "point",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "cName",
+            "type": "nominal",
+            "axis": {
+                "labelAngle": 0
+            }
+        },
+        "y": {
+            "field": "state",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "enr",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "state",
+            "type": "nominal"
+        }
+    }
+}

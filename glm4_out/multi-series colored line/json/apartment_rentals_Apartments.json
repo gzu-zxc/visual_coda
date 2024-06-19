@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the sum of bathroom counts by apartment type and room count.",
+    "data": {
+        "url": "spider_csv/apartment_rentals_Apartments.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "room_count",
+            "type": "quantitative",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "sum_bathroom_count",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "apt_type_code",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "bathroom_count",
+                    "as": "sum_bathroom_count"
+                }
+            ],
+            "groupby": [
+                "apt_type_code",
+                "room_count"
+            ]
+        }
+    ]
+}

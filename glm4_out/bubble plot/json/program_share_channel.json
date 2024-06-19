@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the share and rating percentages of television channels.",
+    "data": {
+        "url": "spider_csv/program_share_channel.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Channel_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Share_in_percent",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Rating_in_percent",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of product catalogs published over time.",
+    "data": {
+        "url": "spider_csv/product_catalog_Catalogs.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_of_publication",
+            "type": "temporal",
+            "timeUnit": {
+                "unit": "yearmonth",
+                "step": 1
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

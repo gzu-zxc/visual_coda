@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between Gross_in_dollar and Director, with the size of the bubble representing Studio",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/film_rank_film.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Gross_in_dollar",
+            "type": "quantitative",
+            "title": "Gross_in_dollar"
+        },
+        "y": {
+            "field": "Director",
+            "type": "nominal",
+            "title": "Director"
+        },
+        "size": {
+            "field": "Studio",
+            "type": "nominal",
+            "title": "Studio"
+        }
+    }
+}

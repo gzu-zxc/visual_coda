@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of employee locations by city and state/province.",
+    "data": {
+        "url": "spider_csv/hr_1_locations.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "CITY",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "STATE_PROVINCE",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "LOCATION_ID",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    }
+}

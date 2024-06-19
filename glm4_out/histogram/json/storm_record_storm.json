@@ -1,0 +1,20 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of maximum speeds of storms.",
+    "data": {
+        "url": "spider_csv/storm_record_storm.csv.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Max_speed",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "Max_speed",
+            "type": "quantitative"
+        }
+    }
+}

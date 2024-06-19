@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of appellations in each area.",
+    "data": {
+        "url": "spider_csv/wine_1_APPELLATIONS.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Area",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "count,No",
+            "type": "quantitative"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "No",
+                    "as": "count,No"
+                }
+            ],
+            "groupby": [
+                "Area"
+            ]
+        }
+    ]
+}

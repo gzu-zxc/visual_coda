@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of hosts for each party theme over the years.",
+    "data": {
+        "url": "spider_csv/party_host_party.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "First_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Number_of_hosts",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Party_Theme",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Number_of_hosts",
+                    "as": "Number_of_hosts"
+                }
+            ],
+            "groupby": [
+                "Party_Theme",
+                "First_year"
+            ]
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing train numbers by train name and origin.",
+    "data": {
+        "url": "spider_csv/station_weather_train.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "origin",
+            "type": "nominal",
+            "axis": {
+                "labelAngle": 0
+            }
+        },
+        "y": {
+            "field": "name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "train_number",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "name",
+            "type": "nominal"
+        }
+    }
+}

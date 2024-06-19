@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between Document_Date and Project_ID, with the size of the bubbles representing the count of documents.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Docs_and_Epenses_Documents.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Document_Date",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Project_ID",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Document_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

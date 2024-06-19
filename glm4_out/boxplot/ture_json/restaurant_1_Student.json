@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of student ages by gender.",
+    "data": {
+        "url": "spider_csv/restaurant_1_Student.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Sex",
+            "type": "nominal",
+            "axis": {
+                "title": "Gender"
+            }
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative",
+            "axis": {
+                "title": "Age"
+            }
+        }
+    }
+}

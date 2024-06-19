@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of rooms, bedrooms, and bathrooms for each apartment.",
+    "data": {
+        "url": "spider_csv/apartment_rentals_Apartments.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "bathroom_count",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "bedroom_count",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "room_count",
+            "type": "quantitative"
+        }
+    }
+}

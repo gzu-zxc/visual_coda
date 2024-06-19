@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the decision outcomes of soccer players' tryouts across different colleges, colored by their positions.",
+    "data": {
+        "url": "spider_csv/soccer_2_tryout.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "pID",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "cName",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "pPos",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "decision",
+            "type": "quantitative"
+        }
+    }
+}

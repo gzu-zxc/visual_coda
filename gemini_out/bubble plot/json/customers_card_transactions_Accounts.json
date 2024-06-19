@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between 'account_name' and 'other_account_details', with the size of the bubbles representing 'customer_id'",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/customers_card_transactions_Accounts.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "account_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "other_account_details",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "customer_id",
+            "type": "quantitative"
+        }
+    }
+}

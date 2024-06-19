@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of charge amounts for services at a dog kennel.",
+    "data": {
+        "url": "spider_csv/dog_kennels_Charges.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "charge_amount",
+            "type": "quantitative",
+            "bin": true,
+            "axis": {
+                "title": "Charge Amount"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of Charges"
+            }
+        }
+    }
+}

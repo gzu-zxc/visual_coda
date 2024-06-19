@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of issues per book, grouped by writer.",
+    "data": {
+        "url": "spider_csv/book_2_book.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Title",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Issues",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Writer",
+            "type": "nominal"
+        }
+    }
+}

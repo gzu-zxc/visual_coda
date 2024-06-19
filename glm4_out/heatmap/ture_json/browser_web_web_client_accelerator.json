@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of web client accelerators per operating system and connection type.",
+    "data": {
+        "url": "spider_csv/browser_web_web_client_accelerator.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "y": {
+            "field": "Operating_system",
+            "type": "nominal"
+        },
+        "x": {
+            "field": "Connection",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "id",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            }
+        }
+    }
+}

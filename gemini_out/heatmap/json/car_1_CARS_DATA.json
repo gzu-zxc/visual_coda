@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap Visualization of Car properties",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/car_1_CARS_DATA.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Cylinders",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Year",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "average",
+            "field": "MPG",
+            "type": "quantitative"
+        }
+    }
+}

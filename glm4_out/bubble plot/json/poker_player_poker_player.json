@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot showing the number of final tables made by poker players against their best finish, with the size of the bubble representing total earnings.",
+    "data": {
+        "url": "spider_csv/poker_player_poker_player.csv.csv"
+    },
+    "mark": {
+        "type": "point",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Final_Table_Made",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Best_Finish",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "Earnings",
+            "type": "quantitative"
+        }
+    }
+}

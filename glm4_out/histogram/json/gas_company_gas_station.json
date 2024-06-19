@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of gas stations opened in each year.",
+    "data": {
+        "url": "spider_csv/gas_company_gas_station.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Year",
+            "type": "temporal",
+            "timeUnit": "year",
+            "bin": {
+                "maxbins": 50
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

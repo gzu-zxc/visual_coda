@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of software problems reported over time, categorized by problem category.",
+    "data": {
+        "url": "spider_csv/tracking_software_problems_problem_log.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "log_entry_date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "y": {
+            "field": "count_problem_log_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "problem_category_code",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.problem_log_id",
+            "as": "count_problem_log_id"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "problem_log_id",
+                    "as": "count_problem_log_id"
+                }
+            ],
+            "groupby": [
+                "problem_category_code",
+                "log_entry_date"
+            ]
+        }
+    ]
+}

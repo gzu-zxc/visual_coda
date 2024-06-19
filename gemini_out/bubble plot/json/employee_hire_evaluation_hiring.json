@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This visualization shows the relationship between the year an employee started working and the shop ID, with the size of the bubbles representing the number of employees hired at that shop in that year.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/employee_hire_evaluation_hiring.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Start_from",
+            "type": "quantitative",
+            "title": "Year Started"
+        },
+        "y": {
+            "field": "Shop_ID",
+            "type": "nominal",
+            "title": "Shop ID"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Employee_ID",
+            "type": "quantitative",
+            "title": "Number of Employees"
+        }
+    }
+}

@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of papers per acceptance result.",
+    "data": {
+        "url": "spider_csv/workshop_paper_acceptance.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Result",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "count",
+            "type": "quantitative"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Submission_ID",
+                    "as": "count"
+                }
+            ],
+            "groupby": [
+                "Result"
+            ]
+        }
+    ]
+}

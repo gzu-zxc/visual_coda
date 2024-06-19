@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization of the Formula 1 circuits, with countries on the x-axis and latitude on the y-axis, showing the density of circuits in each country and latitude range.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/formula_1_circuits.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "country",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "lat",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 20
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

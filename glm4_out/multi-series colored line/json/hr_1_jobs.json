@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the salary ranges for different job positions.",
+    "data": {
+        "url": "spider_csv/hr_1_jobs.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "JOB_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": [
+                "MIN_SALARY",
+                "MAX_SALARY"
+            ],
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            }
+        },
+        "color": {
+            "field": "JOB_TITLE",
+            "type": "nominal"
+        }
+    }
+}

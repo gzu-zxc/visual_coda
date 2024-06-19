@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing courses with their IDs and names, sized by additional details.",
+    "data": {
+        "url": "spider_csv/student_assessment_courses.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "course_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "course_name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "other_details",
+            "type": "quantitative"
+        }
+    }
+}

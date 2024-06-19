@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the budget allocated to each department.",
+    "data": {
+        "url": "spider_csv/college_2_department.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dept_name",
+            "type": "nominal",
+            "axis": {
+                "labelAngle": 0
+            }
+        },
+        "size": {
+            "field": "budget",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "dept_name"
+            },
+            {
+                "field": "budget"
+            }
+        ]
+    }
+}

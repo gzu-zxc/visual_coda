@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the zip code distribution across different cities.",
+    "data": {
+        "url": "spider_csv/customers_and_products_contacts_addresses.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "city",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "zip_postcode",
+            "type": "quantitative"
+        }
+    }
+}

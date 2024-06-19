@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Visualizes the relationship between building, room_number, and capacity of rooms on campus.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_2_classroom.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "room_number",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "building",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "capacity",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of wrestlers in each location and event.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/wrestler_wrestler.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Location",
+            "type": "nominal",
+            "title": "Location"
+        },
+        "y": {
+            "field": "Event",
+            "type": "nominal",
+            "title": "Event"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Count of Wrestlers"
+        }
+    }
+}

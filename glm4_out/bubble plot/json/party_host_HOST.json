@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the age distribution by nationality of party hosts.",
+    "data": {
+        "url": "spider_csv/party_host_HOST.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Nationality",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "average",
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Nationality",
+            "type": "nominal"
+        }
+    }
+}

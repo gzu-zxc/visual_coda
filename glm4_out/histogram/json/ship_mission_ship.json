@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of ship tonnage.",
+    "data": {
+        "url": "spider_csv/ship_mission_ship.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "bin": {
+                "maxbins": 30
+            },
+            "field": "Tonnage",
+            "type": "quantitative"
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

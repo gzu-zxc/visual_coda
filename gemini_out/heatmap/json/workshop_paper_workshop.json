@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the number of workshops held in each venue over time.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/workshop_paper_workshop.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Date"
+        },
+        "y": {
+            "field": "Venue",
+            "type": "nominal",
+            "title": "Venue"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "Workshop_ID",
+            "type": "quantitative",
+            "title": "Count of Workshops"
+        }
+    }
+}

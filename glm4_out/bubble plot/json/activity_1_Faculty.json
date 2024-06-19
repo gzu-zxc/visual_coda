@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the distribution of faculty members by rank and gender, with the size of the bubble representing the total number of phone numbers.",
+    "data": {
+        "url": "spider_csv/activity_1_Faculty.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Sex",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Phone",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    }
+}

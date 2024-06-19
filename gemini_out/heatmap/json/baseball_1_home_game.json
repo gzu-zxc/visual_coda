@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap showing the number of home games played by each team in each league.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/baseball_1_home_game.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "league_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "team_id",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "games",
+            "type": "quantitative"
+        }
+    }
+}

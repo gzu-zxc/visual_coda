@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of day numbers in the calendar dataset.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Tracking_DB_Ref_calendar.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Day_Number",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Calendar_Date",
+            "type": "temporal",
+            "timeUnit": "day"
+        }
+    }
+}

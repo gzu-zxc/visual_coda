@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the lifespan of elected representatives by state and party.",
+    "data": {
+        "url": "spider_csv/election_representative_representative.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "State",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Lifespan_years",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "color": {
+            "field": "Party",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "toDate(datum.Lifespan.split('-')[0])",
+            "as": "start_year"
+        },
+        {
+            "calculate": "toDate(datum.Lifespan.split('-')[1])",
+            "as": "end_year"
+        },
+        {
+            "calculate": "year(datum.end_year) - year(datum.start_year)",
+            "as": "Lifespan_years"
+        },
+        {
+            "groupby": [
+                "State",
+                "Party"
+            ],
+            "aggregate": {
+                "Lifespan_years": [
+                    "mean"
+                ]
+            }
+        }
+    ]
+}

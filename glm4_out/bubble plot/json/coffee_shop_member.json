@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the average level of membership by age and membership card color.",
+    "data": {
+        "url": "spider_csv/coffee_shop_member.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "Level_of_membership",
+            "type": "quantitative",
+            "aggregate": "average"
+        },
+        "color": {
+            "field": "Membership_card",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

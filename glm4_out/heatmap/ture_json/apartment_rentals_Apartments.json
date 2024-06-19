@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of apartments based on the number of bedrooms and bathrooms.",
+    "data": {
+        "url": "spider_csv/apartment_rentals_Apartments.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "bedroom_count",
+            "type": "ordinal",
+            "axis": {
+                "title": "Number of Bedrooms"
+            }
+        },
+        "y": {
+            "field": "bathroom_count",
+            "type": "ordinal",
+            "axis": {
+                "title": "Number of Bathrooms"
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "greenblue"
+            },
+            "legend": {
+                "title": "Count of Apartments"
+            }
+        }
+    }
+}

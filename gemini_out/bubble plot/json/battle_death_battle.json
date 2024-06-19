@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of battles won by Bulgarian and Latin commanders.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/battle_death_battle.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "bulgarian_commander",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "latin_commander",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "id",
+            "type": "quantitative"
+        }
+    }
+}

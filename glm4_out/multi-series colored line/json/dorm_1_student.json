@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the distribution of students' ages across different majors.",
+    "data": {
+        "url": "spider_csv/dorm_1_student.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Major",
+            "type": "ordinal"
+        }
+    },
+    "groupby": [
+        "Major"
+    ],
+    "sort": {
+        "field": "Age"
+    }
+}

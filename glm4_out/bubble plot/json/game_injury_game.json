@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the frequency of scores by season, colored by teams.",
+    "data": {
+        "url": "spider_csv/game_injury_game.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Season",
+            "type": "ordinal",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "Home_team",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "score_numeric",
+            "type": "quantitative",
+            "aggregate": "median"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "if(datum.Score === '0–0', 0, if(datum.Score.split('–')[0] > datum.Score.split('–')[1], datum.Score.split('–')[0], datum.Score.split('–')[1]))",
+            "as": "score_numeric"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "median",
+                    "field": "score_numeric",
+                    "as": "median_score"
+                }
+            ],
+            "groupby": [
+                "Season"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the relationship between age and years of work experience for journalists, colored by nationality.",
+    "data": {
+        "url": "spider_csv/news_report_journalist.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Years_working",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Nationality",
+            "type": "nominal"
+        }
+    },
+    "sort": {
+        "field": "Age"
+    }
+}

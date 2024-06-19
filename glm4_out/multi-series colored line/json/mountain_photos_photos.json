@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing mountain photos.",
+    "data": {
+        "url": "spider_csv/mountain_photos_photos.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "mountain_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "color",
+            "type": "nominal"
+        }
+    },
+    "sort": {
+        "field": "id"
+    }
+}

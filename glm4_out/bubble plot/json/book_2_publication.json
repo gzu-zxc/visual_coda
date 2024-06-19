@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the price of books over publication years.",
+    "data": {
+        "url": "spider_csv/book_2_publication.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Publication_Date",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Price",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "size": {
+            "field": "Book_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the sum of book club results by category over the years.",
+    "data": {
+        "url": "spider_csv/culture_company_book_club.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal"
+        },
+        "y": {
+            "field": "sum",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Category",
+            "type": "nominal"
+        },
+        "detail": {
+            "field": "Result",
+            "type": "ordinal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Result",
+                    "as": "sum"
+                }
+            ],
+            "groupby": [
+                "Year",
+                "Category",
+                "Result"
+            ]
+        }
+    ]
+}

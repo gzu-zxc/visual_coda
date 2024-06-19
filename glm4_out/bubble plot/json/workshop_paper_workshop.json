@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the workshops by date and venue.",
+    "data": {
+        "url": "spider_csv/workshop_paper_workshop.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "Workshop_ID",
+            "type": "quantitative"
+        },
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "Venue",
+            "type": "nominal"
+        }
+    }
+}

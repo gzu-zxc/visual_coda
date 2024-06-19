@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of tests taken by students per month, colored by test result.",
+    "data": {
+        "url": "spider_csv/e_learning_Student_Tests_Taken.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_test_taken",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Month"
+            }
+        },
+        "y": {
+            "field": "registration_id",
+            "type": "quantitative",
+            "aggregate": "count",
+            "axis": {
+                "title": "Number of Tests Taken"
+            }
+        },
+        "color": {
+            "field": "test_result",
+            "type": "nominal",
+            "scale": {
+                "range": [
+                    "#4daf4a",
+                    "#e41a1c"
+                ]
+            },
+            "legend": {
+                "title": "Test Result"
+            }
+        }
+    }
+}

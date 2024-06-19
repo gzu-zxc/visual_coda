@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing countries by region and their unique identifier size.",
+    "data": {
+        "url": "spider_csv/hr_1_countries.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "COUNTRY_NAME",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "REGION_ID",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "COUNTRY_ID",
+            "type": "nominal"
+        }
+    }
+}

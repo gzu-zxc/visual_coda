@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the distribution of guests by gender and date of birth.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/apartment_rentals_Guests.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_of_birth",
+            "type": "temporal",
+            "timeUnit": "year",
+            "title": "Year of Birth"
+        },
+        "y": {
+            "field": "gender_code",
+            "type": "nominal",
+            "title": "Gender"
+        },
+        "size": {
+            "field": "guest_id",
+            "type": "quantitative",
+            "title": "Number of Guests"
+        }
+    }
+}

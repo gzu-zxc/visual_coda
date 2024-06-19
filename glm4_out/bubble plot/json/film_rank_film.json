@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the gross earnings of movies by studio.",
+    "data": {
+        "url": "spider_csv/film_rank_film.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Title",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Studio",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Gross_in_dollar",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Studio",
+            "type": "nominal"
+        },
+        "tooltip": [
+            {
+                "field": "Title",
+                "type": "nominal"
+            },
+            {
+                "field": "Studio",
+                "type": "nominal"
+            },
+            {
+                "field": "Gross_in_dollar",
+                "type": "quantitative"
+            }
+        ]
+    }
+}

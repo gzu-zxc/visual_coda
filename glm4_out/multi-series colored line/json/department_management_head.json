@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the age of department heads by their state of birth.",
+    "data": {
+        "url": "spider_csv/department_management_head.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "born_state",
+            "type": "ordinal",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "head_ID",
+            "type": "nominal"
+        }
+    }
+}

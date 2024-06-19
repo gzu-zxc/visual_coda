@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of zip or postal codes for customer addresses.",
+    "data": {
+        "url": "spider_csv/customers_and_products_contacts_addresses.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "zip_postcode",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            },
+            "sort": "ascending"
+        },
+        "y": {
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

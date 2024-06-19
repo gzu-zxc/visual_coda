@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap showing the times of swimmers in different swimming events.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/swimming_swimmer.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Nationality",
+            "type": "nominal",
+            "title": "Nationality"
+        },
+        "y": {
+            "field": "name",
+            "type": "nominal",
+            "title": "Swimmer Name"
+        },
+        "color": {
+            "field": "meter_100",
+            "type": "quantitative",
+            "title": "100m Time"
+        }
+    }
+}

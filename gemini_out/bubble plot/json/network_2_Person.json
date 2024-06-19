@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between age and city, with the size of the bubbles representing the count of people in each city-age combination.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/network_2_Person.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "age",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "city",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "*",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "city",
+            "type": "nominal"
+        }
+    }
+}

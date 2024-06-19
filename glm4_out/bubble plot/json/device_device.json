@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot showing the distribution of devices across carriers and software platforms, with the size of the bubble representing the number of applications.",
+    "data": {
+        "url": "spider_csv/device_device.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Device",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Carrier",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Software_Platform",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Applications",
+            "type": "ordinal"
+        }
+    }
+}

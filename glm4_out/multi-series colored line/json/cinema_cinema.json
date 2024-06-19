@@ -1,0 +1,42 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the seating capacity of various cinemas over the opening years.",
+    "data": {
+        "url": "spider_csv/cinema_cinema.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Openning_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Capacity",
+            "type": "quantitative",
+            "aggregate": "sum"
+        },
+        "color": {
+            "field": "Name",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Capacity",
+                    "as": "Capacity"
+                }
+            ],
+            "groupby": [
+                "Openning_year",
+                "Name"
+            ]
+        }
+    ]
+}

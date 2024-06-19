@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This chart shows the relationship between the number of votes received by a player and the number of ballots cast for them, with the size of the bubbles representing the number of needed votes for induction.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/baseball_1_hall_of_fame.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "votes",
+            "type": "quantitative",
+            "title": "Votes Received"
+        },
+        "y": {
+            "field": "ballots",
+            "type": "quantitative",
+            "title": "Ballots Cast"
+        },
+        "size": {
+            "field": "needed",
+            "type": "quantitative",
+            "title": "Needed Votes"
+        }
+    }
+}

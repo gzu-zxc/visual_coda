@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of access counts for different document types.",
+    "data": {
+        "url": "spider_csv/document_management_documents.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "access_count",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "document_type_code",
+            "type": "nominal"
+        }
+    }
+}

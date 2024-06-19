@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of participants and organizers in local government events in Alabama.",
+    "data": {
+        "url": "spider_csv/local_govt_in_alabama_Participants.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Participant_Type_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "count_Participant_ID",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "count_Participant_ID",
+            "type": "quantitative"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Participant_ID",
+                    "as": "count_Participant_ID"
+                }
+            ],
+            "groupby": [
+                "Participant_Type_Code"
+            ]
+        }
+    ]
+}

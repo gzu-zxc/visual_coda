@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between order_id and invoice_number, with the size of the bubbles representing the count of invoices for each combination.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/customers_and_invoices_Invoices.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "order_id",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "invoice_number",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

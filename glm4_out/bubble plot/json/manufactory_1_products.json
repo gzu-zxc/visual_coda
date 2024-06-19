@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing product price grouped by manufacturer.",
+    "data": {
+        "url": "spider_csv/manufactory_1_products.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Manufacturer",
+            "type": "nominal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "y": {
+            "field": "Manufacturer",
+            "type": "nominal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "size": {
+            "field": "Price",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Manufacturer",
+            "type": "nominal"
+        }
+    },
+    "config": {
+        "tooltip": {
+            "content": "data('Name')"
+        }
+    }
+}

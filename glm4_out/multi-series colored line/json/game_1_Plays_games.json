@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of hours students have played different games.",
+    "data": {
+        "url": "spider_csv/game_1_Plays_games.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "GameID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Hours_Played",
+            "type": "quantitative"
+        },
+        "stroke": {
+            "field": "StuID",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of Draft Pick Number across different seasons.",
+    "data": {
+        "url": "spider_csv/match_season_match_season.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Season",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Draft_Pick_Number",
+            "type": "quantitative"
+        }
+    }
+}

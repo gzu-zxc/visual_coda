@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the frequency of investor_id occurrences.",
+    "data": {
+        "url": "spider_csv/tracking_share_transactions_INVESTORS.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "investor_id",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "investor_id",
+            "type": "quantitative"
+        }
+    }
+}

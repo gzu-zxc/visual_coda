@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot of machine repair technicians by starting year and age.",
+    "data": {
+        "url": "spider_csv/machine_repair_technician.csv.csv"
+    },
+    "mark": {
+        "type": "point",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Starting_Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "technician_id",
+            "type": "quantitative"
+        }
+    }
+}

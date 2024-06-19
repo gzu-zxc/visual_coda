@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between a poker player's final table appearances, best finish, and earnings.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/poker_player_poker_player.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Final_Table_Made",
+            "type": "quantitative",
+            "title": "Final Table Appearances"
+        },
+        "y": {
+            "field": "Earnings",
+            "type": "quantitative",
+            "title": "Earnings"
+        },
+        "size": {
+            "field": "Best_Finish",
+            "type": "quantitative",
+            "title": "Best Finish"
+        },
+        "color": {
+            "field": "Best_Finish",
+            "type": "ordinal",
+            "title": "Best Finish"
+        }
+    }
+}

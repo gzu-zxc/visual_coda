@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart that shows the relationship between Sales_billion and Profits_billion, with the size of the bubbles representing Market_Value.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/gas_company_company.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Sales_billion",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Profits_billion",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Market_Value",
+            "type": "quantitative"
+        }
+    }
+}

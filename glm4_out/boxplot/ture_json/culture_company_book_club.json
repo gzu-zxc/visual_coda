@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the number of book club nominations and awards per year and category.",
+    "data": {
+        "url": "spider_csv/culture_company_book_club.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "book_club_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "color": {
+            "field": "Result",
+            "type": "ordinal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Year",
+            "as": "Year"
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

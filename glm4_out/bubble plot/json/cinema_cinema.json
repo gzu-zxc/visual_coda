@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the opening year and capacity of various cinemas.",
+    "data": {
+        "url": "spider_csv/cinema_cinema.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Openning_year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Capacity",
+            "type": "quantitative",
+            "sort": "descending"
+        },
+        "size": {
+            "field": "Cinema_ID",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    }
+}

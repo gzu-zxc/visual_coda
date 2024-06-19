@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the age of ship captains, colored by ship ID, with rank in the tooltip.",
+    "data": {
+        "url": "spider_csv/ship_1_captain.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Ship_ID",
+            "type": "nominal"
+        },
+        "tooltip": [
+            {
+                "field": "Rank",
+                "type": "ordinal"
+            }
+        ]
+    }
+}

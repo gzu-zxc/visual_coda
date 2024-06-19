@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the age of pilots over the years they joined, grouped by team.",
+    "data": {
+        "url": "spider_csv/pilot_record_pilot.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Join_Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Team",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "sort": {
+                "field": "Join_Year"
+            }
+        },
+        {
+            "groupby": [
+                "Team"
+            ]
+        }
+    ]
+}

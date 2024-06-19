@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of player IDs by their positions on the soccer field.",
+    "data": {
+        "url": "spider_csv/soccer_2_tryout.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "pPos",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "pID",
+            "type": "quantitative"
+        }
+    }
+}

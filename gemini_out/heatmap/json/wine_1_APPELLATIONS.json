@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of appellations in each county and area.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/wine_1_APPELLATIONS.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "County",
+            "type": "nominal",
+            "title": "County"
+        },
+        "y": {
+            "field": "Area",
+            "type": "nominal",
+            "title": "Area"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Count of Appellations"
+        }
+    }
+}

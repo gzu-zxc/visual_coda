@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of appearances by players in different positions, grouped by their club ID.",
+    "data": {
+        "url": "spider_csv/sports_competition_player.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Position",
+            "type": "nominal",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "Apps",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Club_ID",
+            "type": "nominal"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

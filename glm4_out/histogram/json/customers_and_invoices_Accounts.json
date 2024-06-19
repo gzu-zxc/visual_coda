@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of account opening dates.",
+    "data": {
+        "url": "spider_csv/customers_and_invoices_Accounts.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_account_opened",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "bin": {
+                "maxbins": 12
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

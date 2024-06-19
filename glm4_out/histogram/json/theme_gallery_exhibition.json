@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of ticket prices for art exhibitions.",
+    "data": {
+        "url": "spider_csv/theme_gallery_exhibition.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Ticket_Price",
+            "type": "quantitative",
+            "bin": true,
+            "axis": {
+                "title": "Ticket Price"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of Exhibitions"
+            }
+        }
+    }
+}

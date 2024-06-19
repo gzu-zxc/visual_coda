@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the distribution of research projects across different roles, with bubble size representing the number of staff members involved in each role.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/tracking_grants_for_research_Project_Staff.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "role_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "project_id",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "staff_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "role_code",
+            "type": "nominal"
+        }
+    }
+}

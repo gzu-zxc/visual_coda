@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of store area sizes, color-encoded by the number of product categories.",
+    "data": {
+        "url": "spider_csv/store_product_store.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Area_size",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "Number_of_product_category",
+            "type": "quantitative"
+        }
+    },
+    "aggregate": {
+        "count": "valid"
+    }
+}

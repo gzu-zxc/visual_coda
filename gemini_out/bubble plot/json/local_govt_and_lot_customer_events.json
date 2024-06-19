@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between customer_id and property_id, sized by the count of Customer_Event_ID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/local_govt_and_lot_customer_events.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "customer_id",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "property_id",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Customer_Event_ID",
+            "type": "quantitative"
+        }
+    }
+}

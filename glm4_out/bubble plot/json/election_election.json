@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of delegates from each party over the years.",
+    "data": {
+        "url": "spider_csv/election_election.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "First_Elected",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Party",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Delegate",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of payment amounts by payment method.",
+    "data": {
+        "url": "spider_csv/insurance_policies_Payments.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Amount_Payment",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "Payment_Method_Code",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the number of staff members involved in each research project over time.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/tracking_grants_for_research_Project_Staff.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_from",
+            "type": "temporal",
+            "timeUnit": "year",
+            "title": "Year"
+        },
+        "y": {
+            "field": "project_id",
+            "type": "nominal",
+            "title": "Project ID"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "staff_id",
+            "type": "quantitative",
+            "title": "Number of Staff Members"
+        }
+    }
+}

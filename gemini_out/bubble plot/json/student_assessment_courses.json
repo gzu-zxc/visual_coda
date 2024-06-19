@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of courses for each course name",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/student_assessment_courses.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "course_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "course_name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "count()",
+            "type": "quantitative",
+            "title": "Number of Courses"
+        },
+        "color": {
+            "field": "course_name",
+            "type": "nominal",
+            "title": "Course Name"
+        },
+        "tooltip": [
+            {
+                "field": "course_name",
+                "type": "nominal",
+                "title": "Course Name"
+            },
+            {
+                "field": "count()",
+                "type": "quantitative",
+                "title": "Number of Courses"
+            }
+        ]
+    }
+}

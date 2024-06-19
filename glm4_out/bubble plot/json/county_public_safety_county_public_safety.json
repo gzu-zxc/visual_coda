@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between population, number of police officers, and crime rate in various counties.",
+    "data": {
+        "url": "spider_csv/county_public_safety_county_public_safety.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Police_officers",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Crime_rate",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Population",
+            "type": "quantitative"
+        }
+    }
+}

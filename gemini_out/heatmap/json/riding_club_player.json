@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap showing the relationship between sponsor and votes",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/riding_club_player.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Sponsor_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Residence",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "mean",
+            "field": "Votes",
+            "type": "quantitative"
+        }
+    }
+}

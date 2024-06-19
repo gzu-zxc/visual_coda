@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization of the ACC regular season winning percentage across different teams.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/university_basketball_basketball_match.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Team_Name",
+            "type": "nominal",
+            "title": "Team Name"
+        },
+        "y": {
+            "field": "ACC_Percent",
+            "type": "quantitative",
+            "title": "ACC Regular Season Winning Percentage",
+            "bin":true
+        },
+        "color": {
+            "aggregate": "mean",
+            "field": "ACC_Percent",
+            "type": "quantitative"
+        }
+    }
+}

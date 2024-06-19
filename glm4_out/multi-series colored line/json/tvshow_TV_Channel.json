@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing TV shows across different countries.",
+    "data": {
+        "url": "spider_csv/tvshow_TV_Channel.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Country",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "series_name",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of student enrollment numbers for college soccer teams.",
+    "data": {
+        "url": "spider_csv/soccer_2_College.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "enr",
+            "type": "quantitative",
+            "bin": true
+        }
+    }
+}

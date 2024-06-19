@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot showing the distribution of payment amounts made to the driving school.",
+    "data": {
+        "url": "spider_csv/driving_school_Customer_Payments.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "payment_method_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "amount_payment",
+            "type": "quantitative",
+            "axis": {
+                "title": "Payment Amount"
+            }
+        }
+    }
+}

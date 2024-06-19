@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the connection type of each client accelerator and the count of unique operating systems supported by that accelerator.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/browser_web_web_client_accelerator.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Connection",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Operating_system",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "id",
+            "type": "quantitative"
+        }
+    }
+}

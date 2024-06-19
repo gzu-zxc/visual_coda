@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the date the student started living at the address and the monthly rental amount paid by the student, with the size of the bubble representing the address id.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/behavior_monitoring_Student_Addresses.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_address_from",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "field": "monthly_rental",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "address_id",
+            "type": "quantitative"
+        }
+    }
+}

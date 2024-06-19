@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of races held at each track.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/race_track_race.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Track_ID",
+            "type": "quantitative",
+            "title": "Track ID"
+        },
+        "y": {
+            "field": "Name",
+            "type": "nominal",
+            "title": "Race Name"
+        },
+        "size": {
+            "field": "Race_ID",
+            "type": "quantitative",
+            "title": "Number of Races"
+        },
+        "color": {
+            "field": "Class",
+            "type": "nominal",
+            "title": "Race Class"
+        }
+    }
+}

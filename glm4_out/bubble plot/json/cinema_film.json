@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the rank and number in season of cinema films.",
+    "data": {
+        "url": "spider_csv/cinema_film.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Film_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Rank_in_series",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "Number_in_season",
+            "type": "ordinal"
+        }
+    }
+}

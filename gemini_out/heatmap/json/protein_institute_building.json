@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the relationship between the number of floors and the height of the buildings.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/protein_institute_building.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Floors",
+            "type": "quantitative",
+            "bin": true,
+            "title": "Number of Floors"
+        },
+        "y": {
+            "field": "Height_feet",
+            "type": "quantitative",
+            "bin": true,
+            "title": "Height (Feet)"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Buildings"
+        }
+    }
+}

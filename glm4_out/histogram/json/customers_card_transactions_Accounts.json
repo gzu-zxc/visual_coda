@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of transactions per account.",
+    "data": {
+        "url": "spider_csv/customers_card_transactions_Accounts.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "account_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "account_id",
+            "type": "quantitative"
+        }
+    }
+}

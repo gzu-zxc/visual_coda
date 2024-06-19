@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the employee's title and the number of employees in each title, with the size of the bubble representing the number of employees in each title",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/chinook_1_EMPLOYEE.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Title",
+            "type": "nominal"
+        },
+        "y": {
+            "aggregate": "count()",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Title",
+            "aggregate": "count()",
+            "type": "quantitative"
+        }
+    }
+}

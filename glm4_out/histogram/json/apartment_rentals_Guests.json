@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of guests born per year.",
+    "data": {
+        "url": "spider_csv/apartment_rentals_Guests.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_of_birth",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year of Birth"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "axis": {
+                "title": "Number of Guests"
+            }
+        }
+    }
+}

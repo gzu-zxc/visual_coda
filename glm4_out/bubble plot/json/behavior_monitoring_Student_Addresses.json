@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot of monthly rental costs by student and type of residence.",
+    "data": {
+        "url": "spider_csv/behavior_monitoring_Student_Addresses.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "student_id",
+            "type": "nominal",
+            "axis": {
+                "labelAngle": 0
+            }
+        },
+        "y": {
+            "field": "monthly_rental",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "monthly_rental",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "other_details",
+            "type": "nominal"
+        }
+    }
+}

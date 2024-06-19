@@ -1,0 +1,56 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the duration of documents in different locations.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Tracking_DB_Document_locations.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "duration",
+            "type": "quantitative",
+            "timeUnit": "yearmonthdate",
+            "axis": {
+                "title": "Duration in Location"
+            }
+        },
+        "y": {
+            "field": "Location_Code",
+            "type": "nominal",
+            "axis": {
+                "title": "Location Code"
+            }
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Document_ID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Location_Code",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Date_in_Locaton_To - datum.Date_in_Location_From",
+            "as": "duration"
+        },
+        {
+            "calculate": "toDate(datum.duration)",
+            "as": "duration_date"
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

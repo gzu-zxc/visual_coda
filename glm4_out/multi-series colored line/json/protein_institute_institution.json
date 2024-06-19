@@ -1,0 +1,70 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the enrollment of various educational institutions by type and founding decade.",
+    "data": {
+        "url": "spider_csv/protein_institute_institution.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Founded",
+            "type": "temporal",
+            "timeUnit": "decade",
+            "axis": {
+                "title": "Founded (by decade)"
+            }
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "axis": {
+                "title": "Total Enrollment"
+            }
+        },
+        "color": {
+            "field": "Type",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            },
+            "legend": {
+                "title": "Type"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Institution",
+                "type": "nominal"
+            },
+            {
+                "field": "Type",
+                "type": "nominal"
+            },
+            {
+                "field": "Enrollment",
+                "type": "quantitative",
+                "aggregate": "sum"
+            }
+        ]
+    },
+    "transform": [
+        {
+            "groupby": [
+                "Type",
+                "Institution"
+            ],
+            "aggregate": {
+                "Enrollment": "sum"
+            }
+        },
+        {
+            "sort": {
+                "field": "Founded"
+            }
+        }
+    ]
+}

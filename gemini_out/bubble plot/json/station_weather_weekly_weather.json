@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between high temperature and precipitation for each day of the week.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/station_weather_weekly_weather.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "high_temperature",
+            "type": "quantitative",
+            "title": "High Temperature (°C)"
+        },
+        "y": {
+            "field": "precipitation",
+            "type": "quantitative",
+            "title": "Precipitation (mm)"
+        },
+        "size": {
+            "field": "wind_speed_mph",
+            "type": "quantitative",
+            "title": "Wind Speed (mph)"
+        },
+        "color": {
+            "field": "day_of_week",
+            "type": "nominal",
+            "title": "Day of Week"
+        }
+    }
+}

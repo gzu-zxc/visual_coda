@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing camera lenses by focal length, maximum aperture, and brand.",
+    "data": {
+        "url": "spider_csv/mountain_photos_camera_lens.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "focal_length_mm",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            },
+            "axis": {
+                "title": "Focal Length (mm)"
+            }
+        },
+        "y": {
+            "field": "max_aperture",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            },
+            "axis": {
+                "title": "Maximum Aperture"
+            }
+        },
+        "color": {
+            "field": "brand",
+            "type": "nominal"
+        }
+    }
+}

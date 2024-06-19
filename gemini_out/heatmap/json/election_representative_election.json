@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the relationship between the election date and the number of votes received.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/election_representative_election.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "year",
+            "title": "Election Date"
+        },
+        "y": {
+            "field": "Place",
+            "type": "ordinal",
+            "title": "Place"
+        },
+        "color": {
+            "field": "Votes",
+            "type": "quantitative",
+            "title": "Votes"
+        }
+    }
+}

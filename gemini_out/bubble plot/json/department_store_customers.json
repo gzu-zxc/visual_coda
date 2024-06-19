@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart visualizing the distribution of customers by payment method code, with customer_id mapped to the size of the bubbles.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/department_store_customers.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "payment_method_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "customer_code",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "customer_id",
+            "type": "quantitative"
+        }
+    }
+}

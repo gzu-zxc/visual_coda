@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualizing the relationship between receipt date and receipt number, with the size of the bubbles representing the document id.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Doc_Control_Systems_Documents.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "receipt_date",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "receipt_number",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "document_id",
+            "type": "quantitative"
+        }
+    }
+}

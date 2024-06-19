@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This heatmap shows the count of documents received by each shipping agent on different document types.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Doc_Control_Systems_Documents.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "document_type_code",
+            "type": "nominal",
+            "title": "Document Type"
+        },
+        "y": {
+            "field": "shipping_agent_code",
+            "type": "nominal",
+            "title": "Shipping Agent"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Count"
+        }
+    }
+}

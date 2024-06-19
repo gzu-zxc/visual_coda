@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of customer events by move-in date per customer.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_customer_events.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_moved_in",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Move-in Date (Month)"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "Customer_Event_ID",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of Events"
+            }
+        },
+        "color": {
+            "field": "customer_id",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            },
+            "legend": {
+                "title": "Customer ID"
+            }
+        }
+    },
+    "transform": [
+        {
+            "filter": "datum.Customer_Event_ID !== null"
+        }
+    ]
+}

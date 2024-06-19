@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing film market estimations over the years.",
+    "data": {
+        "url": "spider_csv/film_rank_film_market_estimation.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Film_ID",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "average",
+            "field": [
+                "Low_Estimate",
+                "High_Estimate"
+            ],
+            "type": "quantitative"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Low_Estimate + datum.High_Estimate",
+            "as": "EstimateRange"
+        },
+        {
+            "sort": {
+                "field": "Year"
+            }
+        }
+    ]
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing apartment bookings by apartment and guest IDs, with bubble size representing the booking start date.",
+    "data": {
+        "url": "spider_csv/apartment_rentals_Apartment_Bookings.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "apt_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "guest_id",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "booking_start_date",
+            "type": "quantitative",
+            "timeUnit": "yearmonthdate"
+        }
+    }
+}

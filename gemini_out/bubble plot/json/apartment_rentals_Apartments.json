@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the number of bathrooms and bedrooms in each apartment, with the size of the bubble representing the number of rooms.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/apartment_rentals_Apartments.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "bathroom_count",
+            "type": "quantitative",
+            "title": "Bathroom Count"
+        },
+        "y": {
+            "field": "bedroom_count",
+            "type": "quantitative",
+            "title": "Bedroom Count"
+        },
+        "size": {
+            "field": "room_count",
+            "type": "quantitative",
+            "title": "Room Count"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing account balance by state and account type.",
+    "data": {
+        "url": "spider_csv/loan_1_customer.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "state",
+            "type": "nominal",
+            "scale": {
+                "type": "band"
+            }
+        },
+        "y": {
+            "field": "acc_bal",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear"
+            }
+        },
+        "color": {
+            "field": "acc_type",
+            "type": "nominal"
+        }
+    }
+}

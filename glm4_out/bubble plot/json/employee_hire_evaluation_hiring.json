@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of employees hired over time, categorized by shop and employment type.",
+    "data": {
+        "url": "spider_csv/employee_hire_evaluation_hiring.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Shop_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Start_from",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "Is_full_time",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Employee_ID",
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

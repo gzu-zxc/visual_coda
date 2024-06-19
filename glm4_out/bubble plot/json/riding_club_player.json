@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of votes each player received, colored by their rank.",
+    "data": {
+        "url": "spider_csv/riding_club_player.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Player_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Votes",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Votes",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Rank",
+            "type": "ordinal"
+        }
+    }
+}

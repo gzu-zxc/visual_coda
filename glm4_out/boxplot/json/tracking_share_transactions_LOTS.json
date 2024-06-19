@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot chart for share transactions, grouped by lot details.",
+    "data": {
+        "url": "spider_csv/tracking_share_transactions_LOTS.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "lot_id",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "lot_details",
+            "type": "nominal"
+        }
+    }
+}

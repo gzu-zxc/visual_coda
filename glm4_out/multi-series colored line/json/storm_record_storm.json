@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the maximum speed of storms over their active periods.",
+    "data": {
+        "url": "spider_csv/storm_record_storm.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Dates_active",
+            "type": "temporal",
+            "timeUnit": "interval"
+        },
+        "y": {
+            "field": "Max_speed",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Name",
+            "type": "nominal"
+        }
+    }
+}

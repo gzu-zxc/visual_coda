@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of sports competitions per year",
+    "data": {
+        "url": "spider_csv/sports_competition_competition.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Competition_ID",
+            "type": "quantitative",
+            "aggregate": "boxplot"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the number of hosts, the first year of the party and the last year of the party",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/party_host_party.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "First_year",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Last_year",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Number_of_hosts",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Party_Theme",
+            "type": "nominal"
+        }
+    }
+}

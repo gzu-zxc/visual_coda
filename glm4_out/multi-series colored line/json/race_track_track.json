@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing seating capacity over the years the race tracks were opened.",
+    "data": {
+        "url": "spider_csv/race_track_track.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year_Opened",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year Opened"
+            }
+        },
+        "y": {
+            "field": "Seating",
+            "type": "quantitative",
+            "axis": {
+                "title": "Seating Capacity"
+            }
+        },
+        "color": {
+            "field": "Name",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            }
+        }
+    },
+    "sort": {
+        "field": "Year_Opened"
+    }
+}

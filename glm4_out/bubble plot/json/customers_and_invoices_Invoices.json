@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the invoices by order ID and invoice date.",
+    "data": {
+        "url": "spider_csv/customers_and_invoices_Invoices.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "invoice_number",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "order_id",
+            "type": "nominal"
+        },
+        "x": {
+            "field": "invoice_date",
+            "type": "temporal",
+            "timeUnit": "day",
+            "axis": {
+                "title": "Invoice Date"
+            }
+        }
+    }
+}

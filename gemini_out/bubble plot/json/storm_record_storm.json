@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the maximum wind speed, damage, and number of deaths caused by storms.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/storm_record_storm.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Max_speed",
+            "type": "quantitative",
+            "title": "Maximum Wind Speed (mph)"
+        },
+        "y": {
+            "field": "Damage_millions_USD",
+            "type": "quantitative",
+            "title": "Damage (millions of USD)"
+        },
+        "size": {
+            "field": "Number_Deaths",
+            "type": "quantitative",
+            "title": "Number of Deaths"
+        },
+        "color": {
+            "field": "Name",
+            "type": "nominal",
+            "title": "Storm Name"
+        }
+    }
+}

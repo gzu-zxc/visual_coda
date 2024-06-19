@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of furniture market rates, color-encoded by number of components.",
+    "data": {
+        "url": "spider_csv/manufacturer_furniture.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Market_Rate",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "Num_of_Component",
+            "type": "ordinal"
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

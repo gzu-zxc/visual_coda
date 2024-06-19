@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between age and the number of students in each age group, with the size of the bubble representing the number of students.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/allergy_1_Student.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "title": "Age"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative",
+            "aggregate": "count",
+            "title": "Number of Students"
+        },
+        "size": {
+            "field": "Age",
+            "type": "quantitative",
+            "aggregate": "count",
+            "title": "Count"
+        }
+    }
+}

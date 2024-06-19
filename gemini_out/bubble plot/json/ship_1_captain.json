@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the age of the captains and the class of ship they command, with the size of the bubbles representing the number of captains in each category.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/ship_1_captain.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "age",
+            "type": "quantitative",
+            "title": "Age of Captain"
+        },
+        "y": {
+            "field": "Class",
+            "type": "nominal",
+            "title": "Class of Ship"
+        },
+        "size": {
+            "aggregate": "count()",
+            "type": "quantitative",
+            "title": "Number of Captains"
+        }
+    }
+}

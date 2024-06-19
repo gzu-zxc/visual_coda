@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the budget of a movie and its worldwide gross revenue, with the size of the bubbles representing the year of release.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/culture_company_movie.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Budget_million",
+            "type": "quantitative",
+            "title": "Budget (Millions of Dollars)"
+        },
+        "y": {
+            "field": "Gross_worldwide",
+            "type": "quantitative",
+            "title": "Worldwide Gross Revenue"
+        },
+        "size": {
+            "field": "Year",
+            "type": "quantitative",
+            "title": "Year of Release"
+        }
+    }
+}

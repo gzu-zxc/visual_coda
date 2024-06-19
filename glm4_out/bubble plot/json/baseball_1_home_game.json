@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of games and total attendance for each league.",
+    "data": {
+        "url": "spider_csv/baseball_1_home_game.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "games",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "attendance",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "games",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        },
+        "color": {
+            "field": "league_id",
+            "type": "nominal"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

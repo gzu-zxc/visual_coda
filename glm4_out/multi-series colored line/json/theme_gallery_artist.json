@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the average age of artists by the year they joined, grouped by country.",
+    "data": {
+        "url": "spider_csv/theme_gallery_artist.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year_Join",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative",
+            "aggregate": "average"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Age",
+                    "as": "Age"
+                }
+            ],
+            "groupby": [
+                "Year_Join",
+                "Country"
+            ]
+        }
+    ],
+    "sort": {
+        "field": "Year_Join"
+    }
+}

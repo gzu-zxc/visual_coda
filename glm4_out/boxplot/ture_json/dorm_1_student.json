@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of student ages in Dormitory 1.",
+    "data": {
+        "url": "spider_csv/dorm_1_student.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        }
+    }
+}

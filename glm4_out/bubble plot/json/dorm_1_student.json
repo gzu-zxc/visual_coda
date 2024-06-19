@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot of student data in Dorm 1, with age, major, and gender.",
+    "data": {
+        "url": "spider_csv/dorm_1_student.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Major",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "Sex",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "StuID",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

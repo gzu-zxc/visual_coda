@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of audience members at various debate dates.",
+    "data": {
+        "url": "spider_csv/debate_debate.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "monthdate",
+            "axis": {
+                "title": "Debate Date"
+            }
+        },
+        "y": {
+            "field": "Num_of_Audience",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of Audience Members"
+            }
+        },
+        "size": {
+            "field": "Num_of_Audience",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    }
+}

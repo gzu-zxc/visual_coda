@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot chart showing the distribution of problem logs by category and month.",
+    "data": {
+        "url": "spider_csv/tracking_software_problems_problem_log.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "problem_category_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "log_entry_date",
+            "type": "temporal",
+            "timeUnit": "month"
+        }
+    }
+}

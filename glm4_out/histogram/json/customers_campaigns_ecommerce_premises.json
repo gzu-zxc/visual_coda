@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of premise IDs, grouped by premises type.",
+    "data": {
+        "url": "spider_csv/customers_campaigns_ecommerce_premises.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "premise_id",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "premises_type",
+            "type": "nominal"
+        }
+    },
+    "aggregation": {
+        "count": "premise_id"
+    }
+}

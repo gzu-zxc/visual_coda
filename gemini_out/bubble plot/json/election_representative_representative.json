@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart to represent the number of representatives by state and their party affiliation",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/election_representative_representative.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "State",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Party",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Representative_ID",
+            "aggregate": "count",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Party",
+            "type": "nominal"
+        }
+    }
+}

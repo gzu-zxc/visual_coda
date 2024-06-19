@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualizing the relationship between Age and Time_of_purchase, with the size of the bubbles representing Level_of_membership.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/coffee_shop_member.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Time_of_purchase",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Level_of_membership",
+            "type": "quantitative"
+        }
+    }
+}

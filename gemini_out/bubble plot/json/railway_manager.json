@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the age of railway managers and their level in the company, sized by the number of managers in each category.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/railway_manager.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "title": "Age"
+        },
+        "y": {
+            "field": "Level",
+            "type": "quantitative",
+            "title": "Level"
+        },
+        "size": {
+            "field": "Manager_ID",
+            "type": "quantitative",
+            "aggregate": "count",
+            "title": "Number of Managers"
+        }
+    }
+}

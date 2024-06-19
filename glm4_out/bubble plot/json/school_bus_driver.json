@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot of school bus drivers by political party, age, and home city.",
+    "data": {
+        "url": "spider_csv/school_bus_driver.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Party",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Home_city",
+            "type": "quantitative"
+        }
+    }
+}

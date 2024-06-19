@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the capacity of classrooms across different buildings.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_2_classroom.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "building",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "room_number",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "capacity",
+            "type": "quantitative"
+        }
+    }
+}

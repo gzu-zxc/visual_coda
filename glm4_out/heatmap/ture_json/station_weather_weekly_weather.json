@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the maximum recorded temperature for each day of the week across different weather stations.",
+    "data": {
+        "url": "spider_csv/station_weather_weekly_weather.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "day_of_week",
+            "type": "nominal",
+            "axis": {
+                "title": "Day of the Week"
+            }
+        },
+        "y": {
+            "field": "station_id",
+            "type": "nominal",
+            "axis": {
+                "title": "Weather Station ID"
+            }
+        },
+        "color": {
+            "field": "high_temperature",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redyellowblue"
+            },
+            "legend": {
+                "title": "High Temperature (Fahrenheit)"
+            }
+        }
+    }
+}

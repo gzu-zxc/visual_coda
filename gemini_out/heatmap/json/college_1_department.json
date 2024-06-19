@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the number of employees in each department",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_1_department.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "DEPT_CODE",
+            "type": "nominal",
+            "title": "Department Code"
+        },
+        "y": {
+            "field": "SCHOOL_CODE",
+            "type": "nominal",
+            "title": "School Code"
+        },
+        "color": {
+            "field": "EMP_NUM",
+            "type": "quantitative",
+            "title": "Number of Employees"
+        }
+    }
+}

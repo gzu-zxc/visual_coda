@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of professors' office extensions.",
+    "data": {
+        "url": "spider_csv/college_1_professor.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "PROF_EXTENSION",
+            "type": "quantitative"
+        }
+    }
+}

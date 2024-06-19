@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the count of documents in each location over time.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Doc_Tracking_DB_Document_locations.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date_in_Location_From",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Date Document Arrived"
+        },
+        "y": {
+            "field": "Location_Code",
+            "type": "nominal",
+            "title": "Location Code"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "Document_ID",
+            "type": "quantitative",
+            "title": "Count of Documents"
+        }
+    }
+}

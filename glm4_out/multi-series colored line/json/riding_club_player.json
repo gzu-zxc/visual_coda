@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of votes received by players at different ranks.",
+    "data": {
+        "url": "spider_csv/riding_club_player.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Votes",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Player_name",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "sort": [
+                "Rank",
+                "Player_name"
+            ]
+        }
+    ]
+}

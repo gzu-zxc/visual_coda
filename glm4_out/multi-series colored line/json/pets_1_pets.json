@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing pet weight by age, categorized by pet type.",
+    "data": {
+        "url": "spider_csv/pets_1_pets.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "pet_age",
+            "type": "quantitative",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "weight",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "PetType",
+            "type": "nominal"
+        }
+    }
+}

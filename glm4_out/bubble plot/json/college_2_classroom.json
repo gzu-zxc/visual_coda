@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the classroom capacity and room number.",
+    "data": {
+        "url": "spider_csv/college_2_classroom.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "room_number",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "capacity",
+            "type": "quantitative"
+        }
+    }
+}

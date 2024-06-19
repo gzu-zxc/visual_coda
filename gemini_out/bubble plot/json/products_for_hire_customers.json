@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of customers hired by each coupon.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/products_for_hire_customers.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "coupon_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "good_or_bad_customer",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "customer_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "good_or_bad_customer",
+            "type": "nominal"
+        }
+    }
+}

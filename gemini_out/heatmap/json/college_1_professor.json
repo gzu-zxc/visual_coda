@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap visualizing the distribution of professors across departments.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/college_1_professor.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "DEPT_CODE",
+            "type": "nominal",
+            "title": "Department"
+        },
+        "y": {
+            "field": "PROF_HIGH_DEGREE",
+            "type": "nominal",
+            "title": "Highest Degree"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Professors"
+        }
+    }
+}

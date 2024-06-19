@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of address identifiers for teachers.",
+    "data": {
+        "url": "spider_csv/behavior_monitoring_Teachers.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "address_id",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "count",
+            "type": "quantitative"
+        }
+    }
+}

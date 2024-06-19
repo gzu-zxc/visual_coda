@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of dock counts across different cities.",
+    "data": {
+        "url": "spider_csv/bike_1_station.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "city",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "dock_count",
+            "type": "quantitative"
+        }
+    }
+}

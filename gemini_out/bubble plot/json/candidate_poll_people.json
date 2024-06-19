@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualizing the relationship between height and weight of the candidates, with bubble size representing the weight of the candidate.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/candidate_poll_people.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Height",
+            "type": "quantitative",
+            "title": "Height (cm)"
+        },
+        "y": {
+            "field": "Weight",
+            "type": "quantitative",
+            "title": "Weight (kg)"
+        },
+        "size": {
+            "field": "Weight",
+            "type": "quantitative",
+            "title": "Weight (kg)"
+        },
+        "color": {
+            "field": "Sex",
+            "type": "nominal",
+            "title": "Sex"
+        }
+    }
+}

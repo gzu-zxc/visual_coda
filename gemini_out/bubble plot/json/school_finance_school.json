@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between enrollment and IHSAA class.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/school_finance_school.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "title": "Enrollment"
+        },
+        "y": {
+            "field": "IHSAA_Class",
+            "type": "nominal",
+            "title": "IHSAA Class"
+        },
+        "size": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "title": "Enrollment"
+        }
+    }
+}

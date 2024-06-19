@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of guests by gender and year-month of birth.",
+    "data": {
+        "url": "spider_csv/apartment_rentals_Guests.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_of_birth",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "axis": {
+                "title": "Year-Month of Birth"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "axis": {
+                "title": "Number of Guests"
+            }
+        },
+        "color": {
+            "field": "gender_code",
+            "type": "nominal",
+            "scale": {
+                "scheme": "category10"
+            },
+            "legend": {
+                "title": "Gender"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "year(datum.date_of_birth)",
+            "as": "year_of_birth"
+        },
+        {
+            "calculate": "month(datum.date_of_birth)",
+            "as": "month_of_birth"
+        },
+        {
+            "calculate": "datum.year_of_birth + '-' + datum.month_of_birth",
+            "as": "yearmonth_of_birth"
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

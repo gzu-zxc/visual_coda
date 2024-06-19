@@ -1,0 +1,43 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the total receipt numbers for each document status and type.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Control_Systems_Documents.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "document_status_code",
+            "type": "nominal",
+            "axis": {
+                "title": "Document Status"
+            }
+        },
+        "y": {
+            "field": "document_type_code",
+            "type": "nominal",
+            "axis": {
+                "title": "Document Type"
+            }
+        },
+        "size": {
+            "field": "receipt_number",
+            "type": "quantitative",
+            "aggregate": "sum",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    },
+    "config": {
+        "view": {
+            "stroke": "transparent"
+        }
+    }
+}

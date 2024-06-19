@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the duration of music files by artist and file format.",
+    "data": {
+        "url": "spider_csv/music_1_files.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "artist_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "duration",
+            "type": "quantitative",
+            "timeUnit": "seconds"
+        },
+        "color": {
+            "field": "formats",
+            "type": "nominal"
+        }
+    }
+}

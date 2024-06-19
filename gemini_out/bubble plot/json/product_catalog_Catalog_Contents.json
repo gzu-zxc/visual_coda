@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart visualizing the relationship between the capacity, price, and height of products in the product catalog.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/product_catalog_Catalog_Contents.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "capacity",
+            "type": "quantitative"
+        },
+        "x": {
+            "field": "price_in_dollars",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "height",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "catalog_entry_name",
+            "type": "nominal"
+        }
+    }
+}

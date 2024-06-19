@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the sales, profits, and market value of gas companies.",
+    "data": {
+        "url": "spider_csv/gas_company_company.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Sales_billion",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Profits_billion",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Market_Value",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Company"
+            }
+        ]
+    }
+}

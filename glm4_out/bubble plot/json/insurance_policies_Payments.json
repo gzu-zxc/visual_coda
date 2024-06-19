@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the total payment amount by payment method over time.",
+    "data": {
+        "url": "spider_csv/insurance_policies_Payments.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Payment_Method_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Date_Payment_Made",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "size": {
+            "field": "Amount_Payment",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    }
+}

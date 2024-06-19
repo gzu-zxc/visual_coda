@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the area and population of cities, with the size of the bubbles representing the population.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/farm_city.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Area_km_2",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Population",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Population",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of days wrestlers have held the championship across different reigns.",
+    "data": {
+        "url": "spider_csv/wrestler_wrestler.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Days_held",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Reign",
+            "type": "ordinal"
+        }
+    },
+    "sort": {
+        "field": [
+            "Name",
+            "Reign"
+        ]
+    }
+}

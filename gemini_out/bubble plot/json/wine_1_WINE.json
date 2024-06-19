@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualizing the relationship between the number of cases produced, the price and the score of different wines.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/wine_1_WINE.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Price",
+            "type": "quantitative",
+            "title": "Price"
+        },
+        "y": {
+            "field": "Score",
+            "type": "quantitative",
+            "title": "Score"
+        },
+        "size": {
+            "field": "Cases",
+            "type": "quantitative",
+            "title": "Cases Produced"
+        },
+        "color": {
+            "field": "Grape",
+            "type": "nominal",
+            "title": "Grape Variety"
+        }
+    }
+}

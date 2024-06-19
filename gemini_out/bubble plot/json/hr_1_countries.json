@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between COUNTRY_NAME and REGION_ID, with the size of the bubbles representing COUNTRY_ID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/hr_1_countries.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "COUNTRY_NAME",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "REGION_ID",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "COUNTRY_ID",
+            "type": "nominal"
+        }
+    }
+}

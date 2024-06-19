@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap showing the number of docks at each station.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/bike_1_station.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "city",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "name",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "sum",
+            "field": "dock_count",
+            "type": "quantitative"
+        }
+    }
+}

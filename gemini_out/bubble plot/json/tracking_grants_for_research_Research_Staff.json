@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This visualization shows the number of research staff members per employer organization.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/tracking_grants_for_research_Research_Staff.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "employer_organisation_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "staff_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "size": {
+            "field": "staff_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A Box Plot chart showing the count of share transactions per investor.",
+    "data": {
+        "url": "spider_csv/tracking_share_transactions_INVESTORS.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "investor_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "count_investor_id",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

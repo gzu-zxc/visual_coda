@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Histogram of flight distances",
+    "data": {
+        "url": "spider_csv/flight_1_Flight.csv.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "distance",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 20
+            }
+        },
+        "y": {
+            "field": "count",
+            "type": "quantitative"
+        }
+    },
+    "transform": [
+        {
+            "bin": {
+                "field": "distance",
+                "maxbins": 20
+            },
+            "aggregate": [
+                {
+                    "op": "count",
+                    "as": "count"
+                }
+            ]
+        }
+    ]
+}

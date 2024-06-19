@@ -1,0 +1,34 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing document types and their descriptions.",
+    "data": {
+        "url": "spider_csv/cre_Docs_and_Epenses_Ref_document_types.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Document_Type_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Document_Type_Name",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Document_Type_Description",
+            "type": "ordinal"
+        },
+        "order": {
+            "field": "Document_Type_Name"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

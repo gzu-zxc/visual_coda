@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the enrollment of different schools by IHSAA Class.",
+    "data": {
+        "url": "spider_csv/school_finance_school.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "IHSAA_Class",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "School_name",
+            "type": "nominal"
+        }
+    }
+}

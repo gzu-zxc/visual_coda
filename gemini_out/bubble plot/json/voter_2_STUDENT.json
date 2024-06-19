@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the distribution of students by age and sex.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/voter_2_STUDENT.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative",
+            "title": "Age"
+        },
+        "y": {
+            "field": "Sex",
+            "type": "nominal",
+            "title": "Sex"
+        },
+        "size": {
+            "field": "StuID",
+            "type": "quantitative",
+            "title": "Number of Students"
+        },
+        "color": {
+            "field": "Sex",
+            "type": "nominal",
+            "title": "Sex"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot showing research staff and their employing organisations, with bubble size representing staff details.",
+    "data": {
+        "url": "spider_csv/tracking_grants_for_research_Research_Staff.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "staff_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "employer_organisation_id",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "staff_details",
+            "type": "nominal"
+        }
+    }
+}

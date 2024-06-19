@@ -1,0 +1,47 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This visualization shows the number of books nominated and won by publisher in 1989 and 1990.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/culture_company_book_club.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Publisher",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Result",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count()",
+            "field": "Book_Title",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Year",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "viridis"
+            }
+        }
+    },
+    "selection": {
+        "grid": {
+            "type": "interval",
+            "bind": "scales"
+        }
+    },
+    "config": {
+        "view": {
+            "stroke": null
+        },
+        "axis": {
+            "labelAngle": -45
+        }
+    }
+}

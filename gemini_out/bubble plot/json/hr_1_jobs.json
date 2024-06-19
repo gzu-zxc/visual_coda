@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the minimum salary, maximum salary, and size based on the job title.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/hr_1_jobs.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "MIN_SALARY",
+            "type": "quantitative",
+            "title": "Minimum Salary"
+        },
+        "y": {
+            "field": "MAX_SALARY",
+            "type": "quantitative",
+            "title": "Maximum Salary"
+        },
+        "size": {
+            "field": "JOB_TITLE",
+            "type": "nominal",
+            "title": "Job Title"
+        },
+        "color": {
+            "field": "JOB_TITLE",
+            "type": "nominal",
+            "title": "Job Title"
+        }
+    }
+}

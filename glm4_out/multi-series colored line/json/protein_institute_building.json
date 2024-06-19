@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the height of Protein Institute buildings over the years they were the tallest.",
+    "data": {
+        "url": "spider_csv/protein_institute_building.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Height_feet",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Years_as_tallest",
+            "type": "temporal",
+            "timeUnit": [
+                "year",
+                "year"
+            ],
+            "title": "Years as Tallest"
+        }
+    }
+}

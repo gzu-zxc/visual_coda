@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the count of transactions per lot detail per investor.",
+    "data": {
+        "url": "spider_csv/tracking_share_transactions_LOTS.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "lot_id",
+            "type": "quantitative"
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "lot_details",
+            "type": "nominal"
+        },
+        "group": {
+            "field": "investor_id",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing races over time.",
+    "data": {
+        "url": "spider_csv/race_track_race.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "color": {
+            "field": "Race_ID",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of people killed and injured over the years, grouped by country.",
+    "data": {
+        "url": "spider_csv/perpetrator_perpetrator.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "value",
+            "type": "quantitative",
+            "stack": "normalize"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        },
+        "order": {
+            "field": "Country"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Killed",
+                    "as": "value"
+                }
+            ],
+            "groupby": [
+                "Year",
+                "Country"
+            ]
+        },
+        {
+            "calculate": "datum.value * -1",
+            "as": "value"
+        },
+        {
+            "fold": [
+                "Killed",
+                "Injured"
+            ],
+            "as": [
+                "measure",
+                "value"
+            ]
+        }
+    ]
+}

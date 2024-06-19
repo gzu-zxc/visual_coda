@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the count of unique location IDs.",
+    "data": {
+        "url": "spider_csv/hr_1_locations.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "LOCATION_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "LOCATION_ID",
+            "type": "quantitative"
+        }
+    }
+}

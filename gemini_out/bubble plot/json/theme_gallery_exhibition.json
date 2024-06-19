@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the ticket price, year, and theme of exhibitions.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/theme_gallery_exhibition.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Ticket_Price",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Theme",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Theme",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the opening years of different gas stations.",
+    "data": {
+        "url": "spider_csv/gas_company_gas_station.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Station_ID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Station_ID",
+            "type": "nominal"
+        },
+        "group": {
+            "field": "Station_ID"
+        }
+    }
+}

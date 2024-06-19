@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the count of web client accelerators by connection type.",
+    "data": {
+        "url": "spider_csv/browser_web_web_client_accelerator.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Connection",
+            "type": "nominal"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "Connection",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of web client accelerators supporting different connection types and operating systems",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/browser_web_web_client_accelerator.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Connection",
+            "type": "nominal",
+            "title": "Connection Type"
+        },
+        "y": {
+            "field": "Operating_system",
+            "type": "nominal",
+            "title": "Operating Systems"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Count"
+        }
+    }
+}

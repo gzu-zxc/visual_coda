@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of employees in each department.",
+    "data": {
+        "url": "spider_csv/college_1_department.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "DEPT_CODE",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "EMP_NUM",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "DEPT_NAME",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the volume of awards by category for each music festival.",
+    "data": {
+        "url": "spider_csv/music_4_music_festival.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Music_Festival",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Volume",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Category",
+            "type": "nominal"
+        }
+    }
+}

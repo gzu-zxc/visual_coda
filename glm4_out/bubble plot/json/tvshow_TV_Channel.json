@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing TV shows across different countries and languages.",
+    "data": {
+        "url": "spider_csv/tvshow_TV_Channel.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Country",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Language",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "id",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "series_name",
+                "type": "nominal"
+            }
+        ]
+    }
+}

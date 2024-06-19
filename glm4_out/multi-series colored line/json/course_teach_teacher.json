@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the age distribution of teachers by hometown.",
+    "data": {
+        "url": "spider_csv/course_teach_teacher.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Teacher_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Hometown",
+            "type": "nominal"
+        }
+    }
+}

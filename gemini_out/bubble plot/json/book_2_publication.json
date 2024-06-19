@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the publication date and the price of publications, where the size of the bubbles represents the publisher.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/book_2_publication.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Publication_Date",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Publication Date"
+        },
+        "y": {
+            "field": "Price",
+            "type": "quantitative",
+            "title": "Price"
+        },
+        "size": {
+            "field": "Publisher",
+            "type": "nominal",
+            "scale": {
+                "range": [
+                    10,
+                    200
+                ]
+            },
+            "legend": {
+                "title": "Publisher"
+            }
+        },
+        "color": {
+            "field": "Publisher",
+            "type": "nominal",
+            "legend": {
+                "title": "Publisher"
+            }
+        }
+    }
+}

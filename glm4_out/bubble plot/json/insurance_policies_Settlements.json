@@ -1,0 +1,35 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the amount claimed and settled over time.",
+    "data": {
+        "url": "spider_csv/insurance_policies_Settlements.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date_Claim_Made",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        },
+        "size": {
+            "field": "Amount_Claimed",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        },
+        "color": {
+            "field": "Amount_Settled",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redyellowblue"
+            }
+        }
+    }
+}

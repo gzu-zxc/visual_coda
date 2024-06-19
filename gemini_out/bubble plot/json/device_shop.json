@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualization showing the relationship between the shop's Open Year and the number of shops in each location. The size of the bubbles represents the number of shops in each location.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/device_shop.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Year",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Location",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count()",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the maximum aperture by focal length for different camera lens brands.",
+    "data": {
+        "url": "spider_csv/mountain_photos_camera_lens.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "focal_length_mm",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "max_aperture",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "brand",
+            "type": "nominal"
+        }
+    }
+}

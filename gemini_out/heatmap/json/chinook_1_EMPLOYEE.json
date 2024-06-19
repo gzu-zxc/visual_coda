@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap visualization of employee count by City and Title",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/chinook_1_EMPLOYEE.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "City",
+            "type": "nominal",
+            "scale": {
+                "padding": 0.2
+            }
+        },
+        "y": {
+            "field": "Title",
+            "type": "nominal",
+            "scale": {
+                "padding": 0.2
+            }
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

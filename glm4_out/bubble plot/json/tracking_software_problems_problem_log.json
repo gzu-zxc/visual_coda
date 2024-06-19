@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of software problems by category and status over time.",
+    "data": {
+        "url": "spider_csv/tracking_software_problems_problem_log.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "problem_category_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "problem_status_code",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "count",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "problem_status_code",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "timeUnit": "month",
+            "field": "log_entry_date",
+            "as": "month"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "as": "count"
+                }
+            ],
+            "groupby": [
+                "problem_category_code",
+                "problem_status_code",
+                "month"
+            ]
+        }
+    ]
+}

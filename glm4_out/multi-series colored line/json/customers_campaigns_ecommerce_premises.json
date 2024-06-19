@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the count of premises by type.",
+    "data": {
+        "url": "spider_csv/customers_campaigns_ecommerce_premises.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "premise_id",
+            "type": "quantitative"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "premise_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "premises_type",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "premise_id"
+                }
+            ],
+            "groupby": [
+                "premises_type",
+                "premise_id"
+            ]
+        }
+    ]
+}

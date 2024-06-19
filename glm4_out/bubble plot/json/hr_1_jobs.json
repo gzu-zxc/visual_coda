@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing job titles with their minimum and maximum salary ranges.",
+    "data": {
+        "url": "spider_csv/hr_1_jobs.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "JOB_TITLE",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "MIN_SALARY",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "MAX_SALARY",
+            "type": "quantitative"
+        }
+    }
+}

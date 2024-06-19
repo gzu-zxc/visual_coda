@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the age and weight of pets by type.",
+    "data": {
+        "url": "spider_csv/pets_1_pets.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "pet_age",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "weight",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "weight",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "PetType",
+            "type": "nominal"
+        }
+    }
+}

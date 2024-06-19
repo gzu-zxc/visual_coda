@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between store area size and number of product categories, with the size of the bubble representing the store ranking.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/store_product_store.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Area_size",
+            "type": "quantitative",
+            "title": "Area Size (square meters)"
+        },
+        "y": {
+            "field": "Number_of_product_category",
+            "type": "quantitative",
+            "title": "Number of Product Categories"
+        },
+        "size": {
+            "field": "Ranking",
+            "type": "quantitative",
+            "title": "Store Ranking"
+        },
+        "color": {
+            "field": "Type",
+            "type": "nominal",
+            "title": "Store Type"
+        }
+    }
+}

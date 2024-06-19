@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the range of temperature and wind speed by weather station.",
+    "data": {
+        "url": "spider_csv/station_weather_weekly_weather.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "high_temperature",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "y": {
+            "field": "low_temperature",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "size": {
+            "field": "wind_speed_mph",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        },
+        "color": {
+            "field": "station_id",
+            "type": "nominal"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

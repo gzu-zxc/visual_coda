@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between \"Rank_in_series\" and \"Number_in_season\" sized by \"Film_ID\"",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cinema_film.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank_in_series",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Number_in_season",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Film_ID",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the number of beds in a room and the base price, with the size of the bubbles representing the maximum occupancy.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/inn_1_Rooms.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "beds",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "basePrice",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "maxOccupancy",
+            "type": "quantitative"
+        }
+    }
+}

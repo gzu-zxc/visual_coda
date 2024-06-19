@@ -1,0 +1,54 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing high and low temperature ranges for different weather stations over the week.",
+    "data": {
+        "url": "spider_csv/station_weather_weekly_weather.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "day_of_week",
+            "type": "temporal",
+            "timeUnit": "day"
+        },
+        "y": {
+            "field": "high_temperature",
+            "type": "quantitative"
+        },
+        "y2": {
+            "field": "low_temperature",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "station_id",
+            "type": "nominal"
+        }
+    },
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "field": "high_temperature",
+                    "type": "quantitative"
+                }
+            }
+        },
+        {
+            "encoding": {
+                "y": {
+                    "field": "low_temperature",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

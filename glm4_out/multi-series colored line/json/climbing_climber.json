@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing climbers' points over time, grouped by country.",
+    "data": {
+        "url": "spider_csv/climbing_climber.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Time",
+            "type": "temporal",
+            "timeUnit": "hoursminutesseconds"
+        },
+        "y": {
+            "field": "Points",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "toDate(datum.Time)",
+            "as": "Time"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Points",
+                    "as": "meanPoints"
+                }
+            ],
+            "groupby": [
+                "Country",
+                "Time"
+            ]
+        }
+    ]
+}

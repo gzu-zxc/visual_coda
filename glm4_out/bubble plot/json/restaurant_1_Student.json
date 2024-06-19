@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot of student age, gender, and major.",
+    "data": {
+        "url": "spider_csv/restaurant_1_Student.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Major",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "StuID",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "color": {
+            "field": "Sex",
+            "type": "nominal"
+        }
+    }
+}

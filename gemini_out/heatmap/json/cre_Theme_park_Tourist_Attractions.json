@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization of the Tourist Attraction Type Code and How to Get There.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Theme_park_Tourist_Attractions.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Attraction_Type_Code",
+            "type": "nominal",
+            "title": "Attraction Type Code"
+        },
+        "y": {
+            "field": "How_to_Get_There",
+            "type": "nominal",
+            "title": "How to Get There"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Count"
+        }
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of wedding churches opened per year.",
+    "data": {
+        "url": "spider_csv/wedding_Church.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Date",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "Church_ID"
+        },
+        "color": {
+            "field": "Continuation_of",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Open_Date",
+            "as": "Open_Date_year"
+        }
+    ]
+}

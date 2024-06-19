@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between Faculty Rank and Phone number, with the size of the bubbles representing the Faculty ID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/activity_1_Faculty.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Phone",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "FacID",
+            "type": "quantitative"
+        }
+    }
+}

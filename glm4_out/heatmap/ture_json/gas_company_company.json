@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the sales of gas companies by industry and rank.",
+    "data": {
+        "url": "spider_csv/gas_company_company.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank",
+            "type": "ordinal",
+            "scale": {
+                "paddingInner": 0.5
+            },
+            "axis": {
+                "title": "Rank"
+            }
+        },
+        "y": {
+            "field": "Main_Industry",
+            "type": "nominal",
+            "axis": {
+                "title": "Main Industry"
+            }
+        },
+        "color": {
+            "field": "Sales_billion",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "redblue"
+            },
+            "legend": {
+                "title": "Sales (billions)"
+            }
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

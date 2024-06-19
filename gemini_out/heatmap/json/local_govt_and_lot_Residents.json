@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap visualization of the frequency of residents moving in and out of properties over time.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/local_govt_and_lot_Residents.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_moved_in",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Month Moved In"
+        },
+        "y": {
+            "field": "date_moved_out",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Month Moved Out"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Residents"
+        }
+    }
+}

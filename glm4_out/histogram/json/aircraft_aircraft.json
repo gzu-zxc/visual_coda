@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of maximum gross weight of various aircraft.",
+    "data": {
+        "url": "spider_csv/aircraft_aircraft.csv.csv"
+    },
+    "transform": [
+        {
+            "calculate": "toNumber(datum.Max_Gross_Weight.replace(' lb (', ',').replace(' kg)', ''))",
+            "as": "Max_Gross_Weight_num"
+        },
+        {
+            "bin": {
+                "maxbins": 50
+            },
+            "field": "Max_Gross_Weight_num",
+            "as": "binned_weight"
+        }
+    ],
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "binned_weight",
+            "type": "quantitative",
+            "bin": {
+                "maxbins": 50
+            },
+            "axis": {
+                "title": "Maximum Gross Weight (lb/kg)"
+            }
+        },
+        "y": {
+            "type": "quantitative",
+            "aggregate": "count",
+            "axis": {
+                "title": "Number of Aircraft"
+            }
+        }
+    }
+}

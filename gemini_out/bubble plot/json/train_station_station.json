@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the number of platforms, total passengers, and annual entry/exit count for each train station.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/train_station_station.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Total_Passengers",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Annual_entry_exit",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Number_of_Platforms",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Location",
+            "type": "nominal"
+        }
+    }
+}

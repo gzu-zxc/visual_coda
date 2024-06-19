@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the average salary by birth year and department number.",
+    "data": {
+        "url": "spider_csv/company_1_employee.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Bdate",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Birth Year"
+            }
+        },
+        "y": {
+            "field": "Salary",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "axis": {
+                "title": "Average Salary"
+            }
+        },
+        "color": {
+            "field": "Dno",
+            "type": "ordinal",
+            "scale": {
+                "scheme": "category10"
+            },
+            "legend": {
+                "title": "Department Number"
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "year(datum.Bdate)",
+            "as": "year"
+        }
+    ],
+    "sort": {
+        "field": "year"
+    }
+}

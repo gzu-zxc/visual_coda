@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart visualising the relationship between revenue and headquarter with size of the bubble representing the revenue of the manufacturer.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/manufactory_1_manufacturers.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Headquarter",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Revenue",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Revenue",
+            "type": "quantitative"
+        }
+    }
+}

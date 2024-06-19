@@ -1,0 +1,17 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot showing the distribution of crime rates across various counties.",
+    "data": {
+        "url": "spider_csv/county_public_safety_county_public_safety.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Crime_rate",
+            "type": "quantitative"
+        }
+    }
+}

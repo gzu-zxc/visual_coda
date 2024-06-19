@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap visualizing the Capacity of Stadiums across different Countries",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/swimming_stadium.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Country",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "City",
+            "type": "nominal"
+        },
+        "color": {
+            "field": "Capacity",
+            "type": "quantitative"
+        }
+    }
+}

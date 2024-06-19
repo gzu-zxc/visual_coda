@@ -1,0 +1,45 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualizing matches by competition and venue, with the size of the bubble representing the number of matches.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/city_record_MATCH.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Competition",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Venue",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "*",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Competition",
+                "type": "nominal"
+            },
+            {
+                "field": "Venue",
+                "type": "nominal"
+            },
+            {
+                "field": "Score",
+                "type": "nominal"
+            },
+            {
+                "aggregate": "count",
+                "field": "*",
+                "type": "quantitative"
+            }
+        ]
+    }
+}

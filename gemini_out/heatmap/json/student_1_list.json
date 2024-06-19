@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the distribution of students across grade levels and classrooms.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/student_1_list.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Classroom",
+            "type": "nominal",
+            "title": "Classroom Number"
+        },
+        "y": {
+            "field": "Grade",
+            "type": "ordinal",
+            "title": "Grade Level"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Students"
+        }
+    }
+}

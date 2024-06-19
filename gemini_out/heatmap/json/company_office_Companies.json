@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the relationship between Industry and Sales_billion",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/company_office_Companies.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Industry",
+            "type": "nominal",
+            "title": "Industry"
+        },
+        "y": {
+            "field": "Sales_billion",
+            "type": "quantitative",
+            "bin": true,
+            "title": "Sales_billion"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

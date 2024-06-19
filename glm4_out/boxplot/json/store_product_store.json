@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of store area sizes by store type.",
+    "data": {
+        "url": "spider_csv/store_product_store.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Area_size",
+            "type": "quantitative"
+        }
+    }
+}

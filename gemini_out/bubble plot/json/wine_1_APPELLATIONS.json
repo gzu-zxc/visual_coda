@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of appellations in each county",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/wine_1_APPELLATIONS.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "County",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Appelation",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "No",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear",
+                "range": [
+                    10,
+                    100
+                ]
+            }
+        },
+        "color": {
+            "field": "County",
+            "type": "nominal"
+        }
+    }
+}

@@ -1,0 +1,38 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualizing the relationship between product type and price, with bubble size representing the product quantity.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/department_store_products.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "product_type_code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "product_price",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "product_id",
+            "type": "quantitative",
+            "scale": {
+                "type": "linear"
+            },
+            "legend": {
+                "title": "Product Count"
+            }
+        },
+        "color": {
+            "field": "product_type_code",
+            "type": "nominal",
+            "legend": {
+                "title": "Product Type"
+            }
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing crime rates for different counties by location.",
+    "data": {
+        "url": "spider_csv/county_public_safety_county_public_safety.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Name",
+            "type": "nominal",
+            "sort": {
+                "field": "Name"
+            }
+        },
+        "y": {
+            "field": "Crime_rate",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Location",
+            "type": "nominal"
+        }
+    }
+}

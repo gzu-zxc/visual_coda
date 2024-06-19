@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the highest score achieved by soccer players with yellow card status indicated by color.",
+    "data": {
+        "url": "spider_csv/soccer_2_Player.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "pName",
+            "type": "nominal",
+            "sort": {
+                "field": "pName"
+            }
+        },
+        "y": {
+            "field": "HS",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "yCard",
+            "type": "nominal"
+        }
+    }
+}

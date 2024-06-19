@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap showing the distribution of scores by college and author.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/workshop_paper_submission.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Author",
+            "type": "nominal",
+            "title": "Author"
+        },
+        "y": {
+            "field": "College",
+            "type": "nominal",
+            "title": "College"
+        },
+        "color": {
+            "aggregate": "mean",
+            "field": "Scores",
+            "type": "quantitative",
+            "title": "Average Score"
+        }
+    }
+}

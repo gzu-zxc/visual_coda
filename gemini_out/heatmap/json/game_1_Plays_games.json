@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the hours played for each game by each student.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/game_1_Plays_games.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "StuID",
+            "type": "nominal",
+            "title": "Student ID"
+        },
+        "y": {
+            "field": "GameID",
+            "type": "nominal",
+            "title": "Game ID"
+        },
+        "color": {
+            "field": "Hours_Played",
+            "type": "quantitative",
+            "title": "Hours Played"
+        }
+    }
+}

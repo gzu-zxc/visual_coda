@@ -1,0 +1,55 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the relationship between the number of appearances, tries, goals, and points scored by players in different positions.",
+    "data": {
+        "url": "spider_csv/sports_competition_player.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Apps",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Tries",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Goals",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "Points",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "name",
+                "type": "nominal"
+            },
+            {
+                "field": "Position",
+                "type": "nominal"
+            },
+            {
+                "field": "Apps",
+                "type": "quantitative"
+            },
+            {
+                "field": "Tries",
+                "type": "quantitative"
+            },
+            {
+                "field": "Goals",
+                "type": "ordinal"
+            },
+            {
+                "field": "Points",
+                "type": "quantitative"
+            }
+        ]
+    }
+}

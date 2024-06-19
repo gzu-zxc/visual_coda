@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This chart displays the number of physicians in each department, with the size of the bubble representing the number of physicians.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/hospital_1_affiliated_with.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Department",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "PrimaryAffiliation",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Physician",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing web client accelerators by client type and connection type.",
+    "data": {
+        "url": "spider_csv/browser_web_web_client_accelerator.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Client",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Connection",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "id",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "name",
+                "type": "nominal"
+            }
+        ]
+    }
+}

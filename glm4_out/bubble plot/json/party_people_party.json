@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the tenure of ministers in office by political party.",
+    "data": {
+        "url": "spider_csv/party_people_party.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Party_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Took_office",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "size": {
+            "field": {
+                "expr": "datum.Left_office - datum.Took_office"
+            },
+            "type": "quantitative"
+        }
+    }
+}

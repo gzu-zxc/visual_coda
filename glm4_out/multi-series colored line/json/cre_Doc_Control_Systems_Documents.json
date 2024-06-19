@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the average receipt number by document type over time.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Control_Systems_Documents.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "receipt_date",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        },
+        "y": {
+            "field": "receipt_number",
+            "type": "quantitative",
+            "aggregate": "average"
+        },
+        "color": {
+            "field": "document_type_code",
+            "type": "nominal"
+        }
+    },
+    "groupby": [
+        "document_type_code"
+    ]
+}

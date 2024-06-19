@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the distribution of student voters' age across different majors.",
+    "data": {
+        "url": "spider_csv/voter_2_STUDENT.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "order": {
+            "field": "Major_sorted"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Major",
+            "as": "Major_sorted"
+        }
+    ]
+}

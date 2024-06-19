@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of credits per course across different departments.",
+    "data": {
+        "url": "spider_csv/college_2_course.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dept_name",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "credits",
+            "type": "ordinal"
+        },
+        "color": {
+            "field": "course_id",
+            "type": "nominal"
+        }
+    }
+}

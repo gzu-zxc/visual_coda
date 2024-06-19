@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of hosts for each party theme at different locations.",
+    "data": {
+        "url": "spider_csv/party_host_party.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Party_Theme",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Location",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Number_of_hosts",
+            "type": "quantitative",
+            "aggregate": "count",
+            "sort": "descending"
+        }
+    }
+}

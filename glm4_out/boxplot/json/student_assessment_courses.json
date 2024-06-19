@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot of additional quantitative details about the courses per course ID.",
+    "data": {
+        "url": "spider_csv/student_assessment_courses.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "course_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "other_details",
+            "type": "quantitative"
+        }
+    }
+}

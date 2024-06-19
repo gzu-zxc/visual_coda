@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing university enrollment over time.",
+    "data": {
+        "url": "spider_csv/university_basketball_university.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Founded",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "School",
+            "type": "nominal"
+        }
+    }
+}

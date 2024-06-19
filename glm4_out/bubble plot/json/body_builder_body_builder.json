@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the maximum weight lifted in Snatch and Clean Jerk, with the size of the bubble representing the total weight lifted.",
+    "data": {
+        "url": "spider_csv/body_builder_body_builder.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Snatch",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Clean_Jerk",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Total",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    }
+}

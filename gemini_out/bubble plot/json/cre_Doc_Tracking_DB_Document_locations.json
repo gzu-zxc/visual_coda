@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot showing the relationship between Date_in_Location_From and Date_in_Locaton_To, sized by Document_ID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Doc_Tracking_DB_Document_locations.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date_in_Location_From",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Date_in_Locaton_To",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "size": {
+            "field": "Document_ID",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the age of each editor in the journal committee.",
+    "data": {
+        "url": "spider_csv/journal_committee_editor.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Editor_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Name"
+            }
+        ]
+    }
+}

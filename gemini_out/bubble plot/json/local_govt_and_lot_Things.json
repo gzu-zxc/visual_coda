@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot that shows the number of things per Type of Thing Code. The size of the bubbles is determined by the number of service type codes for each Type of Thing Code.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/local_govt_and_lot_Things.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type_of_Thing_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "aggregate": "count()",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "count()",
+            "field": "service_type_code",
+            "type": "quantitative"
+        }
+    }
+}

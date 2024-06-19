@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of visits to each tourist attraction on each day.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Theme_park_VISITS.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Visit_Date",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Month"
+        },
+        "y": {
+            "field": "Tourist_Attraction_ID",
+            "type": "nominal",
+            "title": "Tourist Attraction ID"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "Visit_ID",
+            "type": "quantitative",
+            "title": "Number of Visits"
+        }
+    }
+}

@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the annual entry and exit numbers of UK train stations, with bubble size representing annual interchanges and color representing the number of platforms.",
+    "data": {
+        "url": "spider_csv/train_station_station.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Station_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Annual_entry_exit",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Annual_interchanges",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Number_of_Platforms",
+            "type": "ordinal"
+        }
+    }
+}

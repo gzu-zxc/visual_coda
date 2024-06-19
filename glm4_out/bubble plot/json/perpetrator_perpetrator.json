@@ -1,0 +1,60 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of people killed and injured over the years.",
+    "data": {
+        "url": "spider_csv/perpetrator_perpetrator.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "size": {
+            "field": "Killed",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Injured",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    "#fee6ce",
+                    "#fdae6b",
+                    "#e6550d"
+                ]
+            }
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Killed",
+                    "as": "Killed"
+                },
+                {
+                    "op": "sum",
+                    "field": "Injured",
+                    "as": "Injured"
+                }
+            ],
+            "groupby": [
+                "Year"
+            ]
+        }
+    ],
+    "config": {
+        "axisX": {
+            "title": "Year"
+        },
+        "axisY": {
+            "title": "Casualties"
+        }
+    }
+}

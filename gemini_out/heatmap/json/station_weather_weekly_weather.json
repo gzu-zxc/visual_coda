@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the average high temperature for each day of the week across all stations.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/station_weather_weekly_weather.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "day_of_week",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "station_id",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "average",
+            "field": "high_temperature",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram of faculty phone numbers.",
+    "data": {
+        "url": "spider_csv/activity_1_Faculty.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Phone",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

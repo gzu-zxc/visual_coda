@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the count of insurance policies by type and start month-year.",
+    "data": {
+        "url": "spider_csv/insurance_and_eClaims_policies.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Policy_Type_Code",
+            "type": "nominal",
+            "axis": {
+                "title": "Policy Type Code"
+            }
+        },
+        "y": {
+            "field": "Start_Date",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "axis": {
+                "title": "Start Date (Year-Month)"
+            }
+        },
+        "size": {
+            "field": "Policy_ID",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    }
+}

@@ -1,0 +1,52 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the time frames during which documents were present in different locations.",
+    "data": {
+        "url": "spider_csv/cre_Doc_Tracking_DB_Document_locations.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "bin_Date_in_Location",
+            "type": "temporal",
+            "timeUnit": "yearmonthdate"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "Document_ID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Location_Code",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "bin": {
+                "field": "Date_in_Location_From",
+                "as": "bin_Date_in_Location"
+            },
+            "extent": [
+                "1972-03-31",
+                "2017-01-06"
+            ]
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Document_ID",
+                    "as": "count"
+                }
+            ],
+            "groupby": [
+                "Location_Code",
+                "bin_Date_in_Location"
+            ]
+        }
+    ]
+}

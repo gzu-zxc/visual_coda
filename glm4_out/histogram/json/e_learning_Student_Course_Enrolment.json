@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of course enrollments per month.",
+    "data": {
+        "url": "spider_csv/e_learning_Student_Course_Enrolment.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_of_enrolment",
+            "type": "temporal",
+            "timeUnit": "month",
+            "axis": {
+                "title": "Month of Enrollment"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "axis": {
+                "title": "Number of Enrollments"
+            }
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap visualization of count of booking ID by month and store ID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Drama_Workshop_Groups_BOOKINGS.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Store_ID",
+            "type": "nominal",
+            "title": "Store ID"
+        },
+        "y": {
+            "field": "Order_Date",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Order Month"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "Booking_ID",
+            "type": "quantitative",
+            "title": "Count of Booking IDs"
+        }
+    }
+}

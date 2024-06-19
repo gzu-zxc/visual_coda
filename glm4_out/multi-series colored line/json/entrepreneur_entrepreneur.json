@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the total money requested by different companies from various investors.",
+    "data": {
+        "url": "spider_csv/entrepreneur_entrepreneur.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Company",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "sum(Money_Requested)",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Investor",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "sum",
+                    "field": "Money_Requested",
+                    "as": "sum(Money_Requested)"
+                }
+            ],
+            "groupby": [
+                "Company",
+                "Investor"
+            ]
+        }
+    ]
+}

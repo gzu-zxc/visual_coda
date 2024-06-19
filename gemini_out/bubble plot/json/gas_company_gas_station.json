@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the year a gas station was opened and its location, with the size of the bubble representing the number of stations at that location and year.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/gas_company_gas_station.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Year",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Location",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Station_ID",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the attendance of various sports teams over time.",
+    "data": {
+        "url": "spider_csv/performance_attendance_performance.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Date",
+            "type": "temporal",
+            "timeUnit": "monthdate"
+        },
+        "y": {
+            "field": "Attendance",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Host",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Attendance",
+            "type": "quantitative",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        }
+    },
+    "transform": [
+        {
+            "calculate": "if(datum.Attendance < 0, 0, datum.Attendance)",
+            "as": "Attendance"
+        }
+    ],
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

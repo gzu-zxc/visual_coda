@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing hospital physician affiliations.",
+    "data": {
+        "url": "spider_csv/hospital_1_affiliated_with.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Physician",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Department",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "PrimaryAffiliation",
+            "type": "nominal"
+        }
+    }
+}

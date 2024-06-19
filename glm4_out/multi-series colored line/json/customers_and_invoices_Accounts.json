@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of accounts opened per month, grouped by account name.",
+    "data": {
+        "url": "spider_csv/customers_and_invoices_Accounts.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_account_opened",
+            "type": "temporal",
+            "timeUnit": "month"
+        },
+        "y": {
+            "aggregate": "count",
+            "field": "account_id"
+        },
+        "color": {
+            "field": "account_name",
+            "type": "ordinal"
+        }
+    },
+    "groupby": [
+        "account_name"
+    ]
+}

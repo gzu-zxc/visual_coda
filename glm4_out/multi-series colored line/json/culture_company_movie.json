@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing movie budget and worldwide gross over the years.",
+    "data": {
+        "url": "spider_csv/culture_company_movie.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "value",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "variable",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "fold": [
+                "Budget_million",
+                "Gross_worldwide"
+            ],
+            "as": [
+                "variable",
+                "value"
+            ]
+        },
+        {
+            "groupby": [
+                "Year",
+                "variable"
+            ],
+            "aggregate": {
+                "value": [
+                    "mean"
+                ]
+            }
+        }
+    ]
+}

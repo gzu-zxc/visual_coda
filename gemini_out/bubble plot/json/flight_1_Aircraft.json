@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between distance and aircraft ID, with the size of the bubbles representing the aircraft name.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/flight_1_Aircraft.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "distance",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "aid",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "name",
+            "type": "nominal"
+        }
+    }
+}

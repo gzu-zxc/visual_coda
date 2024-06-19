@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap visualization of the number of matches played in each month across different competitions.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/city_record_MATCH.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Competition",
+            "type": "nominal",
+            "title": "Competition"
+        },
+        "y": {
+            "field": "Date",
+            "type": "ordinal",
+            "title": "Month"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "scale": {
+                "scheme": "viridis"
+            },
+            "title": "Number of Matches"
+        }
+    }
+}

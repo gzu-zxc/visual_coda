@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between velocity and altitude of flights, with the size of the bubble representing the number of flights for each velocity and altitude combination.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/flight_company_flight.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Velocity",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Altitude",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

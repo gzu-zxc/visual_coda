@@ -1,0 +1,46 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between Amount_Claimed and Amount_Settled, with the size of the bubbles representing the Date_Claim_Made.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/insurance_policies_Settlements.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Amount_Claimed",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Amount_Settled",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Date_Claim_Made",
+            "type": "temporal",
+            "timeUnit": "year",
+            "scale": {
+                "type": "linear"
+            }
+        },
+        "tooltip": [
+            {
+                "field": "Date_Claim_Made",
+                "type": "temporal",
+                "title": "Date_Claim_Made"
+            },
+            {
+                "field": "Amount_Claimed",
+                "type": "quantitative",
+                "title": "Amount_Claimed"
+            },
+            {
+                "field": "Amount_Settled",
+                "type": "quantitative",
+                "title": "Amount_Settled"
+            }
+        ]
+    }
+}

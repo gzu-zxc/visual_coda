@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of tests taken over the given date range.",
+    "data": {
+        "url": "spider_csv/e_learning_Student_Tests_Taken.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_test_taken",
+            "type": "temporal",
+            "timeUnit": "day",
+            "bin": {
+                "maxbins": 10
+            }
+        },
+        "y": {
+            "field": "count(registration_id)",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This visualization shows the number of transactions for each transaction type and invoice number.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/customers_and_invoices_Financial_transactions.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "invoice_number",
+            "type": "nominal",
+            "title": "Invoice Number"
+        },
+        "y": {
+            "field": "transaction_type",
+            "type": "nominal",
+            "title": "Transaction Type"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Transactions"
+        }
+    }
+}

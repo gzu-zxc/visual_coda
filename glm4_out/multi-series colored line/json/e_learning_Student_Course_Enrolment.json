@@ -1,0 +1,39 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the month of student course enrolment and completion.",
+    "data": {
+        "url": "spider_csv/e_learning_Student_Course_Enrolment.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "course_id",
+            "type": "nominal"
+        },
+        "y": [
+            {
+                "field": "date_of_enrolment",
+                "type": "temporal",
+                "timeUnit": "month"
+            },
+            {
+                "field": "date_of_completion",
+                "type": "temporal",
+                "timeUnit": "month"
+            }
+        ],
+        "color": {
+            "field": "course_id",
+            "type": "nominal"
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

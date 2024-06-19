@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the height and number of floors of Protein Institute buildings.",
+    "data": {
+        "url": "spider_csv/protein_institute_building.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "Height_feet",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Floors",
+            "type": "quantitative"
+        },
+        "text": {
+            "field": "Name",
+            "type": "nominal"
+        }
+    }
+}

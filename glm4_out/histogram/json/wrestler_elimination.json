@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the frequency of wrestler eliminations over time.",
+    "data": {
+        "url": "spider_csv/wrestler_elimination.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Time",
+            "type": "temporal",
+            "timeUnit": "interval",
+            "axis": {
+                "title": "Time of Elimination"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "axis": {
+                "title": "Number of Eliminations"
+            }
+        }
+    }
+}

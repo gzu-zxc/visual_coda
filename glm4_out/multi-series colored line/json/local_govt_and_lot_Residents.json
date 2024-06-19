@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the duration of residency for each resident.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_Residents.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_moved_in",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "date_moved_out",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "resident_id",
+            "type": "nominal"
+        }
+    }
+}

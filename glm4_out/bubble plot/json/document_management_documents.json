@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of accesses per document type in a document management system.",
+    "data": {
+        "url": "spider_csv/document_management_documents.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "document_code",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "document_type_code",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "access_count",
+            "type": "quantitative",
+            "aggregate": "sum"
+        }
+    }
+}

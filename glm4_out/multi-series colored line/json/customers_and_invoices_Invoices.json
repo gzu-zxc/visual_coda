@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of invoices per order over time.",
+    "data": {
+        "url": "spider_csv/customers_and_invoices_Invoices.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "invoice_date",
+            "type": "temporal",
+            "timeUnit": "day",
+            "title": "Invoice Date"
+        },
+        "y": {
+            "field": "invoice_number",
+            "type": "quantitative",
+            "aggregate": "count",
+            "title": "Number of Invoices"
+        },
+        "color": {
+            "field": "order_id",
+            "type": "nominal",
+            "title": "Order ID"
+        }
+    },
+    "transform": [
+        {
+            "sort": {
+                "field": "invoice_date"
+            }
+        }
+    ]
+}

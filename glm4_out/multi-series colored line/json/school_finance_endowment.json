@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the amount donated by different donators to various schools.",
+    "data": {
+        "url": "spider_csv/school_finance_endowment.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "School_id",
+            "type": "nominal",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "amount",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "donator_name",
+            "type": "nominal"
+        }
+    }
+}

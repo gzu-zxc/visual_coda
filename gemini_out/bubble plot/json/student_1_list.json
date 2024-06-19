@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of students per classroom and grade level.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/student_1_list.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Classroom",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Grade",
+            "type": "quantitative"
+        },
+        "size": {
+            "aggregate": "count()",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Classroom",
+            "type": "nominal"
+        }
+    }
+}

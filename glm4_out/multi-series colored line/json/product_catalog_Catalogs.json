@@ -1,0 +1,36 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the publication and revision dates of product catalogs by publishers.",
+    "data": {
+        "url": "spider_csv/product_catalog_Catalogs.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "catalog_publisher",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "date",
+            "type": "quantitative",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "date_type",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.date_of_publication ? 'Publication' : 'Revision'",
+            "as": "date_type"
+        },
+        {
+            "calculate": "datum.date_of_publication ? year(datum.date_of_publication) : year(datum.date_of_latest_revision)",
+            "as": "date"
+        }
+    ]
+}

@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of total number of votes received by representative candidates in elections.",
+    "data": {
+        "url": "spider_csv/election_representative_election.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Votes",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

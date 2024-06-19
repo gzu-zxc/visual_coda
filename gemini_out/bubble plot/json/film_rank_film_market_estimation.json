@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between Low_Estimate and High_Estimate, with the size of the bubbles representing the year.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/film_rank_film_market_estimation.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Low_Estimate",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "High_Estimate",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Year",
+            "type": "quantitative"
+        }
+    }
+}

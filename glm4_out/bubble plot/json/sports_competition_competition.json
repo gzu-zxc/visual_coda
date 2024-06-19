@@ -1,0 +1,49 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of sports competitions by year and type.",
+    "data": {
+        "url": "spider_csv/sports_competition_competition.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal"
+        },
+        "y": {
+            "field": "Competition_type",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "count_Competition_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Year",
+            "as": "Year"
+        },
+        {
+            "calculate": "datum.Competition_type",
+            "as": "Competition_type"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "Competition_ID",
+                    "as": "count_Competition_ID"
+                }
+            ],
+            "groupby": [
+                "Year",
+                "Competition_type"
+            ]
+        }
+    ]
+}

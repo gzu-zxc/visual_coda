@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between enrollment and founded year for each university, with the size of the bubble representing the enrollment",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/university_basketball_university.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Founded",
+            "type": "quantitative",
+            "title": "Year Founded"
+        },
+        "y": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "title": "Enrollment"
+        },
+        "size": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "title": "Enrollment"
+        },
+        "color": {
+            "field": "Affiliation",
+            "type": "nominal",
+            "title": "Affiliation"
+        }
+    }
+}

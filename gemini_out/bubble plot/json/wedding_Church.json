@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart visualizing the relationship between church establishment year and the number of churches established in that year.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/wedding_Church.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Date",
+            "type": "quantitative",
+            "title": "Year Established"
+        },
+        "y": {
+            "aggregate": "count()",
+            "type": "quantitative",
+            "title": "Number of Churches Established"
+        },
+        "size": {
+            "aggregate": "count()",
+            "type": "quantitative",
+            "title": "Number of Churches Established"
+        },
+        "color": {
+            "field": "Continuation_of",
+            "type": "nominal",
+            "title": "Continuation of Denomination"
+        }
+    }
+}

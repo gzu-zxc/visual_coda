@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart visualizing the relationship between asset acquired date and asset disposed date, sized by the number of assets with the same acquired and disposed dates",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/assets_maintenance_Assets.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "asset_acquired_date",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "title": "Asset Acquired Date"
+        },
+        "y": {
+            "field": "asset_disposed_date",
+            "type": "temporal",
+            "timeUnit": "yearmonth",
+            "title": "Asset Disposed Date"
+        },
+        "size": {
+            "aggregate": "count",
+            "title": "Number of Assets"
+        }
+    }
+}

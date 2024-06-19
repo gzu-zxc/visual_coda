@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the distribution of faculty members by rank and gender.",
+    "data": {
+        "url": "spider_csv/activity_1_Faculty.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "FacID",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Sex",
+            "type": "nominal"
+        }
+    }
+}

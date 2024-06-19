@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of playlist IDs.",
+    "data": {
+        "url": "spider_csv/store_1_playlists.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "id",
+            "type": "nominal"
+        },
+        "tooltip": [
+            {
+                "field": "name",
+                "type": "nominal"
+            }
+        ]
+    }
+}

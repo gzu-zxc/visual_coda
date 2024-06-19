@@ -1,0 +1,40 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the count of items by type and service satisfaction level.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_Things.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type_of_Thing_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "count_thing_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "service_details",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "thing_id",
+                    "as": "count_thing_id"
+                }
+            ],
+            "groupby": [
+                "Type_of_Thing_Code",
+                "service_details"
+            ]
+        }
+    ]
+}

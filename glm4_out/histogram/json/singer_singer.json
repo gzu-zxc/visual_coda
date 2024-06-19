@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of net worth in millions by birth year of the wealthiest singers.",
+    "data": {
+        "url": "spider_csv/singer_singer.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Net_Worth_Millions",
+            "bin": {
+                "field": "Birth_Year",
+                "maxbins": 10
+            },
+            "type": "quantitative"
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

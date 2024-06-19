@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing paper submissions per college with scores.",
+    "data": {
+        "url": "spider_csv/workshop_paper_submission.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "Scores",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "College",
+            "type": "nominal"
+        },
+        "tooltip": [
+            {
+                "field": "Author",
+                "type": "nominal"
+            },
+            {
+                "field": "Submission_ID",
+                "type": "nominal"
+            }
+        ]
+    }
+}

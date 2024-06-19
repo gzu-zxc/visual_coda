@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of paper submission scores by college.",
+    "data": {
+        "url": "spider_csv/workshop_paper_submission.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "College",
+            "type": "nominal",
+            "sort": {
+                "field": "Scores",
+                "op": "mean"
+            }
+        },
+        "y": {
+            "field": "Scores",
+            "type": "quantitative",
+            "aggregate": "mean"
+        }
+    }
+}

@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the scores of paper submissions per college.",
+    "data": {
+        "url": "spider_csv/workshop_paper_submission.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Submission_ID",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "Scores",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "color": {
+            "field": "College",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Scores",
+            "as": "mean_scores"
+        },
+        {
+            "groupby": [
+                "College"
+            ],
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Scores",
+                    "as": "mean_scores"
+                }
+            ]
+        },
+        {
+            "sort": {
+                "field": [
+                    "Submission_ID"
+                ]
+            }
+        }
+    ]
+}

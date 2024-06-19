@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between Snatch and Clean_Jerk weights, with the size of the bubbles representing the Total weight lifted.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/body_builder_body_builder.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Snatch",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Clean_Jerk",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Total",
+            "type": "quantitative"
+        }
+    }
+}

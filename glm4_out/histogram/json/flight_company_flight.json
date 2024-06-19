@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of flight velocities.",
+    "data": {
+        "url": "spider_csv/flight_company_flight.csv.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "bin": {
+                "maxbins": 30
+            },
+            "field": "Velocity",
+            "type": "quantitative"
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

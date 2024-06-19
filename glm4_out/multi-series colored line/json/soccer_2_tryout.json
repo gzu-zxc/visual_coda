@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the decision outcomes of soccer players by college and position.",
+    "data": {
+        "url": "spider_csv/soccer_2_tryout.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "cName",
+            "type": "nominal",
+            "sort": {
+                "field": "cName"
+            }
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "pPos",
+            "type": "nominal"
+        },
+        "detail": {
+            "field": "decision"
+        }
+    }
+}

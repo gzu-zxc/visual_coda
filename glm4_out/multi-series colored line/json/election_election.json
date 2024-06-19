@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the first elected year for each district by party.",
+    "data": {
+        "url": "spider_csv/election_election.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "District",
+            "type": "ordinal",
+            "sort": {
+                "field": "District"
+            }
+        },
+        "y": {
+            "field": "First_Elected",
+            "type": "quantitative",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "Party",
+            "type": "nominal"
+        }
+    }
+}

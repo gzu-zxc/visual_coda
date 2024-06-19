@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of phone prices binned by memory size.",
+    "data": {
+        "url": "spider_csv/phone_market_phone.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Price",
+            "type": "quantitative",
+            "bin": true
+        },
+        "color": {
+            "field": "Memory_in_G",
+            "type": "ordinal"
+        },
+        "y": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

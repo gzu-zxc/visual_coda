@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the age of department heads by the state they were born in.",
+    "data": {
+        "url": "spider_csv/department_management_head.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "age",
+            "type": "quantitative"
+        },
+        "longitude": {
+            "field": "born_state",
+            "type": "geojson"
+        },
+        "latitude": {
+            "field": "born_state",
+            "type": "geojson"
+        }
+    }
+}

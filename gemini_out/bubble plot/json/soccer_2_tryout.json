@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the number of players from each college based on their position, with the size of the bubble representing the count.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/soccer_2_tryout.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "cName",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "pPos",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "count()",
+            "type": "quantitative",
+            "title": "Number of Players"
+        },
+        "color": {
+            "field": "cName",
+            "type": "nominal",
+            "title": "College Name"
+        }
+    }
+}

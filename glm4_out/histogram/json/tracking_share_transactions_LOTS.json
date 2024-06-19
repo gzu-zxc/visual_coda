@@ -1,0 +1,37 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the number of transactions per lot.",
+    "data": {
+        "url": "spider_csv/tracking_share_transactions_LOTS.csv.csv"
+    },
+    "mark": {
+        "type": "bar",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "lot_id",
+            "type": "quantitative",
+            "bin": true,
+            "sort": "x"
+        },
+        "y": {
+            "field": "count_investor_id",
+            "type": "quantitative"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "investor_id",
+                    "as": "count_investor_id"
+                }
+            ],
+            "groupby": [
+                "lot_id"
+            ]
+        }
+    ]
+}

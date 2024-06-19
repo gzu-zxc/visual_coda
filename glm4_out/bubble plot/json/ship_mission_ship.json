@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the tonnage of ships by type and nationality.",
+    "data": {
+        "url": "spider_csv/ship_mission_ship.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Type",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Nationality",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Tonnage",
+            "type": "quantitative"
+        }
+    }
+}

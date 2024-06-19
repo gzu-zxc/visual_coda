@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of professors per department and their highest degrees.",
+    "data": {
+        "url": "spider_csv/college_1_professor.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "PROF_HIGH_DEGREE",
+            "type": "ordinal",
+            "scale": {
+                "bandSize": 20
+            }
+        },
+        "y": {
+            "field": "DEPT_CODE",
+            "type": "nominal",
+            "sort": "-x"
+        },
+        "size": {
+            "field": "count_EMP_NUM",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "DEPT_CODE",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "aggregate": [
+                {
+                    "op": "count",
+                    "field": "EMP_NUM",
+                    "as": "count_EMP_NUM"
+                }
+            ],
+            "groupby": [
+                "DEPT_CODE",
+                "PROF_HIGH_DEGREE"
+            ]
+        }
+    ]
+}

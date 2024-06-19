@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of employees in each department.",
+    "data": {
+        "url": "spider_csv/college_1_department.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "DEPT_CODE",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "DEPT_NAME",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "EMP_NUM",
+            "type": "quantitative"
+        }
+    }
+}

@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot visualizing the number of participants by their type.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/local_govt_in_alabama_Participants.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Participant_Type_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Participant_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "size": {
+            "field": "Participant_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "color": {
+            "field": "Participant_Type_Code",
+            "type": "nominal"
+        }
+    }
+}

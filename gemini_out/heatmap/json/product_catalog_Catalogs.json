@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap visualization showing the count of catalogs published by each publisher on different dates.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/product_catalog_Catalogs.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "date_of_publication",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Date of Publication"
+        },
+        "y": {
+            "field": "catalog_publisher",
+            "type": "nominal",
+            "title": "Publisher"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "catalog_id",
+            "type": "quantitative",
+            "title": "Count of Catalogs"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the document types, mapping the size to the count of each type",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Docs_and_Epenses_Ref_document_types.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Document_Type_Code",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Document_Type_Name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Document_Type_Description",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

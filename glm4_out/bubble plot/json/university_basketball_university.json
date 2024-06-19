@@ -1,0 +1,44 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing university founding years and enrollment sizes.",
+    "data": {
+        "url": "spider_csv/university_basketball_university.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Founded",
+            "type": "temporal",
+            "timeUnit": "year",
+            "axis": {
+                "title": "Year Founded"
+            }
+        },
+        "y": {
+            "field": "School",
+            "type": "nominal",
+            "axis": {
+                "title": "University"
+            }
+        },
+        "size": {
+            "field": "Enrollment",
+            "type": "quantitative",
+            "scale": {
+                "type": "log"
+            },
+            "legend": {
+                "title": "Enrollment"
+            }
+        }
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

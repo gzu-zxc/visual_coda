@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the distribution of votes by contestant number over time.",
+    "data": {
+        "url": "spider_csv/voter_1_votes.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "contestant_number",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "created",
+            "type": "temporal",
+            "timeUnit": "seconds"
+        },
+        "size": {
+            "field": "vote_id",
+            "type": "quantitative"
+        }
+    }
+}

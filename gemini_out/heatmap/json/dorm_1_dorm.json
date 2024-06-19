@@ -1,0 +1,28 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap visualization of student capacity in each dorm by gender",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/dorm_1_dorm.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "dorm_name",
+            "type": "nominal",
+            "title": "Dorm Name"
+        },
+        "y": {
+            "field": "gender",
+            "type": "nominal",
+            "title": "Gender"
+        },
+        "color": {
+            "field": "student_capacity",
+            "type": "quantitative",
+            "title": "Student Capacity"
+        }
+    }
+}

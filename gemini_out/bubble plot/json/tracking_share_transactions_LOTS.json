@@ -1,0 +1,27 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the number of transactions for each investor and the number of lots they invested in.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/tracking_share_transactions_LOTS.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "investor_id",
+            "type": "quantitative",
+            "title": "Investor ID"
+        },
+        "y": {
+            "field": "lot_id",
+            "type": "quantitative",
+            "title": "Lot ID"
+        },
+        "size": {
+            "aggregate": "count()",
+            "title": "Number of Transactions"
+        }
+    }
+}

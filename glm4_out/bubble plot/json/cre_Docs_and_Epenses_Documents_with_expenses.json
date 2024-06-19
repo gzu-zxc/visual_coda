@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the count of document details by budget type code.",
+    "data": {
+        "url": "spider_csv/cre_Docs_and_Epenses_Documents_with_expenses.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Document_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Budget_Type_Code",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "Document_Details",
+            "type": "quantitative"
+        }
+    }
+}

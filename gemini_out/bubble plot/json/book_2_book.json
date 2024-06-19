@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart showing the relationship between the number of issues and the writer of a book, with the size of the bubbles representing the number of issues.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/book_2_book.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Writer",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Issues",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Issues",
+            "type": "quantitative"
+        }
+    }
+}

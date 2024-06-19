@@ -1,0 +1,51 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the years ministers took and left office for each political party.",
+    "data": {
+        "url": "spider_csv/party_people_party.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Took_office",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Left_office",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "color": {
+            "field": "Party_name",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Took_office",
+            "as": "Took_office_year"
+        },
+        {
+            "calculate": "datum.Left_office",
+            "as": "Left_office_year"
+        },
+        {
+            "timeUnit": [
+                "Took_office_year",
+                "Left_office_year"
+            ],
+            "field": [
+                "Took_office_year",
+                "Left_office_year"
+            ],
+            "as": [
+                "Took_office_year",
+                "Left_office_year"
+            ]
+        }
+    ]
+}

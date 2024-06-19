@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the average level of railway managers by country and starting year of work.",
+    "data": {
+        "url": "spider_csv/railway_manager.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Working_year_starts",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "aggregate": "mean",
+            "field": "Level",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Country",
+            "type": "nominal"
+        },
+        "group": {
+            "field": "Country"
+        }
+    }
+}

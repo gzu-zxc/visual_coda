@@ -1,0 +1,33 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the budget in billions over the years for different departments.",
+    "data": {
+        "url": "spider_csv/department_management_department.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Creation",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Budget_in_Billions",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "color": {
+            "field": "Name",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Creation",
+            "as": "year"
+        }
+    ]
+}

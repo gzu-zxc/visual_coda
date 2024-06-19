@@ -1,0 +1,23 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A box plot chart showing the distribution of ship captain ages by rank.",
+    "data": {
+        "url": "spider_csv/ship_1_captain.csv.csv"
+    },
+    "mark": {
+        "type": "boxplot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Rank",
+            "type": "ordinal",
+            "sort": "ascending"
+        },
+        "y": {
+            "field": "age",
+            "type": "quantitative",
+            "aggregate": "mean"
+        }
+    }
+}

@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the number of issues per book.",
+    "data": {
+        "url": "spider_csv/book_2_book.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Book_ID",
+            "type": "ordinal"
+        },
+        "size": {
+            "field": "Issues",
+            "type": "quantitative"
+        },
+        "tooltip": [
+            {
+                "field": "Title"
+            }
+        ]
+    }
+}

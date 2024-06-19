@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between the price and the quantity of each product.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Drama_Workshop_Groups_PRODUCTS.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Product_Price",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Product_Name",
+            "type": "nominal"
+        },
+        "size": {
+            "field": "Product_ID",
+            "type": "quantitative"
+        }
+    }
+}

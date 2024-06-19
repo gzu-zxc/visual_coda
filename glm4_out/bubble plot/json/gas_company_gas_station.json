@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the number of gas stations opened per year, colored by the manager's name.",
+    "data": {
+        "url": "spider_csv/gas_company_gas_station.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Open_Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Station_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        },
+        "size": {
+            "field": "Station_ID",
+            "type": "quantitative",
+            "aggregate": "count",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        },
+        "color": {
+            "field": "Manager_Name",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Open_Year",
+            "as": "year"
+        }
+    ],
+    "sort": {
+        "field": "Station_ID",
+        "order": "descending"
+    }
+}

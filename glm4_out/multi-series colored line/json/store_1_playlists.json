@@ -1,0 +1,21 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing music playlists.",
+    "data": {
+        "url": "spider_csv/store_1_playlists.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "name",
+            "type": "nominal"
+        }
+    }
+}

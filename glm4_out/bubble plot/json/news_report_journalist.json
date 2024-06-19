@@ -1,0 +1,50 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the age and years of work experience of journalists, colored by nationality.",
+    "data": {
+        "url": "spider_csv/news_report_journalist.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "Years_working",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Age",
+            "type": "quantitative",
+            "aggregate": "average"
+        },
+        "color": {
+            "field": "Nationality",
+            "type": "nominal"
+        },
+        "tooltip": [
+            {
+                "field": "Name"
+            },
+            {
+                "field": "Nationality"
+            },
+            {
+                "field": "Age"
+            },
+            {
+                "field": "Years_working"
+            }
+        ]
+    },
+    "config": {
+        "axis": {
+            "labelFontSize": 12,
+            "titleFontSize": 14
+        }
+    }
+}

@@ -1,0 +1,30 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot showing the number of student course enrolments by month.",
+    "data": {
+        "url": "spider_csv/e_learning_Student_Course_Enrolment.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "student_id",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "course_id",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count",
+            "field": "date_of_enrolment",
+            "type": "quantitative",
+            "timeUnit": {
+                "unit": "month",
+                "field": "date_of_enrolment"
+            }
+        }
+    }
+}

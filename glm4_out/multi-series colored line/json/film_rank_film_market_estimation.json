@@ -1,0 +1,41 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing low and high estimates for film market estimations by year and type.",
+    "data": {
+        "url": "spider_csv/film_rank_film_market_estimation.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Low_Estimate",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "Type",
+            "type": "nominal",
+            "sort": "none"
+        },
+        "detail": {
+            "field": "Type",
+            "type": "nominal"
+        }
+    },
+    "layer": [
+        {
+            "encoding": {
+                "y": {
+                    "field": "High_Estimate",
+                    "type": "quantitative"
+                }
+            }
+        }
+    ]
+}

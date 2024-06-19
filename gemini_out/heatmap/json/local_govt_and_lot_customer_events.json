@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "This heatmap shows the distribution of customers based on the date they moved in and their property ID.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/local_govt_and_lot_customer_events.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "property_id",
+            "type": "nominal",
+            "title": "Property ID"
+        },
+        "y": {
+            "field": "date_moved_in",
+            "type": "temporal",
+            "timeUnit": "month",
+            "title": "Date Moved In"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative",
+            "title": "Number of Customers"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble chart to show the relationship between Order_Quantity and Product_ID with size encoded by Invoice_ID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/cre_Drama_Workshop_Groups_INVOICES.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Product_ID",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "Order_Quantity",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "Invoice_ID",
+            "type": "quantitative"
+        }
+    }
+}

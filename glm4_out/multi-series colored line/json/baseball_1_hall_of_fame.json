@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing the number of votes received by players in different Hall of Fame induction statuses over the years.",
+    "data": {
+        "url": "spider_csv/baseball_1_hall_of_fame.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "yearid",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "votes",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "inducted",
+            "type": "nominal"
+        }
+    }
+}

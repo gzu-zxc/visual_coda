@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the relationship between age and head_ID, with the size of the bubbles determined by the count of each unique head_ID",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/department_management_head.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "age",
+            "type": "quantitative",
+            "scale": {
+                "zero": false
+            }
+        },
+        "y": {
+            "field": "head_ID",
+            "type": "quantitative"
+        },
+        "size": {
+            "field": "head_ID",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

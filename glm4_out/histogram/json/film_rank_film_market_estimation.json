@@ -1,0 +1,20 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A histogram showing the distribution of low and high estimates for film market estimations.",
+    "data": {
+        "url": "spider_csv/film_rank_film_market_estimation.csv.csv"
+    },
+    "mark": "bar",
+    "encoding": {
+        "x": {
+            "field": "Low_Estimate",
+            "type": "quantitative",
+            "bin": true
+        },
+        "y": {
+            "field": "High_Estimate",
+            "type": "quantitative",
+            "aggregate": "count"
+        }
+    }
+}

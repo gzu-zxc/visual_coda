@@ -1,0 +1,22 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Box plot chart showing the distribution of move-in dates across different properties.",
+    "data": {
+        "url": "spider_csv/local_govt_and_lot_Residents.csv.csv"
+    },
+    "mark": {
+        "type": "box-plot",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "property_id",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "date_moved_in",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        }
+    }
+}

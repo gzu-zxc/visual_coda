@@ -1,0 +1,29 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot showing the distribution of employees by age and city, sized by the number of employees in each group",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/employee_hire_evaluation_employee.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Age",
+            "type": "quantitative"
+        },
+        "y": {
+            "field": "City",
+            "type": "nominal"
+        },
+        "size": {
+            "aggregate": "count()",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "City",
+            "type": "nominal"
+        }
+    }
+}

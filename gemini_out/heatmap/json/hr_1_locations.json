@@ -1,0 +1,26 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Heatmap of the number of locations in each state or province and country.",
+    "data": {
+        "url": "https://raw.githubusercontent.com/gzu-zxc/visual_coda/main/spider_csv/hr_1_locations.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "STATE_PROVINCE",
+            "type": "nominal"
+        },
+        "y": {
+            "field": "COUNTRY_ID",
+            "type": "nominal"
+        },
+        "color": {
+            "aggregate": "count",
+            "field": "LOCATION_ID",
+            "type": "quantitative"
+        }
+    }
+}

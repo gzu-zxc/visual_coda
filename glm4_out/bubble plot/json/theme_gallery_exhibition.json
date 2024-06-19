@@ -1,0 +1,57 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A bubble plot chart showing the ticket price of art exhibitions by year and theme.",
+    "data": {
+        "url": "spider_csv/theme_gallery_exhibition.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "Year",
+            "type": "temporal",
+            "timeUnit": "year"
+        },
+        "y": {
+            "field": "Ticket_Price",
+            "type": "quantitative",
+            "aggregate": "mean"
+        },
+        "size": {
+            "field": "Ticket_Price",
+            "type": "quantitative",
+            "aggregate": "mean",
+            "scale": {
+                "range": [
+                    100,
+                    1000
+                ]
+            }
+        },
+        "color": {
+            "field": "Theme",
+            "type": "nominal"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "datum.Year - 2000",
+            "as": "Century"
+        },
+        {
+            "aggregate": [
+                {
+                    "op": "mean",
+                    "field": "Ticket_Price",
+                    "as": "Average_Ticket_Price"
+                }
+            ],
+            "groupby": [
+                "Year",
+                "Theme"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,25 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A heatmap showing the number of rooms available based on the number of beds and maximum occupancy.",
+    "data": {
+        "url": "spider_csv/inn_1_Rooms.csv.csv"
+    },
+    "mark": {
+        "type": "rect",
+        "tooltip": true
+    },
+    "encoding": {
+        "x": {
+            "field": "beds",
+            "type": "ordinal"
+        },
+        "y": {
+            "field": "maxOccupancy",
+            "type": "ordinal"
+        },
+        "color": {
+            "aggregate": "count",
+            "type": "quantitative"
+        }
+    }
+}

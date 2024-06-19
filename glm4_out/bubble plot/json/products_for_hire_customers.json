@@ -1,0 +1,31 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "Bubble plot showing customer behavior based on when they became a customer and their last hire date.",
+    "data": {
+        "url": "spider_csv/products_for_hire_customers.csv.csv"
+    },
+    "mark": {
+        "type": "circle",
+        "tooltip": true
+    },
+    "encoding": {
+        "size": {
+            "field": "customer_id",
+            "type": "quantitative"
+        },
+        "color": {
+            "field": "good_or_bad_customer",
+            "type": "nominal"
+        },
+        "x": {
+            "field": "date_became_customer",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        },
+        "y": {
+            "field": "date_last_hire",
+            "type": "temporal",
+            "timeUnit": "yearmonth"
+        }
+    }
+}

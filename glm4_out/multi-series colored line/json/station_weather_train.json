@@ -1,0 +1,48 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "description": "A multi-series colored line chart showing train numbers by departure time for each train route.",
+    "data": {
+        "url": "spider_csv/station_weather_train.csv"
+    },
+    "mark": {
+        "type": "line",
+        "tooltip": true
+    },
+    "encoding": {
+        "color": {
+            "field": "name",
+            "type": "nominal"
+        },
+        "x": {
+            "field": "time",
+            "type": "temporal",
+            "timeUnit": "hoursminutes"
+        },
+        "y": {
+            "field": "train_number",
+            "type": "quantitative",
+            "aggregate": "mean"
+        }
+    },
+    "transform": [
+        {
+            "calculate": "hours(datum.time)",
+            "as": "hours"
+        },
+        {
+            "calculate": "minutes(datum.time)",
+            "as": "minutes"
+        },
+        {
+            "calculate": "100 * datum.hours + datum.minutes",
+            "as": "time_order"
+        },
+        {
+            "sort": {
+                "field": [
+                    "time_order"
+                ]
+            }
+        }
+    ]
+}
